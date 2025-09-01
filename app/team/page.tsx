@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { FaXTwitter } from 'react-icons/fa6';
+import { FaXTwitter } from "react-icons/fa6";
 
 const team = [
   {
@@ -43,7 +43,7 @@ const team = [
     },
   },
   {
-    image: "/laurent.jpeg",
+    image: "/laurent.jpg",
     name: "Nyumbayire Laurent",
     role: "Developer Relations Specialist",
     description:
@@ -53,6 +53,7 @@ const team = [
       instagram: "https://www.instagram.com/laulan_6/",
       linkedin: "https://www.linkedin.com/in/nyumbayire-laurent-b11251299/",
       telegram: "https://t.me/laulanez",
+      github: "https://github.com/NyLaurent",
     },
   },
 ];
@@ -189,7 +190,6 @@ const TeamPage = () => {
     </div>
   );
 };
-
 
 const InstagramIcon = () => (
   <svg
