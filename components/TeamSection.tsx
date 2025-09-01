@@ -35,14 +35,14 @@ const team = [
   {
     image: "/jonas.jpg",
     name: "Jonas Sebera",
-    role: "Web3 Developer & Technical Support Lead",
+    role: "Senior Technical Support Engineer",
     description:
       "Mr. Jonas leads the technical support efforts and drives blockchain development initiatives, ensuring robust, scalable solutions and expert troubleshooting.",
     socials: {
       twitter: "https://x.com/0xJonaseb11",
       instagram: "https://instagram.com/sebe_j_az99",
       linkedin: "https://linkedin.com/in/jonassebera",
-      telegram: "https://t.me/jonas_sebera",
+      telegram: "https://t.me/OxJonaseb11",
       github: "https://github.com/0xJonaseb11",
     },
   },
@@ -57,6 +57,7 @@ const team = [
       instagram: "https://www.instagram.com/laulan_6/",
       linkedin: "https://www.linkedin.com/in/nyumbayire-laurent-b11251299/",
       telegram: "https://t.me/laulanez",
+
       github: "https://github.com/NyLaurent",
     },
   },

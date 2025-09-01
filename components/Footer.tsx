@@ -31,7 +31,7 @@ const Footer = () => {
               Empowering Africa&apos;s Web3 Builders—One Line of Code at a Time.
             </p>
             <div className="flex gap-4 sm:gap-6 pt-2 sm:pt-4">
-              <a href="https://www.linkedin.com/company/Web3Mates" className="hover:opacity-80 transition-opacity">
+              <a href="https://www.linkedin.com/company/web3mates" className="hover:opacity-80 transition-opacity">
                 <FaLinkedin className="w-5 h-5 sm:w-6 sm:h-6 text-[#0A66C2]" />
               </a>
               <a href="https://x.com/Web3Mates" className="hover:opacity-80 transition-opacity">
