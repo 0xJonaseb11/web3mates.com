@@ -31,7 +31,7 @@ const Navbar = () => {
     <>
       <nav className="bg-white/80 backdrop-blur-sm border-b border-white/20 fixed w-full top-0 z-40">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between h-16 sm:h-20">
+          <div className="flex justify-between items-center h-16 sm:h-20">
 
             <div className="flex items-center">
               <Link href="/" className="flex items-center space-x-1 sm:space-x-2 lg:space-x-1">
@@ -118,40 +118,38 @@ const Navbar = () => {
             </div>
 
 
-            <div className="lg:hidden flex items-center">
+            <div className="lg:hidden flex items-center justify-end flex-shrink-0 ml-4">
               <button
                 onClick={() => setIsOpen(!isOpen)}
                 type="button"
-                className="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-gray-900 hover:bg-white/50 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-[#0066FF] transition-all duration-200"
-                aria-controls="mobile-menu"
-                aria-expanded="false"
+                className="mobile-nav-button relative inline-flex items-center justify-center w-10 h-10 rounded-lg text-gray-700 hover:text-gray-900 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-[#0066FF] focus:ring-offset-2 transition-all duration-200 touch-manipulation"
               >
                 <span className="sr-only">Open main menu</span>
                 {!isOpen ? (
                   <svg
-                    className="block h-6 w-6"
+                    className="block h-6 w-6 transition-transform duration-200"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
+                    strokeWidth={2}
                   >
                     <path
                       strokeLinecap="round"
                       strokeLinejoin="round"
-                      strokeWidth={2}
                       d="M4 6h16M4 12h16M4 18h16"
                     />
                   </svg>
                 ) : (
                   <svg
-                    className="block h-6 w-6"
+                    className="block h-6 w-6 transition-transform duration-200"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
+                    strokeWidth={2}
                   >
                     <path
                       strokeLinecap="round"
                       strokeLinejoin="round"
-                      strokeWidth={2}
                       d="M6 18L18 6M6 6l12 12"
                     />
                   </svg>
@@ -163,7 +161,7 @@ const Navbar = () => {
       </nav>
 
       {isOpen && (
-        <div className="fixed inset-0 z-50 lg:hidden">
+        <div id="mobile-menu" className="mobile-menu-overlay lg:hidden">
           <div className="absolute inset-0 bg-white" style={{ backgroundColor: "#ffffff" }} />
 
           <div className="relative flex flex-col h-full w-full">

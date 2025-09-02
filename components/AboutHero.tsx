@@ -67,7 +67,7 @@ const AboutHero = () => {
             <div className="w-full h-80 sm:h-96 lg:h-[500px] relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white">
               {/* Spinning Globe Container */}
               <div className="absolute inset-0 flex items-center justify-center group">
-                <div className="w-full h-full flex items-center justify-center animate-spin-slow group-hover:animate-spin transition-all duration-1000">
+                <div className="w-full h-full flex items-center justify-center animate-spin-slow group-hover:animate-spin-fast transition-all duration-1000">
                   <Image
                     src="/africa-globe.webp"
                     alt="About Web3 Mates Blockchain"

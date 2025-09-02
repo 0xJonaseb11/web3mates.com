@@ -33,6 +33,56 @@ html {
 .rotate-animation {
   transform-origin: center;
 }
+
+/* Globe Spinning Animations */
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spin-fast {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 20s linear infinite;
+}
+
+.animate-spin-fast {
+  animation: spin-fast 8s linear infinite;
+}
+
+/* Mobile Navigation Improvements */
+.mobile-nav-button {
+  position: relative;
+  z-index: 50;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.mobile-nav-button:active {
+  transform: scale(0.95);
+}
+
+/* Ensure mobile menu is properly positioned */
+.mobile-menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 50;
+  overflow: hidden;
+}
 /* body {
   font-family: 'Inter', sans-serif;
 } */

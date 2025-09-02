@@ -41,53 +41,61 @@ const ContactSection = () => {
             </div>
           </div>
 
-  
-          <div className="bg-white p-4 sm:p-6 lg:p-8 rounded-2xl shadow-sm">
-            <h3 className="text-xl sm:text-2xl font-bold text-[#0B1C39] mb-3 sm:mb-4">
-              Contact Us
-            </h3>
-            <p className="text-gray-600 mb-6 sm:mb-8 text-sm sm:text-base">
-              Have questions or ideas? Reach out and let&apos;s connect.
-            </p>
-            
-            <form className="space-y-4 text-black">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4">
-                <input
-                  type="text"
-                  placeholder="Enter your name"
-                  className="w-full text-black px-3 sm:px-4 py-2.5 sm:py-3 rounded-lg bg-gray-50 border border-gray-200 focus:outline-none focus:border-[#0066FF] text-sm sm:text-base"
-                />
-                <input
-                  type="text"
-                  placeholder="Enter your surname"
-                  className="w-full px-3 sm:px-4 py-2.5 sm:py-3 rounded-lg bg-gray-50 border border-gray-200 focus:outline-none focus:border-[#0066FF] text-sm sm:text-base"
-                />
+          {/* Contact Information Card */}
+          <div className="bg-white p-6 sm:p-8 lg:p-10 rounded-2xl shadow-lg border border-gray-100 text-center">
+            <div className="mb-6 sm:mb-8">
+              <div className="w-16 h-16 bg-[#0066FF] rounded-full flex items-center justify-center mx-auto mb-4">
+                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
               </div>
-              <input
-                type="email"
-                placeholder="Enter your email"
-                className="w-full px-3 sm:px-4 py-2.5 sm:py-3 text-black rounded-lg bg-gray-50 border border-gray-200 focus:outline-none focus:border-[#0066FF] text-sm sm:text-base"
-              />
-              <button
-                type="submit"
-                className="w-full bg-[#0066FF] text-white px-4 sm:px-6 py-2.5 sm:py-3 rounded-lg hover:bg-blue-700 transition-colors text-sm sm:text-base"
-              >
-                Send Email
-              </button>
-            </form>
-
-            <div className="mt-6 sm:mt-8">
-              <p className="text-gray-600 mb-3 sm:mb-4 text-sm sm:text-base">You can also reach us by a call</p>
+              <h3 className="text-xl sm:text-2xl font-bold text-[#0B1C39] mb-3">
+                Ready to Connect?
+              </h3>
+              <p className="text-gray-600 text-sm sm:text-base mb-6">
+                Have questions, ideas, or want to collaborate? We&apos;d love to hear from you!
+              </p>
+            </div>
+            
+            {/* Primary CTA Button */}
+            <Link 
+              href="/contact"
+              className="inline-block w-full bg-[#0066FF] text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg hover:bg-blue-700 transition-all duration-300 font-medium text-sm sm:text-base shadow-lg hover:shadow-xl transform hover:-translate-y-1 mb-4"
+            >
+              Send Us a Message
+            </Link>
+            
+            {/* Alternative Contact Methods */}
+            <div className="space-y-3 sm:space-y-4">
+              <p className="text-gray-500 text-xs sm:text-sm">Or reach us directly:</p>
+              
+              {/* Phone Number */}
               <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4">
                 <div className="flex-1 px-3 sm:px-4 py-2.5 sm:py-3 bg-gray-50 rounded-lg text-gray-600 text-sm sm:text-base">
                   {phoneNumber}
                 </div>
                 <button
                   onClick={handleCopyNumber}
-                  className="w-full sm:w-auto bg-[#0066FF] text-white px-4 sm:px-6 py-2.5 sm:py-3 rounded-lg hover:bg-blue-700 transition-colors whitespace-nowrap text-sm sm:text-base"
+                  className="w-full sm:w-auto bg-gray-100 text-gray-700 px-4 sm:px-6 py-2.5 sm:py-3 rounded-lg hover:bg-gray-200 transition-colors whitespace-nowrap text-sm sm:text-base"
                 >
                   Copy Number
                 </button>
+              </div>
+              
+              {/* Quick Links */}
+              <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 pt-2">
+                <Link 
+                  href="/join-community"
+                  className="text-[#0066FF] hover:text-blue-700 text-sm transition-colors"
+                >
+                  Join Community →
+                </Link>
+                <Link 
+                  href="/partnership"
+                  className="text-[#0066FF] hover:text-blue-700 text-sm transition-colors"
+                >
+                  Partnership →
+                </Link>
               </div>
             </div>
           </div>

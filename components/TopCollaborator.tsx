@@ -21,7 +21,7 @@ const TopCollaborator = () => {
             Our <span className="text-[#0066FF]">Top Collaborator</span>
           </h2>
           <p className="text-gray-600 max-w-3xl mx-auto text-sm sm:text-base lg:text-lg px-4 sm:px-0">
-            Meet Genesys - the premier Web3 education platform that's revolutionizing how developers learn and build in the blockchain space.
+            Meet Genesys - the premier Web3 education platform that&apos;s revolutionizing how developers learn and build in the blockchain space.
           </p>
         </motion.div>
 
@@ -90,7 +90,7 @@ const TopCollaborator = () => {
                 Visit Genesys
               </Link>
               <Link
-                href="#contact"
+                href="/partnership"
                 className="border border-[#0066FF] text-[#0066FF] px-4 sm:px-6 py-2.5 sm:py-3 rounded-lg hover:bg-[#0066FF] hover:text-white transition-colors font-medium text-center text-sm sm:text-base"
               >
                 Partner With Us
@@ -155,7 +155,7 @@ const TopCollaborator = () => {
               </div>
               <div className="p-3 sm:p-4 bg-gray-50 border-t">
                 <p className="text-xs sm:text-sm text-gray-600 text-center">
-                  Explore the Genesys platform to see how we're revolutionizing Web3 education
+                  Explore the Genesys platform to see how we&apos;re revolutionizing Web3 education
                 </p>
               </div>
             </div>
