@@ -360,7 +360,7 @@ const ApplyPage = () => {
               onChange={handleChange}
               onBlur={() => handleBlur("timezone")}
               required
-              className={`w-full px-4 py-3 rounded-lg border focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all text-black outline-none ${
+              className={`w-full px-3 sm:px-4 py-2 sm:py-3 rounded-lg border focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all text-black outline-none ${
                 errors.timezone ? 'border-red-500' : 'border-gray-300'
               }`}
               placeholder="e.g. GMT+1, EST, UTC, etc."
@@ -387,7 +387,7 @@ const ApplyPage = () => {
               required
               min="1"
               max="168"
-              className={`w-full px-4 py-3 rounded-lg border focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all text-black outline-none ${
+              className={`w-full px-3 sm:px-4 py-2 sm:py-3 rounded-lg border focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all text-black outline-none ${
                 errors.availability ? 'border-red-500' : 'border-gray-300'
               }`}
               placeholder="How many hours per week can you dedicate?"
@@ -400,7 +400,7 @@ const ApplyPage = () => {
           <div className="pt-4">
             <button
               type="submit"
-              className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-6 rounded-lg transition-colors"
+              className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 sm:py-3 px-4 sm:px-6 rounded-lg transition-colors"
             >
               Submit Application
             </button>
@@ -421,16 +421,16 @@ const ApplyPage = () => {
       </motion.div>
 
       <motion.section
-        className="mt-16 bg-blue-50 rounded-xl p-8 sm:p-12 text-center"
+        className="mt-12 sm:mt-16 bg-blue-50 rounded-xl p-4 sm:p-8 lg:p-12 text-center"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
       >
-        <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">
+        <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 mb-4">
           What Happens Next?
         </h2>
         <div className="max-w-3xl mx-auto">
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-8">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 mt-6 sm:mt-8">
             {[
               {
                 icon: "✉️",
@@ -457,13 +457,13 @@ const ApplyPage = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-white p-6 rounded-lg shadow-sm"
+                className="bg-white p-4 sm:p-6 rounded-lg shadow-sm"
               >
-                <div className="text-3xl mb-3">{item.icon}</div>
-                <h3 className="text-lg font-bold text-gray-900 mb-2">
+                <div className="text-2xl sm:text-3xl mb-2 sm:mb-3">{item.icon}</div>
+                <h3 className="text-base sm:text-lg font-bold text-gray-900 mb-2">
                   {item.title}
                 </h3>
-                <p className="text-gray-600 text-sm">{item.description}</p>
+                <p className="text-gray-600 text-xs sm:text-sm">{item.description}</p>
               </motion.div>
             ))}
           </div>

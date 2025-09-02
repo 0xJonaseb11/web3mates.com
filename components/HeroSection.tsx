@@ -23,7 +23,7 @@ const HeroSection = () => {
       opacity: 1,
       transition: {
         duration: 0.5,
-        ease: "easeInOut" 
+        ease: "easeInOut" as const
       }
     }
   };
@@ -34,9 +34,9 @@ const HeroSection = () => {
       transition: {
         x: {
           repeat: Infinity,
-          repeatType: "loop",
+          repeatType: "loop" as const,
           duration: 20,
-          ease: "linear"
+          ease: "linear" as const
         }
       }
     }
@@ -87,14 +87,14 @@ const HeroSection = () => {
           >
             <Link
               href="/mentorship/apply"
-              className="relative bg-gradient-to-r from-[#0066FF] to-[#0047CC] text-white px-8 py-4 rounded-full hover:shadow-lg transition-all duration-300 font-medium group overflow-hidden"
+              className="relative bg-gradient-to-r from-[#0066FF] to-[#0047CC] text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full hover:shadow-lg transition-all duration-300 font-medium group overflow-hidden text-sm sm:text-base"
             >
               <span className="relative z-10">Join The Course</span>
               <span className="absolute inset-0 bg-gradient-to-r from-[#0047CC] to-[#0066FF] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
             </Link>
             <Link
               href="/contact"
-              className="bg-white text-[#0066FF] px-8 py-4 rounded-full border-2 border-[#0066FF] hover:bg-[#0066FF]/5 hover:shadow-md transition-all duration-300 font-medium"
+              className="bg-white text-[#0066FF] px-6 sm:px-8 py-3 sm:py-4 rounded-full border-2 border-[#0066FF] hover:bg-[#0066FF]/5 hover:shadow-md transition-all duration-300 font-medium text-sm sm:text-base"
             >
               Contact Us
             </Link>
