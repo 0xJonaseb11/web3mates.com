@@ -77,39 +77,40 @@ const OurStory = () => {
   ];
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      {/* Hero Section */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 sm:pt-24 lg:py-24">
+    <>
+      {/* Hero Section - Full Width */}
+      <div className="relative w-screen -ml-[calc(50vw-50%)] pt-20 sm:pt-24 lg:py-24">
         <div className="relative h-[60vh] min-h-[500px] flex items-center justify-center overflow-hidden">
-          <div className="relative h-[50vh] sm:h-[60vh] min-h-[400px] sm:min-h-[500px] flex items-center justify-center overflow-hidden rounded-xl">
+          <div className="relative h-[50vh] sm:h-[60vh] min-h-[400px] sm:min-h-[500px] flex items-center justify-center overflow-hidden">
             <Image
-              src="/africa-tech-hub.jpg"
-              alt="African tech hub"
+              src="/assembly.jpeg"
+              alt="Web3 Mates team assembly and collaboration"
               fill
               className="object-cover absolute z-0"
               priority
             />
-            <div className="absolute inset-0 bg-blue-800 rounded-xl opacity-90 z-1"></div>
+            <div className="absolute inset-0 bg-gradient-to-br from-black/60 via-black/40 to-black/70 z-1"></div>
             <motion.div
-              className=" relative z-10 text-center px-4"
+              className="relative z-10 text-center px-6 sm:px-8 md:px-12 lg:px-16 xl:px-20"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-4">
-                From <span className="text-[#0066FF]">Vision</span> to Movement
+              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-4 drop-shadow-lg px-2 sm:px-0">
+                From <span className="text-[#0066FF] drop-shadow-lg">Vision</span> to Movement
               </h1>
-              <p className="text-base sm:text-lg lg:text-xl text-white/90 max-w-3xl mx-auto">
-                How a small group of passionate Africans came together to build
-                Web3 Mates
+              <p className="text-base sm:text-lg lg:text-xl text-white/95 max-w-3xl mx-auto font-medium px-2 sm:px-0">
+                How passionate Africans came together to build Web3 Mates
               </p>
             </motion.div>
           </div>
         </div>
       </div>
 
-      {/* Founder Spotlight */}
-      <section className="py-12 sm:py-16 lg:py-20">
+      {/* Main Content Container */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Founder Spotlight */}
+        <section className="py-12 sm:py-16 lg:py-20">
         <div className="flex flex-col lg:flex-row gap-8 sm:gap-12 items-center">
           <motion.div
             className="w-full lg:w-1/2"
@@ -162,7 +163,7 @@ const OurStory = () => {
                 Meet The Team
               </Link>
               <Link
-                href="https://youtube.com/watch?v=example"
+                href="#"
                 className="flex items-center justify-center gap-2 text-[#0066FF] hover:underline text-sm sm:text-base"
               >
                 <svg
@@ -309,7 +310,8 @@ const OurStory = () => {
           </div>
         </motion.div>
       </section>
-    </div>
+      </div>
+    </>
   );
 };
 

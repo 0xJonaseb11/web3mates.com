@@ -263,7 +263,7 @@ const Testimonials = () => {
             Start Learning
           </Link>
           <Link
-            href="/enterprise"
+            href="/partnership"
             className="bg-white text-[#0066FF] px-6 sm:px-8 py-3 rounded-full border-2 border-[#0066FF] hover:bg-[#0066FF]/5 hover:shadow-md transition-all duration-300 font-medium text-sm sm:text-base"
           >
             Partner With Us

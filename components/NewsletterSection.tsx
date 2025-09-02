@@ -1,24 +1,28 @@
 "use client";
 
 import { useState } from "react";
+import { useNewsletter } from "@/hooks/useNewsletter";
 
 const NewsletterSection = () => {
   const [email, setEmail] = useState("");
-  const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
+  const { subscribeToNewsletter, isLoading, message, error, clearMessages } = useNewsletter();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
     if (!email.trim()) return;
 
-    try {
-      console.log("Subscribing email:", email);
+    const result = await subscribeToNewsletter(email);
+    if (result.success) {
+      setEmail(""); // Clear the form on success
+    }
+  };
 
-      setStatus("success");
-      setEmail("");
-    } catch (error) {
-      console.error("Subscription error:", error);
-      setStatus("error");
+  // Clear messages when email changes
+  const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setEmail(e.target.value);
+    if (message || error) {
+      clearMessages();
     }
   };
 
@@ -45,33 +49,34 @@ const NewsletterSection = () => {
             <input
               type="email"
               value={email}
-              onChange={(e) => {
-                setEmail(e.target.value);
-                if (status !== "idle") setStatus("idle");
-              }}
+              onChange={handleEmailChange}
               placeholder="Enter your email"
               required
-              className="px-4 sm:px-6 py-3 sm:py-4 rounded-full border border-gray-300 flex-1 focus:outline-none focus:ring-2 focus:ring-[#0066FF] focus:border-transparent text-sm sm:text-base"
+              disabled={isLoading}
+              className="px-4 sm:px-6 py-3 sm:py-4 rounded-full border border-gray-300 flex-1 focus:outline-none focus:ring-2 focus:ring-[#0066FF] focus:border-transparent text-sm sm:text-base disabled:bg-gray-100 disabled:cursor-not-allowed"
               aria-label="Email address"
             />
             <button
               type="submit"
-              className="bg-[#0066FF] text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-medium hover:bg-blue-700 transition-colors whitespace-nowrap text-sm sm:text-base"
+              disabled={isLoading}
+              className="bg-[#0066FF] text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-medium hover:bg-blue-700 transition-colors whitespace-nowrap text-sm sm:text-base disabled:bg-gray-400 disabled:cursor-not-allowed"
             >
-              Subscribe Now
+              {isLoading ? "Subscribing..." : "Subscribe Now"}
             </button>
           </form>
 
-  
-          {status === "success" && (
-            <p className="text-green-600 mt-3 sm:mt-4 text-sm sm:text-base">
-              Thanks for subscribing!
-            </p>
+          {/* Success Message */}
+          {message && (
+            <div className="mt-4 p-3 bg-green-100 border border-green-400 text-green-700 rounded-lg text-sm max-w-md mx-auto">
+              {message}
+            </div>
           )}
-          {status === "error" && (
-            <p className="text-red-600 mt-3 sm:mt-4 text-sm sm:text-base">
-              Something went wrong. Please try again.
-            </p>
+          
+          {/* Error Message */}
+          {error && (
+            <div className="mt-4 p-3 bg-red-100 border border-red-400 text-red-700 rounded-lg text-sm max-w-md mx-auto">
+              {error}
+            </div>
           )}
         </div>
       </div>
