@@ -4,7 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 
 const ContactSection = () => {
-  const [phoneNumber] = useState("+250-799-9900-999");
+  const [phoneNumber] = useState("+256 789 649671");
 
   const handleCopyNumber = () => {
     navigator.clipboard.writeText(phoneNumber);

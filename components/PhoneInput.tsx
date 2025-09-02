@@ -67,12 +67,12 @@ export default function PhoneInput({
           <button
             type="button"
             onClick={() => setIsOpen(!isOpen)}
-            className="flex items-center px-4 py-3 border-2 border-r-0 border-gray-200 rounded-l-xl bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-200"
+            className="flex items-center px-2 sm:px-4 py-2 sm:py-3 border-2 border-r-0 border-gray-200 rounded-l-xl bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-200"
           >
-            <span className="text-lg mr-2">{selectedCountry.flag}</span>
-            <span className="text-sm font-medium text-gray-700">{selectedCountry.code}</span>
+            <span className="text-base sm:text-lg mr-1 sm:mr-2">{selectedCountry.flag}</span>
+            <span className="text-xs sm:text-sm font-medium text-gray-700">{selectedCountry.code}</span>
             <svg
-              className={`ml-2 h-4 w-4 text-gray-400 transition-transform ${isOpen ? 'rotate-180' : ''}`}
+              className={`ml-1 sm:ml-2 h-3 w-3 sm:h-4 sm:w-4 text-gray-400 transition-transform ${isOpen ? 'rotate-180' : ''}`}
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -83,7 +83,7 @@ export default function PhoneInput({
 
           {/* Dropdown Menu */}
           {isOpen && (
-            <div className="absolute z-50 mt-1 w-80 bg-white border border-gray-300 rounded-lg shadow-lg max-h-60 overflow-hidden">
+            <div className="absolute z-50 mt-1 w-72 sm:w-80 bg-white border border-gray-300 rounded-lg shadow-lg max-h-60 overflow-hidden">
               {/* Search Input */}
               <div className="p-3 border-b border-gray-200">
                 <input
@@ -123,7 +123,7 @@ export default function PhoneInput({
           onChange={handlePhoneChange}
           placeholder={placeholder}
           required={required}
-          className={`flex-1 px-4 py-3 border-2 rounded-r-xl transition-all duration-200 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 ${
+          className={`flex-1 px-3 sm:px-4 py-2 sm:py-3 border-2 rounded-r-xl transition-all duration-200 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm sm:text-base ${
             error ? 'border-red-500 bg-red-50 focus:ring-red-500 focus:border-red-500' : 'border-gray-200 bg-white hover:border-gray-300'
           }`}
         />
