@@ -12,7 +12,11 @@ const EnterprisePage = () => {
       title: "Talent Pipeline",
       description:
         "Get first access to our top graduates trained in blockchain development, smart contracts, and Web3 technologies.",
-      icon: "🎯",
+      icon: (
+        <svg className="w-8 h-8 sm:w-10 sm:h-10 text-blue-600" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"/>
+        </svg>
+      ),
       benefits: [
         "Pre-vetted candidates",
         "Custom training tracks",
@@ -23,7 +27,13 @@ const EnterprisePage = () => {
       title: "Team Upskilling",
       description:
         "Transform your existing team with customized Web3 training programs tailored to your business needs.",
-      icon: "📚",
+      icon: (
+        <svg className="w-8 h-8 sm:w-10 sm:h-10 text-blue-600" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M12 14l9-5-9-5-9 5 9 5z"/>
+          <path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/>
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"/>
+        </svg>
+      ),
       benefits: [
         "Personalized curriculum",
         "Project-based learning",
@@ -34,7 +44,11 @@ const EnterprisePage = () => {
       title: "Strategic R&D",
       description:
         "Collaborate on blockchain solutions with our developers and researchers to solve your business challenges.",
-      icon: "🔬",
+      icon: (
+        <svg className="w-8 h-8 sm:w-10 sm:h-10 text-blue-600" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+        </svg>
+      ),
       benefits: [
         "Dedicated innovation lab",
         "Proof-of-concept development",
@@ -142,7 +156,7 @@ const EnterprisePage = () => {
               transition={{ duration: 0.5, delay: 0.2 * index }}
               whileHover={{ y: -5 }}
             >
-              <div className="text-4xl mb-4">{option.icon}</div>
+              <div className="mb-4">{option.icon}</div>
               <h3 className="text-xl font-bold text-[#0B1C39] mb-3">
                 {option.title}
               </h3>

@@ -10,7 +10,13 @@ const MentorshipPage = () => {
       title: "Web3 Fundamentals",
       description:
         "Master blockchain basics, wallets, and core concepts before diving deeper",
-      icon: "📚",
+      icon: (
+        <svg className="w-8 h-8 sm:w-10 sm:h-10 text-blue-600" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M12 14l9-5-9-5-9 5 9 5z"/>
+          <path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/>
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"/>
+        </svg>
+      ),
       duration: "4 weeks",
       level: "Beginner",
       features: [
@@ -24,7 +30,11 @@ const MentorshipPage = () => {
       title: "Smart Contract Development",
       description:
         "Build and deploy production-ready smart contracts on Ethereum and other EVM chains",
-      icon: "🛠️",
+      icon: (
+        <svg className="w-8 h-8 sm:w-10 sm:h-10 text-blue-600" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.7C.4 7.1.9 10.1 2.9 12.1c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.4z"/>
+        </svg>
+      ),
       duration: "8 weeks",
       level: "Intermediate",
       features: [
@@ -38,7 +48,11 @@ const MentorshipPage = () => {
       title: "DeFi & dApp Building",
       description:
         "Create full-stack decentralized applications with frontend integration",
-      icon: "💻",
+      icon: (
+        <svg className="w-8 h-8 sm:w-10 sm:h-10 text-blue-600" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M20 18c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2H1c-.55 0-1 .45-1 1s.45 1 1 1h22c.55 0 1-.45 1-1s-.45-1-1-1h-3zM5 6h14v10H5V6z"/>
+        </svg>
+      ),
       duration: "12 weeks",
       level: "Advanced",
       features: [
@@ -214,7 +228,7 @@ const MentorshipPage = () => {
               className="bg-white rounded-xl border border-gray-200 overflow-hidden shadow-sm hover:shadow-md transition-shadow"
             >
               <div className="p-4 sm:p-6">
-                <div className="text-3xl sm:text-4xl mb-3 sm:mb-4">
+                <div className="mb-3 sm:mb-4">
                   {track.icon}
                 </div>
                 <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2">

@@ -12,7 +12,7 @@ const NotFound = () => {
   }, []);
 
   return (
-    <div className="h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50 flex items-center justify-center px-4 overflow-hidden">
+          <div className="h-screen bg-white flex items-center justify-center px-4 overflow-hidden">
       <div className="w-full max-w-7xl mx-auto text-center">
         {/* Animated Background Elements */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">

@@ -106,7 +106,7 @@ const FeaturesSection = () => {
               variants={cardVariants}
               className="group"
             >
-              <div className="h-full bg-gradient-to-br from-blue-50 to-white p-6 sm:p-8 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100 hover:border-blue-100">
+              <div className="h-full bg-white p-6 sm:p-8 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100 hover:border-blue-100">
                 <div className="bg-blue-100 group-hover:bg-blue-200 w-14 h-14 sm:w-16 sm:h-16 rounded-lg flex items-center justify-center mx-auto mb-6 transition-colors duration-300">
                   <div className="text-blue-600 group-hover:text-blue-800 w-8 h-8 sm:w-10 sm:h-10 transition-colors duration-300">
                     {feature.icon}

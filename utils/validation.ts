@@ -246,7 +246,7 @@ const patterns = {
 // Spam prevention patterns
 const spamPatterns = {
   suspiciousWords: /(buy|sell|money|cash|loan|credit|debt|rich|poor|million|billion|dollar|euro|bitcoin|crypto|investment|profit|earn|make money|get rich|quick money|fast money|urgent|immediate|limited time|act now|click here|free|discount|offer|deal|sale|buy now|order now|call now|text now|email now|contact now|apply now|register now|sign up now|join now|start now|begin now|get started|get started now|get started today|get started immediately|get started right away|get started asap|get started now|get started today|get started immediately|get started right away|get started asap)/i,
-  excessiveCaps: /[A-Z]{5,}/,
+  excessiveCaps: /[A-Z]{8,}/,
   excessivePunctuation: /[!]{3,}|[?]{3,}|[.]{3,}/,
   suspiciousLinks: /(bit\.ly|tinyurl|goo\.gl|t\.co|is\.gd|v\.gd|cli\.gs|short\.to|BudURL|ping\.fm|post\.ly|Just\.as|bkite\.com|snipr\.com|short\.ie|kl\.am|wp\.me|rubyurl\.com|om\.ly|to\.ly|bit\.do|t\.co|lnkd\.in|db\.tt|qr\.ae|adf\.ly|goo\.gl|bitly\.com|cur\.lv|tiny\.cc|ow\.ly|bit\.ly|ity\.im|q\.gs|is\.gd|po\.st|bc\.vc|twitthis\.com|u\.to|j\.mp|buzurl\.com|cutt\.us|u\.bb|yourls\.org|x\.co|prettylinkpro\.com|scrnch\.me|filoops\.info|vzturl\.com|qr\.net|1url\.com|tweez\.me|v\.gd|tr\.im|link\.zip\.net)/i,
   suspiciousEmails: /(test@|admin@|info@|contact@|hello@|hi@|hey@|dear@|sir@|madam@|friend@|user@|guest@|anonymous@|noreply@|no-reply@|donotreply@|do-not-reply@|nobody@|someone@|anyone@|everyone@|anybody@|somebody@|nobody@|test123@|test@test\.com|admin@admin\.com|info@info\.com|contact@contact\.com|hello@hello\.com|hi@hi\.com|hey@hey\.com|dear@dear\.com|sir@sir\.com|madam@madam\.com|friend@friend\.com|user@user\.com|guest@guest\.com|anonymous@anonymous\.com|noreply@noreply\.com|no-reply@no-reply\.com|donotreply@donotreply\.com|do-not-reply@do-not-reply\.com|nobody@nobody\.com|someone@someone\.com|anyone@anyone\.com|everyone@everyone\.com|anybody@anybody\.com|somebody@somebody\.com|nobody@nobody\.com|test123@test123\.com)/i,
@@ -264,17 +264,19 @@ export const validateField = (field: string, value: string, required: boolean = 
 
   const trimmedValue = value.trim();
 
-  // Check for spam patterns
-  if (spamPatterns.suspiciousWords.test(trimmedValue)) {
-    return { field, message: `${field} contains suspicious content` };
-  }
+  // Check for spam patterns (skip for name fields to allow proper capitalization)
+  if (!['name', 'firstName', 'lastName'].includes(field)) {
+    if (spamPatterns.suspiciousWords.test(trimmedValue)) {
+      return { field, message: `${field} contains suspicious content` };
+    }
 
-  if (spamPatterns.excessiveCaps.test(trimmedValue)) {
-    return { field, message: `${field} contains excessive capitalization` };
-  }
+    if (spamPatterns.excessiveCaps.test(trimmedValue)) {
+      return { field, message: `${field} contains excessive capitalization` };
+    }
 
-  if (spamPatterns.excessivePunctuation.test(trimmedValue)) {
-    return { field, message: `${field} contains excessive punctuation` };
+    if (spamPatterns.excessivePunctuation.test(trimmedValue)) {
+      return { field, message: `${field} contains excessive punctuation` };
+    }
   }
 
   // Field-specific validation
@@ -282,8 +284,14 @@ export const validateField = (field: string, value: string, required: boolean = 
     case 'name':
     case 'firstName':
     case 'lastName':
+      // Allow common name patterns with proper capitalization
       if (!patterns.name.test(trimmedValue)) {
-        return { field, message: 'Name must be 2-50 characters with only letters, spaces, hyphens, and apostrophes' };
+        return { field, message: 'Name must be 2-50 characters with only letters, spaces, hyphens, and apostrophes. Proper capitalization is allowed (e.g., "McDonald", "O\'Connor", "van der Berg")' };
+      }
+      
+      // Additional check: ensure the name starts with a capital letter (proper name format)
+      if (!/^[A-Z]/.test(trimmedValue)) {
+        return { field, message: 'Name must start with a capital letter' };
       }
       break;
 
@@ -335,14 +343,14 @@ export const validateField = (field: string, value: string, required: boolean = 
     case 'organization':
     case 'org':
       if (!patterns.company.test(trimmedValue)) {
-        return { field, message: 'Company/Organization name must be 2-100 characters with valid characters' };
+        return { field, message: 'Company/Organization name must be 2-100 characters with valid characters. Proper capitalization is allowed (e.g., "McDonald\'s", "AT&T", "Johnson & Johnson")' };
       }
       break;
 
     case 'title':
     case 'projectTitle':
       if (!patterns.projectTitle.test(trimmedValue)) {
-        return { field, message: 'Title must be 3-100 characters with valid characters' };
+        return { field, message: 'Title must be 3-100 characters with valid characters. Proper capitalization is allowed (e.g., "Web3 Fundamentals", "Smart Contract Development")' };
       }
       break;
 

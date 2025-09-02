@@ -75,18 +75,18 @@ const CarouselSection = () => {
   }
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:pt-20">
-      <div className="text-center mb-12">
-        <h2 className="text-4xl font-bold text-gray-900 mb-4">Featured Gallery</h2>
-        <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16 xl:pt-20">
+      <div className="text-center mb-8 sm:mb-12">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-3 sm:mb-4">Featured Gallery</h2>
+        <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto px-2">
           Discover our curated collection of memorable moments and experiences
         </p>
       </div>
 
       <div className="relative overflow-hidden rounded-sm">
-        <div className="relative h-96 md:h-[500px] lg:h-[600px] flex items-center justify-center overflow-hidden">
+        <div className="relative h-64 sm:h-80 md:h-[500px] lg:h-[600px] flex items-center justify-center overflow-hidden">
           <div 
-            className="flex items-center justify-center space-x-8 w-full transition-all duration-700 ease-in-out"
+            className="flex items-center justify-center space-x-2 sm:space-x-4 md:space-x-8 w-full transition-all duration-700 ease-in-out"
             style={{
               transform: isTransitioning ? 'translateX(-100px)' : 'translateX(0)',
               opacity: isTransitioning ? 0.7 : 1
@@ -101,10 +101,10 @@ const CarouselSection = () => {
               }}
               onClick={goToPrevious}
             >
-              <div className="relative w-64 h-80 md:w-80 md:h-96 overflow-hidden rounded-xl shadow-lg">
+              <div className="relative w-48 h-60 sm:w-64 sm:h-80 md:w-80 md:h-96 overflow-hidden rounded-xl shadow-lg">
                 <img
                   src={images[(currentIndex - 1 + images.length) % images.length] || "/placeholder.svg?height=400&width=320&text=Gallery"}
-                  alt="Previous"
+                  alt="Previous gallery image"
                   className="w-full h-full object-cover transition-all duration-700 ease-in-out"
                 />
                 <div className="absolute inset-0 bg-black/30 hover:bg-black/20 transition-colors duration-300" />
@@ -119,10 +119,10 @@ const CarouselSection = () => {
                 opacity: isTransitioning ? 0.9 : 1
               }}
             >
-              <div className="relative w-80 h-96 md:w-96 md:h-[500px] overflow-hidden rounded-xl shadow-2xl">
+              <div className="relative w-64 h-80 sm:w-80 sm:h-96 md:w-96 md:h-[500px] overflow-hidden rounded-xl shadow-2xl">
                 <img
                   src={images[currentIndex] || "/placeholder.svg?height=500&width=384&text=Featured"}
-                  alt="Current"
+                  alt="Current featured gallery image"
                   className="w-full h-full object-cover transition-all duration-700 ease-in-out"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
@@ -138,10 +138,10 @@ const CarouselSection = () => {
               }}
               onClick={goToNext}
             >
-              <div className="relative w-64 h-80 md:w-80 md:h-96 overflow-hidden rounded-xl shadow-lg">
+              <div className="relative w-48 h-60 sm:w-64 sm:h-80 md:w-80 md:h-96 overflow-hidden rounded-xl shadow-lg">
                 <img
                   src={images[(currentIndex + 1) % images.length] || "/placeholder.svg?height=400&width=320&text=Gallery"}
-                  alt="Next"
+                  alt="Next gallery image"
                   className="w-full h-full object-cover transition-all duration-700 ease-in-out"
                 />
                 <div className="absolute inset-0 bg-black/30 hover:bg-black/20 transition-colors duration-300" />

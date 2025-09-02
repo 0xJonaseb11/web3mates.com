@@ -366,7 +366,7 @@ export default function ContactHero() {
           transition={{ duration: 0.6, delay: 0.4 }}
           className="space-y-6 sm:space-y-8"
         >
-          <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl p-4 sm:p-6 lg:p-8">
+          <div className="bg-white rounded-2xl p-4 sm:p-6 lg:p-8">
             <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4 sm:mb-6">Get in touch</h2>
             
             <div className="space-y-4 sm:space-y-6">
