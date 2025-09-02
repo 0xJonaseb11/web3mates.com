@@ -109,7 +109,7 @@ const CoreValues = () => {
             transition={{ duration: 0.5, delay: 0.1 * index }}
           >
             <div className="flex flex-col sm:flex-row items-start gap-3 sm:gap-4">
-              <div className="flex-shrink-0">
+              <div className={`flex-shrink-0 p-3 rounded-lg ${value.color.replace('/10', '')} bg-opacity-20 flex items-center justify-center`}>
                 {value.icon}
               </div>
               <div>

@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 interface FeatureProps {
   icon: React.ReactNode;
@@ -15,12 +16,12 @@ const Feature = ({ icon, title, description }: FeatureProps) => (
     <div>
       <h3 className="text-[#0B1C39] text-base sm:text-lg md:text-xl font-semibold mb-1 sm:mb-2">{title}</h3>
       <p className="text-gray-600 text-xs sm:text-sm md:text-base leading-relaxed">{description}</p>
-      <a
-        href="#"
+      <Link
+        href="/events/blog"
         className="text-[#0066FF] flex items-center mt-1 sm:mt-2 hover:underline text-xs sm:text-sm"
       >
         Learn more <span className="ml-1">→</span>
-      </a>
+      </Link>
     </div>
   </div>
 );

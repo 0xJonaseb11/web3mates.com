@@ -374,12 +374,12 @@ const ProjectProfilePage = () => {
           work.
         </p>
         <div className="flex flex-wrap justify-center gap-4">
-          <a
-            href="#"
+          <Link
+            href="/contact"
             className="bg-white text-blue-600 px-6 py-3 rounded-lg hover:shadow-md font-medium transition-all"
           >
             Contact Team
-          </a>
+          </Link>
           <Link
             href="/projects"
             className="bg-transparent border border-white text-white px-6 py-3 rounded-lg hover:bg-white/10 font-medium transition-all"

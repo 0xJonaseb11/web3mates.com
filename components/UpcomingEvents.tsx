@@ -66,27 +66,27 @@ const UpcomingEvents = () => {
               <p className="text-gray-700 mb-4 sm:mb-6 leading-relaxed text-sm sm:text-base">
                 {featuredEvent.description}
               </p>
-              <Link
-                href={`/events/${featuredEvent.id}`}
-                className="inline-flex items-center text-[#0066FF] font-semibold hover:text-blue-700 focus:outline-none focus:ring-2 focus:ring-[#0066FF] rounded text-sm sm:text-base"
-                aria-label={`Learn more about: ${featuredEvent.title}`}
-              >
-                Learn more
-                <svg
-                  className="w-3 h-3 sm:w-4 sm:h-4 ml-1"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  aria-hidden="true"
-                >
-                  <path
-                    d="M5 12h14M12 5l7 7-7 7"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-              </Link>
+                             <Link
+                 href="/events/blog"
+                 className="inline-flex items-center text-[#0066FF] font-semibold hover:text-blue-700 focus:outline-none focus:ring-2 focus:ring-[#0066FF] rounded text-sm sm:text-base"
+                 aria-label="View blog posts"
+               >
+                 View Blog
+                 <svg
+                   className="w-3 h-3 sm:w-4 sm:h-4 ml-1"
+                   viewBox="0 0 24 24"
+                   fill="none"
+                   aria-hidden="true"
+                 >
+                   <path
+                     d="M5 12h14M12 5l7 7-7 7"
+                     stroke="currentColor"
+                     strokeWidth="2"
+                     strokeLinecap="round"
+                     strokeLinejoin="round"
+                   />
+                 </svg>
+               </Link>
             </div>
           </article>
 
@@ -117,11 +117,11 @@ const UpcomingEvents = () => {
                     {event.description}
                   </p>
                   <Link
-                    href={`/events/${event.id}`}
+                    href="/events/blog"
                     className="inline-flex items-center text-[#0066FF] font-semibold hover:text-blue-700 focus:outline-none focus:ring-2 focus:ring-[#0066FF] rounded text-xs sm:text-sm"
-                    aria-label={`Learn more about: ${event.title}`}
+                    aria-label="View blog posts"
                   >
-                    Learn more
+                    View Blog
                     <svg
                       className="w-3 h-3 sm:w-4 sm:h-4 ml-1"
                       viewBox="0 0 24 24"

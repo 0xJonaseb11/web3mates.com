@@ -290,10 +290,10 @@ const HackathonsPage = () => {
               transition={{ duration: 0.3, delay: index * 0.1 }}
               className="bg-white p-4 sm:p-6 rounded-xl border border-gray-200 hover:border-green-300 transition-colors"
             >
-              <div className="mb-3 sm:mb-4">
+              <div className="mb-3 sm:mb-4 p-3 rounded-lg bg-blue-50 flex items-center justify-center">
                 {benefit.icon}
               </div>
-              <h3 className="text-base sm:text-lg font-semibold text-gray-900 mb-2">
+              <h3 className="text-base sm:text-lg font-semibold text-center text-gray-900 mb-2">
                 {benefit.title}
               </h3>
               <p className="text-gray-600 text-sm sm:text-base">

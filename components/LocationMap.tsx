@@ -26,7 +26,7 @@ export default function LocationMap() {
                 collaboration, training, and innovation.
               </p>
               <Link
-                href="#"
+                href="/events/blog"
                 className="text-blue-600 hover:text-blue-700 inline-flex items-center text-sm sm:text-base"
               >
                 Read more →
