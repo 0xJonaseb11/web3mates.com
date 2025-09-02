@@ -159,14 +159,14 @@ const ApplyPage = () => {
   };
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16">
       <ToastContainer />
-      <div className="text-center mb-12">
+      <div className="text-center mb-8 sm:mb-12">
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4 sm:mb-6"
+          className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-3 sm:mb-4 lg:mb-6"
         >
           Apply for <span className="text-blue-600">Web3 Mentorship</span>
         </motion.h1>
@@ -174,7 +174,7 @@ const ApplyPage = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="text-gray-600 max-w-3xl mx-auto text-lg"
+          className="text-gray-600 max-w-3xl mx-auto text-base sm:text-lg px-2"
         >
           Complete this form to start your journey. We&apos;ll match you with
           the perfect mentor based on your goals.
@@ -185,9 +185,9 @@ const ApplyPage = () => {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        className="bg-white rounded-xl shadow-sm border border-gray-200 p-6 sm:p-8 lg:p-10 max-w-3xl mx-auto"
+        className="bg-white rounded-xl shadow-sm border border-gray-200 p-4 sm:p-6 lg:p-8 xl:p-10 max-w-3xl mx-auto"
       >
-        <form onSubmit={handleSubmit} className="space-y-6">
+        <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
           <div>
             <label
               htmlFor="name"
@@ -203,7 +203,7 @@ const ApplyPage = () => {
               onChange={handleChange}
               onBlur={() => handleBlur("name")}
               required
-              className={`w-full px-4 py-3 rounded-lg border focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all text-black outline-none ${
+              className={`w-full px-3 sm:px-4 py-2 sm:py-3 rounded-lg border focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all text-black outline-none ${
                 errors.name ? 'border-red-500' : 'border-gray-300'
               }`}
               placeholder="Your full name"
@@ -228,7 +228,7 @@ const ApplyPage = () => {
               onChange={handleChange}
               onBlur={() => handleBlur("email")}
               required
-              className={`w-full px-4 py-3 rounded-lg border focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all text-black outline-none ${
+              className={`w-full px-3 sm:px-4 py-2 sm:py-3 rounded-lg border focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all text-black outline-none ${
                 errors.email ? 'border-red-500' : 'border-gray-300'
               }`}
               placeholder="your@email.com"
@@ -270,7 +270,7 @@ const ApplyPage = () => {
               onChange={handleChange}
               onBlur={() => handleBlur("track")}
               required
-              className={`w-full px-4 py-3 rounded-lg border focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all text-black outline-none ${
+              className={`w-full px-3 sm:px-4 py-2 sm:py-3 rounded-lg border focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all text-black outline-none ${
                 errors.track ? 'border-red-500' : 'border-gray-300'
               }`}
             >
@@ -335,7 +335,7 @@ const ApplyPage = () => {
               onBlur={() => handleBlur("goals")}
               required
               rows={4}
-              className={`w-full px-4 py-3 rounded-lg border focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all text-black outline-none ${
+              className={`w-full px-3 sm:px-4 py-2 sm:py-3 rounded-lg border focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all text-black outline-none ${
                 errors.goals ? 'border-red-500' : 'border-gray-300'
               }`}
               placeholder="What do you hope to achieve through this mentorship? (Minimum 10 characters)"

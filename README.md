@@ -82,7 +82,8 @@ Organized codebase with modular components, reusable hooks, and structured pages
    NEXT_PUBLIC_FORMSPREE_ENTERPRISE_URL=https://formspree.io/f/YOUR_ENTERPRISE_FORM_ID
    NEXT_PUBLIC_FORMSPREE_SPONSORSHIP_URL=https://formspree.io/f/YOUR_SPONSORSHIP_FORM_ID
    NEXT_PUBLIC_FORMSPREE_MENTORSHIP_URL=https://formspree.io/f/YOUR_MENTORSHIP_FORM_ID
-   NEXT_PUBLIC_FORMSPREE_NEWSLETTER_URL=https://formspree.io/f/YOUR_NEWSLETTER_FORM_ID
+NEXT_PUBLIC_FORMSPREE_FEEDBACK_URL=https://formspree.io/f/YOUR_FEEDBACK_FORM_ID
+NEXT_PUBLIC_FORMSPREE_NEWSLETTER_URL=https://formspree.io/f/YOUR_NEWSLETTER_FORM_ID
    ```
 
 3. **Run the development server**
@@ -146,6 +147,15 @@ The website uses Formspree for all contact forms. To set up:
 2. Add form URLs to environment variables
 3. Configure email notifications in Formspree dashboard
 4. Set up auto-replies for better user experience
+
+**Available Forms:**
+- Contact form (`NEXT_PUBLIC_FORMSPREE_CONTACT_URL`)
+- Partnership form (`NEXT_PUBLIC_FORMSPREE_PARTNERSHIP_URL`)
+- Enterprise form (`NEXT_PUBLIC_FORMSPREE_ENTERPRISE_URL`)
+- Sponsorship form (`NEXT_PUBLIC_FORMSPREE_SPONSORSHIP_URL`)
+- Mentorship application form (`NEXT_PUBLIC_FORMSPREE_MENTORSHIP_URL`)
+- General feedback form (`NEXT_PUBLIC_FORMSPREE_FEEDBACK_URL`)
+- Newsletter subscription (`NEXT_PUBLIC_FORMSPREE_NEWSLETTER_URL`)
 
 ## Development Guidelines
 

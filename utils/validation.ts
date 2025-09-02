@@ -234,9 +234,9 @@ const patterns = {
   ideas: /^[\s\S]{0,1000}$/,
   additional: /^[\s\S]{0,1000}$/,
   rate: /^[0-9]{1,4}$/,
-  timezone: /^[A-Za-z\/\s+-]{2,50}$/,
+  timezone: /^[A-Za-z\/\s+\-0-9]{2,50}$/,
   availability: /^[0-9]{1,3}$/,
-  track: /^[A-Za-z\s&]+$/,
+  track: /^[A-Za-z0-9\s&]+$/,
   status: /^[A-Za-z\s]+$/,
   category: /^[A-Za-z\s&]+$/,
   techStack: /^[A-Za-z0-9\s&.,#+]+$/,
@@ -433,6 +433,7 @@ export const validateField = (field: string, value: string, required: boolean = 
 
     case 'message':
     case 'subject':
+    case 'feedback':
       if (trimmedValue.length < 5) {
         return { field, message: `${field} must be at least 5 characters` };
       }

@@ -30,7 +30,7 @@ const NotFound = () => {
           <div className="mb-4 flex justify-center">
             <div className="relative">
               <Image
-                src="logo.svg"
+                src="/logo.svg"
                 alt="Web3 Mates Logo"
                 width={60}
                 height={60}
