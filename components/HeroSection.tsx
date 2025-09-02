@@ -69,7 +69,7 @@ const HeroSection = () => {
             className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-[#0B1C39] mb-4 sm:mb-6 leading-tight"
             variants={itemVariants}
           >
-            Empowering <span className="text-[#0066FF]">Africa</span> Through <span className="text-[#0066FF]">Web3</span>
+            Empowering <span className="text-[#0066FF]">Africa</span> Through <span className="text-[#0066FF]">Web3 Innovation</span>
           </motion.h1>
           
           <motion.p 

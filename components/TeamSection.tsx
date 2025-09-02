@@ -67,7 +67,7 @@ const socialIcons = {
   twitter: <FaXTwitter className="w-5 h-5" />,
   instagram: (
     <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-      <path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2zm0 1.5A4.25 4.25 0 0 0 3.5 7.75v8.5A4.25 4.25 0 0 0 7.75 20.5h8.5a4.25 4.25 0 0 0 4.25-4.25v-8.5A4.25 4.25 0 0 0 16.25 3.5h-8.5zM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 1.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7zm5.25-.25a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
+      <path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2zm0 1.5A4.25 4.25 0 0 0 3.5 7.75v8.5A4.25 4.25 0 0 0 7.75 20.5h-8.5a4.25 4.25 0 0 0 4.25-4.25v-8.5A4.25 4.25 0 0 0 16.25 3.5h-8.5zM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 1.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7zm5.25-.25a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
     </svg>
   ),
   linkedin: (
@@ -110,7 +110,7 @@ const TeamSection = () => {
   };
 
   return (
-    <section className="py-16 sm:py-20 lg:py-24 bg-white">
+    <section className="py-16 sm:py-20 lg:py-24 bg-gradient-to-b from-white to-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -119,7 +119,7 @@ const TeamSection = () => {
           className="text-center mb-12 sm:mb-16 lg:mb-20"
         >
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#0B1C39] mb-4 sm:mb-6">
-            Meet Our Leadership Team
+            Meet Our <span className="text-[#0066FF]">Leadership Team</span>
           </h2>
           <p className="text-gray-600 text-base sm:text-lg lg:text-xl max-w-3xl mx-auto">
             Our strength comes from the passion and expertise of our core team
@@ -132,51 +132,58 @@ const TeamSection = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
-          className="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-12"
+          className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-10"
         >
           {team.map((member, index) => (
             <motion.div
               key={index}
               variants={itemVariants}
-              className="flex flex-col sm:flex-row items-center sm:items-start gap-6 lg:gap-8 bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
+              className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow border border-gray-100"
+              whileHover={{ y: -5 }}
             >
-              <div className="w-full sm:w-48 h-64 sm:h-auto relative rounded-t-lg sm:rounded-l-lg sm:rounded-tr-none overflow-hidden bg-gray-100 flex-shrink-0">
-                <Image
-                  src={member.image}
-                  alt={member.name}
-                  width={384}
-                  height={512}
-                  className="object-cover w-full h-full"
-                  sizes="(max-width: 640px) 100vw, (max-width: 768px) 192px, 384px"
-                />
-              </div>
-              <div className="flex-1 p-6 sm:p-4 lg:p-6">
-                <h3 className="text-xl sm:text-2xl font-bold text-[#0B1C39] mb-2">
-                  {member.name}
-                </h3>
-                <p className="text-[#0066FF] mb-3 sm:mb-4 font-medium">
-                  {member.role}
-                </p>
-                <p className="text-gray-600 mb-4 sm:mb-6 text-sm sm:text-base leading-relaxed">
-                  {member.description}
-                </p>
-                <div className="flex justify-center sm:justify-start gap-3">
-                  {Object.entries(member.socials).map(
-                    ([platform, url]) =>
-                      url &&
-                      url !== "#" && (
-                        <Link
-                          key={platform}
-                          href={url}
-                          className="text-gray-500 hover:text-[#0066FF] transition-colors duration-200"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          aria-label={`${member.name}'s ${platform}`}
-                        >
-                          {socialIcons[platform as keyof typeof socialIcons]}
-                        </Link>
-                      )
-                  )}
+              <div className="flex flex-col sm:flex-row">
+                {/* Member Photo - Updated to match /team page styling */}
+                <div className="w-full sm:w-2/5 lg:w-1/3 h-72 sm:h-auto relative">
+                  <Image
+                    src={member.image}
+                    alt={member.name}
+                    fill
+                    className="object-cover object-top"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  />
+                </div>
+
+                {/* Member Info */}
+                <div className="w-full sm:w-3/5 lg:w-2/3 p-4 sm:p-6 lg:p-8">
+                  <h3 className="text-lg sm:text-xl lg:text-2xl font-semibold text-[#0B1C39] mb-1">
+                    {member.name}
+                  </h3>
+                  <p className="text-[#0066FF] mb-3 text-xs sm:text-sm lg:text-base">
+                    {member.role}
+                  </p>
+                  <p className="text-gray-600 mb-4 sm:mb-6 text-xs sm:text-sm lg:text-base leading-relaxed">
+                    {member.description}
+                  </p>
+
+                  {/* Social Links */}
+                  <div className="flex space-x-2 sm:space-x-3">
+                    {Object.entries(member.socials).map(
+                      ([platform, url]) =>
+                        url &&
+                        url !== "#" && (
+                          <Link
+                            key={platform}
+                            href={url}
+                            className="text-gray-400 hover:text-[#0066FF] transition-colors"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label={`${member.name}'s ${platform}`}
+                          >
+                            {socialIcons[platform as keyof typeof socialIcons]}
+                          </Link>
+                        )
+                    )}
+                  </div>
                 </div>
               </div>
             </motion.div>

@@ -124,7 +124,7 @@ const CommunityPage = () => {
                 Connect with us professionally and stay updated on career opportunities.
               </p>
               <a
-                href="#"
+                href="https://www.linkedin.com/company/web3mates"
                 className="block w-full py-3 px-6 text-center bg-[#0A66C2] hover:bg-[#0957AA] text-white font-medium rounded-lg transition-colors duration-200"
                 target="_blank"
                 rel="noopener noreferrer"

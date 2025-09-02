@@ -294,30 +294,18 @@ const OurStory = () => {
             in building Africa&apos;s Web3 future.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4">
-            <button
-              disabled
-              className="bg-white/80 text-[#0066FF]/60 px-4 sm:px-6 md:px-8 py-2.5 sm:py-3 rounded-full transition-all duration-300 font-medium text-xs sm:text-sm md:text-base cursor-not-allowed opacity-60 hover:opacity-80 relative group"
-              title="Registration coming soon"
+            <Link
+              href="/mentorship"
+              className="bg-white text-[#0066FF] px-4 sm:px-6 md:px-8 py-2.5 sm:py-3 rounded-full hover:shadow-lg transition-all duration-300 font-medium text-xs sm:text-sm md:text-base hover:bg-blue-50"
             >
-              <span className="relative z-10">Start Learning</span>
-              {/* Tooltip */}
-              <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-1 bg-gray-800 text-white text-xs rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap">
-                Registration coming soon
-                <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-gray-800"></div>
-              </div>
-            </button>
-            <button
-              disabled
-              className="bg-transparent border-2 border-white/60 text-white/60 px-4 sm:px-6 md:px-8 py-2.5 sm:py-3 rounded-full transition-all duration-300 font-medium text-xs sm:text-sm md:text-base cursor-not-allowed opacity-60 hover:opacity-80 relative group"
-              title="Registration coming soon"
+              Start Learning
+            </Link>
+            <Link
+              href="/contact"
+              className="bg-transparent border-2 border-white text-white px-4 sm:px-6 md:px-8 py-2.5 sm:py-3 rounded-full hover:bg-white hover:text-[#0066FF] transition-all duration-300 font-medium text-xs sm:text-sm md:text-base"
             >
-              <span className="relative z-10">Contact Us</span>
-              {/* Tooltip */}
-              <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-1 bg-gray-800 text-white text-xs rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap">
-                Registration coming soon
-                <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-gray-800"></div>
-              </div>
-            </button>
+              Contact Us
+            </Link>
           </div>
         </motion.div>
       </section>

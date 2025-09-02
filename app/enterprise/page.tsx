@@ -156,7 +156,9 @@ const EnterprisePage = () => {
               transition={{ duration: 0.5, delay: 0.2 * index }}
               whileHover={{ y: -5 }}
             >
-              <div className="mb-4">{option.icon}</div>
+              <div className="mb-4 p-3 rounded-lg bg-blue-50 flex items-center justify-center">
+                {option.icon}
+              </div>
               <h3 className="text-xl font-bold text-[#0B1C39] mb-3">
                 {option.title}
               </h3>

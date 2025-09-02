@@ -228,7 +228,7 @@ const MentorshipPage = () => {
               className="bg-white rounded-xl border border-gray-200 overflow-hidden shadow-sm hover:shadow-md transition-shadow"
             >
               <div className="p-4 sm:p-6">
-                <div className="mb-3 sm:mb-4">
+                <div className="mb-3 sm:mb-4 p-3 rounded-lg bg-blue-50 flex items-center justify-center">
                   {track.icon}
                 </div>
                 <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2">
