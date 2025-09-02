@@ -15,7 +15,7 @@ const PartnersShowcase = () => {
   const duplicatedPartners = [...partners, ...partners, ...partners, ...partners];
 
   return (
-    <section className="py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 relative overflow-hidden">
+    <section className="py-16 sm:py-20 lg:py-24 bg-white relative overflow-hidden">
       
       <div className="absolute top-0 right-0 w-64 h-64 bg-[#0066FF]/5 rounded-full filter blur-3xl"></div>
       <div className="absolute bottom-0 left-0 w-64 h-64 bg-[#0066FF]/5 rounded-full filter blur-3xl"></div>
@@ -144,21 +144,23 @@ const PartnersShowcase = () => {
             Partner with Web3 Mates and be part of Africa&apos;s Web3 revolution. 
             Together, we&apos;re building the future of decentralized innovation.
           </p>
-          <motion.a
-            href="/partnership"
-            className="inline-block bg-gradient-to-r from-[#0066FF] to-[#0047CC] text-white px-10 py-4 rounded-full hover:shadow-xl transition-all duration-300 font-medium text-lg"
-            whileHover={{ scale: 1.05, y: -2 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            Become a Partner
-          </motion.a>
-          <motion.a
-            href="/sponsorship"
-            className="mt-2 inline-block bg-gradient-to-r from-yellow-400 to-orange-500 text-white px-10 py-4 rounded-full hover:shadow-xl transition-all duration-300 font-medium text-lg ml-4"
-            whileHover={{ scale: 1.05, y: -2 }}
-          >
-            Become a Sponsor
-          </motion.a>
+          <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center">
+            <motion.a
+              href="/partnership"
+              className="inline-block bg-gradient-to-r from-[#0066FF] to-[#0047CC] text-white px-6 sm:px-10 py-3 sm:py-4 rounded-full hover:shadow-xl transition-all duration-300 font-medium text-base sm:text-lg text-center"
+              whileHover={{ scale: 1.05, y: -2 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              Become a Partner
+            </motion.a>
+            <motion.a
+              href="/sponsorship"
+              className="inline-block bg-gradient-to-r from-yellow-400 to-orange-500 text-white px-6 sm:px-10 py-3 sm:py-4 rounded-full hover:shadow-xl transition-all duration-300 font-medium text-base sm:text-lg text-center"
+              whileHover={{ scale: 1.05, y: -2 }}
+            >
+              Become a Sponsor
+            </motion.a>
+          </div>
         </motion.div>
       </div>
     </section>

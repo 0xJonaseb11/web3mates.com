@@ -64,32 +64,60 @@ const HackathonsPage = () => {
     {
       title: "Build Real Solutions",
       description: "Work on meaningful projects that address Africa's unique challenges",
-      icon: "🛠️"
+      icon: (
+        <svg className="w-8 h-8 sm:w-10 sm:h-10 text-blue-600" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.7C.4 7.1.9 10.1 2.9 12.1c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.4z"/>
+        </svg>
+      )
     },
     {
       title: "Learn from Experts",
       description: "Access workshops and mentorship from industry leaders",
-      icon: "👩‍🏫"
+      icon: (
+        <svg className="w-8 h-8 sm:w-10 sm:h-10 text-blue-600" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M12 14l9-5-9-5-9 5 9 5z"/>
+          <path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/>
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"/>
+        </svg>
+      )
     },
     {
       title: "Win Prizes",
       description: "Compete for cash prizes, grants, and incubation opportunities",
-      icon: "🏆"
+      icon: (
+        <svg className="w-8 h-8 sm:w-10 sm:h-10 text-blue-600" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+        </svg>
+      )
     },
     {
       title: "Grow Your Network",
       description: "Connect with developers, entrepreneurs, and potential employers",
-      icon: "🌐"
+      icon: (
+        <svg className="w-8 h-8 sm:w-10 sm:h-10 text-blue-600" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+        </svg>
+      )
     },
     {
       title: "Career Opportunities",
       description: "Get noticed by top tech companies and investors in the region",
-      icon: "💼"
+      icon: (
+        <svg className="w-8 h-8 sm:w-10 sm:h-10 text-blue-600" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M20 6h-4V4c0-1.11-.89-2-2-2h-4c-1.11 0-2 .89-2 2v2H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-6 0h-4V4h4v2z"/>
+        </svg>
+      )
     },
     {
       title: "University Credits",
       description: "Participating students may earn academic credits (varies by institution)",
-      icon: "🎓"
+      icon: (
+        <svg className="w-8 h-8 sm:w-10 sm:h-10 text-blue-600" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M12 14l9-5-9-5-9 5 9 5z"/>
+          <path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/>
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"/>
+        </svg>
+      )
     }
   ];
 
@@ -217,12 +245,18 @@ const HackathonsPage = () => {
                 </div>
 
                 <div className="flex flex-col sm:flex-row gap-3">
-                  <Link
-                    href={hackathon.registrationLink}
-                    className="bg-blue-600 hover:bg-blue-700 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-medium transition-colors text-center text-sm sm:text-base"
+                  <button
+                    disabled
+                    className="bg-blue-400 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-medium transition-all text-center text-sm sm:text-base cursor-not-allowed opacity-60 hover:opacity-80 relative group"
+                    title="Registration coming soon"
                   >
-                    Register Now
-                  </Link>
+                    <span className="relative z-10">Register Now</span>
+                    {/* Tooltip */}
+                    <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-1 bg-gray-800 text-white text-xs rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap">
+                      Registration coming soon
+                      <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-gray-800"></div>
+                    </div>
+                  </button>
                   <Link
                     href={`/hackathons/${hackathon.id}`}
                     className="bg-white border border-gray-300 text-gray-700 px-4 sm:px-6 py-2 sm:py-3 rounded-lg hover:bg-gray-50 font-medium transition-colors text-center text-sm sm:text-base"
@@ -256,7 +290,7 @@ const HackathonsPage = () => {
               transition={{ duration: 0.3, delay: index * 0.1 }}
               className="bg-white p-4 sm:p-6 rounded-xl border border-gray-200 hover:border-green-300 transition-colors"
             >
-              <div className="text-2xl sm:text-3xl mb-3 sm:mb-4">
+              <div className="mb-3 sm:mb-4">
                 {benefit.icon}
               </div>
               <h3 className="text-base sm:text-lg font-semibold text-gray-900 mb-2">
@@ -319,12 +353,18 @@ const HackathonsPage = () => {
           there&apos;s a place for you at our hackathons.
         </p>
         <div className="flex flex-col sm:flex-row justify-center gap-4">
-          <Link
-            href="#register"
-            className="bg-white text-blue-600 px-4 sm:px-6 py-3 rounded-lg hover:shadow-md font-medium transition-all text-sm sm:text-base"
+          <button
+            disabled
+            className="bg-white/80 text-blue-400 px-4 sm:px-6 py-3 rounded-lg font-medium transition-all text-sm sm:text-base cursor-not-allowed opacity-60 hover:opacity-80 relative group"
+            title="Registration coming soon"
           >
-            Register Now
-          </Link>
+            <span className="relative z-10">Register Now</span>
+            {/* Tooltip */}
+            <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-1 bg-gray-800 text-white text-xs rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap">
+              Registration coming soon
+              <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-gray-800"></div>
+            </div>
+          </button>
           <Link
             href="/contact"
             className="bg-transparent border border-white text-white px-4 sm:px-6 py-3 rounded-lg hover:bg-white/10 font-medium transition-all text-sm sm:text-base"

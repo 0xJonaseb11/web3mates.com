@@ -220,7 +220,7 @@ export default function WorkshopsPage() {
                 .map((workshop) => (
                   <div
                     key={workshop.id}
-                    className="border-2 border-blue-200 rounded-xl overflow-hidden bg-gradient-to-br from-blue-50 to-indigo-50 hover:shadow-lg transition-all duration-300"
+                    className="border-2 border-blue-200 rounded-xl overflow-hidden bg-white hover:shadow-lg transition-all duration-300"
                   >
                     {workshop.imageUrl && (
                       <div className="h-48 sm:h-56 bg-gray-100 overflow-hidden">

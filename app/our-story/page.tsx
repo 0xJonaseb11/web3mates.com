@@ -278,33 +278,46 @@ const OurStory = () => {
       </section>
 
       {/* CTA */}
-      <section className="py-12 sm:py-16 lg:py-20 bg-gradient-to-r from-[#0066FF] to-[#0047CC] rounded-2xl mb-12 sm:mb-16 text-center">
+      <section className="py-8 sm:py-12 md:py-16 lg:py-20 bg-gradient-to-r from-[#0066FF] to-[#0047CC] rounded-xl sm:rounded-2xl mb-8 sm:mb-12 md:mb-16 text-center mx-4 sm:mx-6 lg:mx-8">
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
+          className="px-4 sm:px-6 lg:px-8"
         >
-          <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-4">
+          <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-white mb-3 sm:mb-4">
             Be Part of Our Story
           </h2>
-          <p className="text-white/90 max-w-2xl mx-auto mb-6 sm:mb-8 text-sm sm:text-base lg:text-lg">
+          <p className="text-white/90 max-w-2xl mx-auto mb-4 sm:mb-6 md:mb-8 text-xs sm:text-sm md:text-base lg:text-lg px-2">
             Whether you&apos;re a developer, entrepreneur, or company - join us
             in building Africa&apos;s Web3 future.
           </p>
-          <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <Link
-              href="/mentorship"
-              className="bg-white text-[#0066FF] px-6 sm:px-8 py-3 rounded-full hover:shadow-lg transition-all duration-300 font-medium text-sm sm:text-base"
+          <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4">
+            <button
+              disabled
+              className="bg-white/80 text-[#0066FF]/60 px-4 sm:px-6 md:px-8 py-2.5 sm:py-3 rounded-full transition-all duration-300 font-medium text-xs sm:text-sm md:text-base cursor-not-allowed opacity-60 hover:opacity-80 relative group"
+              title="Registration coming soon"
             >
-              Start Learning
-            </Link>
-            <Link
-              href="/contact"
-              className="bg-transparent border-2 border-white text-white px-6 sm:px-8 py-3 rounded-full hover:bg-white/10 transition-all duration-300 font-medium text-sm sm:text-base"
+              <span className="relative z-10">Start Learning</span>
+              {/* Tooltip */}
+              <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-1 bg-gray-800 text-white text-xs rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap">
+                Registration coming soon
+                <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-gray-800"></div>
+              </div>
+            </button>
+            <button
+              disabled
+              className="bg-transparent border-2 border-white/60 text-white/60 px-4 sm:px-6 md:px-8 py-2.5 sm:py-3 rounded-full transition-all duration-300 font-medium text-xs sm:text-sm md:text-base cursor-not-allowed opacity-60 hover:opacity-80 relative group"
+              title="Registration coming soon"
             >
-              Contact Us
-            </Link>
+              <span className="relative z-10">Contact Us</span>
+              {/* Tooltip */}
+              <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-1 bg-gray-800 text-white text-xs rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap">
+                Registration coming soon
+                <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-gray-800"></div>
+              </div>
+            </button>
           </div>
         </motion.div>
       </section>

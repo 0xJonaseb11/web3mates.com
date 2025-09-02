@@ -202,7 +202,7 @@ export default function SponsorshipPage() {
   }
 
   return (
-    <div className="min-h-screen w-full bg-gradient-to-br from-blue-50 via-blue-100 to-blue-200 flex flex-col items-center justify-center py-12 px-2 sm:px-6">
+            <div className="min-h-screen w-full bg-white flex flex-col items-center justify-center py-12 px-2 sm:px-6">
       <div className="w-full max-w-4xl mx-auto relative">
         {/* Sponsor Illustration */}
         <motion.div

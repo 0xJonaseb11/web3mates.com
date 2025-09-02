@@ -53,12 +53,12 @@ const HeroSection = () => {
   ];
 
   return (
-    <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32 overflow-hidden">
-      <div className="absolute -top-32 -right-32 w-64 h-64 md:w-96 md:h-96 bg-[#0066FF]/10 rounded-full filter blur-3xl opacity-70"></div>
-      <div className="absolute -bottom-32 -left-32 w-64 h-64 md:w-96 md:h-96 bg-[#0066FF]/10 rounded-full filter blur-3xl opacity-70"></div>
+    <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 md:py-24 lg:py-32 overflow-hidden">
+      <div className="absolute -top-16 sm:-top-32 -right-16 sm:-right-32 w-32 h-32 sm:w-64 sm:h-64 md:w-96 md:h-96 bg-[#0066FF]/10 rounded-full filter blur-3xl opacity-70"></div>
+      <div className="absolute -bottom-16 sm:-bottom-32 -left-16 sm:-left-32 w-32 h-32 sm:w-64 sm:h-64 md:w-96 md:h-96 bg-[#0066FF]/10 rounded-full filter blur-3xl opacity-70"></div>
       
       <motion.div 
-        className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center"
+        className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-10 lg:gap-12 items-center"
         initial="hidden"
         animate="visible"
         variants={containerVariants}
@@ -66,14 +66,14 @@ const HeroSection = () => {
 
         <div>
           <motion.h1 
-            className="text-4xl md:text-6xl font-bold text-[#0B1C39] mb-6 leading-tight"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-[#0B1C39] mb-4 sm:mb-6 leading-tight"
             variants={itemVariants}
           >
             Empowering <span className="text-[#0066FF]">Africa</span> Through <span className="text-[#0066FF]">Web3</span>
           </motion.h1>
           
           <motion.p 
-            className="text-gray-600 text-xl mb-8 leading-relaxed max-w-lg"
+            className="text-gray-600 text-base sm:text-lg md:text-xl mb-6 sm:mb-8 leading-relaxed max-w-lg"
             variants={itemVariants}
           >
             <b>Web3 Mates</b> is a Web3 education and innovation hub dedicated to
@@ -82,32 +82,32 @@ const HeroSection = () => {
           </motion.p>
           
           <motion.div 
-            className="flex flex-wrap gap-4"
+            className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4"
             variants={itemVariants}
           >
             <Link
               href="/mentorship/apply"
-              className="relative bg-gradient-to-r from-[#0066FF] to-[#0047CC] text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full hover:shadow-lg transition-all duration-300 font-medium group overflow-hidden text-sm sm:text-base"
+              className="relative bg-gradient-to-r from-[#0066FF] to-[#0047CC] text-white px-4 sm:px-6 md:px-8 py-3 sm:py-4 rounded-full hover:shadow-lg transition-all duration-300 font-medium group overflow-hidden text-sm sm:text-base text-center"
             >
               <span className="relative z-10">Join The Course</span>
               <span className="absolute inset-0 bg-gradient-to-r from-[#0047CC] to-[#0066FF] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
             </Link>
             <Link
               href="/contact"
-              className="bg-white text-[#0066FF] px-6 sm:px-8 py-3 sm:py-4 rounded-full border-2 border-[#0066FF] hover:bg-[#0066FF]/5 hover:shadow-md transition-all duration-300 font-medium text-sm sm:text-base"
+              className="bg-white text-[#0066FF] px-4 sm:px-6 md:px-8 py-3 sm:py-4 rounded-full border-2 border-[#0066FF] hover:bg-[#0066FF]/5 hover:shadow-md transition-all duration-300 font-medium text-sm sm:text-base text-center"
             >
               Contact Us
             </Link>
           </motion.div>
 
           <motion.div 
-            className="mt-16"
+            className="mt-12 sm:mt-16"
             variants={itemVariants}
           >
             <p className="text-gray-500 mb-4 text-sm uppercase tracking-wider">Trusted by leading organizations</p>
             <div className="overflow-hidden">
               <motion.div 
-                className="flex gap-8"
+                className="flex gap-4 sm:gap-8"
                 variants={logoScrollVariants}
                 animate="animate"
               >
@@ -160,7 +160,7 @@ const HeroSection = () => {
             {web3Elements.map((element, index) => (
               <motion.div
                 key={index}
-                className={`absolute ${element.position} z-10 bg-blue-500 rounded-sm text-center` }
+                className={`absolute ${element.position} z-10 bg-blue-500 rounded-sm text-center hidden sm:block` }
                 animate={{
                   rotate: 360,
                   transition: {
@@ -170,9 +170,9 @@ const HeroSection = () => {
                   }
                 }}
               >
-                <div className="bg-white/90 backdrop-blur-sm text-[#0066FF] rounded-full p-2 shadow-lg flex flex-col items-center justify-center w-16 h-16">
-                  <span className="text-2xl">{element.icon}</span>
-                  <span className="text-xs font-medium mt-1">{element.name}</span>
+                <div className="bg-white/90 backdrop-blur-sm text-[#0066FF] rounded-full p-2 shadow-lg flex flex-col items-center justify-center w-12 h-12 sm:w-16 sm:h-16">
+                  <span className="text-lg sm:text-2xl">{element.icon}</span>
+                  <span className="text-xs font-medium mt-1 hidden sm:block">{element.name}</span>
                 </div>
               </motion.div>
             ))}
