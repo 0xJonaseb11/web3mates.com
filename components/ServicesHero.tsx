@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { FaArrowRight } from 'react-icons/fa';
 
 const ServicesHero = () => {
   return (
@@ -30,7 +31,7 @@ const ServicesHero = () => {
                 href="/contact"
                 className="text-[#0B1C39] px-4 sm:px-6 py-3 sm:py-4 rounded-lg border border-gray-300 hover:border-[#0066FF] hover:text-[#0066FF] transition-colors flex items-center justify-center text-sm sm:text-base"
               >
-                Contact Us <span className="ml-2">→</span>
+                Contact Us <FaArrowRight className="ml-2 w-4 h-4" />
               </Link>
             </div>
           </div>

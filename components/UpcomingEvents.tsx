@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { FaArrowRight } from 'react-icons/fa';
 
 const events = [
   {
@@ -72,20 +73,7 @@ const UpcomingEvents = () => {
                  aria-label="View blog posts"
                >
                  View Blog
-                 <svg
-                   className="w-3 h-3 sm:w-4 sm:h-4 ml-1"
-                   viewBox="0 0 24 24"
-                   fill="none"
-                   aria-hidden="true"
-                 >
-                   <path
-                     d="M5 12h14M12 5l7 7-7 7"
-                     stroke="currentColor"
-                     strokeWidth="2"
-                     strokeLinecap="round"
-                     strokeLinejoin="round"
-                   />
-                 </svg>
+                 <FaArrowRight className="w-3 h-3 sm:w-4 sm:h-4 ml-1" />
                </Link>
             </div>
           </article>
@@ -122,20 +110,7 @@ const UpcomingEvents = () => {
                     aria-label="View blog posts"
                   >
                     View Blog
-                    <svg
-                      className="w-3 h-3 sm:w-4 sm:h-4 ml-1"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      aria-hidden="true"
-                    >
-                      <path
-                        d="M5 12h14M12 5l7 7-7 7"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
+                    <FaArrowRight className="w-3 h-3 sm:w-4 sm:h-4 ml-1" />
                   </Link>
                 </div>
               </article>

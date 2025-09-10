@@ -1,60 +1,34 @@
 "use client";
 
 import Image from "next/image";
+import { 
+  FaStethoscope, 
+  FaHandshake, 
+  FaCoins, 
+  FaMicrophone 
+} from 'react-icons/fa';
 
 const offerings = [
   {
-    icon: (
-      <svg
-        className="w-6 h-6 text-[#0066FF]"
-        viewBox="0 0 24 24"
-        fill="currentColor"
-      >
-        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z" />
-      </svg>
-    ),
+    icon: <FaStethoscope className="w-6 h-6 text-[#0066FF]" />,
     title: "Web3 Startup Clinics",
     description:
       "1-on-1 advisory sessions for early-stage founders on smart contracts, legal setup, and growth strategy.",
   },
   {
-    icon: (
-      <svg
-        className="w-6 h-6 text-[#0066FF]"
-        viewBox="0 0 24 24"
-        fill="currentColor"
-      >
-        <path d="M21 18v1c0 1.1-.9 2-2 2H5c-1.11 0-2-.9-2-2V5c0-1.1.89-2 2-2h14c1.1 0 2 .9 2 2v1h-9c-1.11 0-2 .9-2 2v8c0 1.1.89 2 2 2h9zm-9-2h10V8H12v8zm4-2.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z" />
-      </svg>
-    ),
+    icon: <FaHandshake className="w-6 h-6 text-[#0066FF]" />,
     title: "Funding Matchmaking",
     description:
       "We connect promising Web3 ideas with regional grant programs, impact investors, and accelerators.",
   },
   {
-    icon: (
-      <svg
-        className="w-6 h-6 text-[#0066FF]"
-        viewBox="0 0 24 24"
-        fill="currentColor"
-      >
-        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z" />
-      </svg>
-    ),
+    icon: <FaCoins className="w-6 h-6 text-[#0066FF]" />,
     title: "Tokenomics Design Support",
     description:
       "Practical help structuring your token economy for real utility, community alignment, and long-term health.",
   },
   {
-    icon: (
-      <svg
-        className="w-6 h-6 text-[#0066FF]"
-        viewBox="0 0 24 24"
-        fill="currentColor"
-      >
-        <path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-7 12h-2v-2h2v2zm0-4h-2V6h2v4z" />
-      </svg>
-    ),
+    icon: <FaMicrophone className="w-6 h-6 text-[#0066FF]" />,
     title: "Pitch Readiness & Demo Prep",
     description:
       "Support with storytelling, deck creation, and demo-day confidence—so you pitch like a pro.",
