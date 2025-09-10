@@ -152,7 +152,7 @@ const OurStory = () => {
             </p>
             <p className="text-gray-600 mb-4 sm:mb-6 text-sm sm:text-base">
               What started as WhatsApp groups sharing Solidity tutorials became
-              structured programs when Jonas (technical lead), Jabo
+              structured programs when Jonas (Technical lead), Jabo
               (operations), and Laurent (community) joined the mission.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
