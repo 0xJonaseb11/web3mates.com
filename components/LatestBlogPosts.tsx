@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { FaArrowRight } from 'react-icons/fa';
 
 const blogPosts = [
   {
@@ -100,19 +101,7 @@ const LatestBlogPosts = () => {
                   className="text-[#0066FF] font-medium hover:text-blue-700 inline-flex items-center text-xs sm:text-sm"
                 >
                   View All Posts
-                  <svg
-                    className="w-3 h-3 sm:w-4 sm:h-4 ml-1"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                  >
-                    <path
-                      d="M5 12h14M12 5l7 7-7 7"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
+                  <FaArrowRight className="w-3 h-3 sm:w-4 sm:h-4 ml-1" />
                 </Link>
               </div>
             </article>
