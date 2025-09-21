@@ -6,24 +6,25 @@ import Link from "next/link";
 import { useToast } from "@/hooks/use-toast";
 import { validateForm, validateField } from "@/utils/validation";
 import PhoneInput from "@/components/PhoneInput";
-import { 
-  FaRocket, 
-  FaUsers, 
-  FaGraduationCap, 
-  FaCheckCircle, 
-  FaUser, 
-  FaEnvelope, 
-  FaPhone, 
-  FaCode, 
-  FaChartLine, 
-  FaBullseye, 
-  FaClock, 
-  FaGlobe, 
-  FaFileAlt, 
-  FaHandshake, 
+import {
+  FaRocket,
+  FaUsers,
+  FaGraduationCap,
+  FaCheckCircle,
+  FaUser,
+  FaEnvelope,
+  FaPhone,
+  FaCode,
+  FaChartLine,
+  FaBullseye,
+  FaClock,
+  FaGlobe,
+  FaFileAlt,
+  FaHandshake,
   FaArrowRight,
-  FaExclamationTriangle
-} from 'react-icons/fa';
+  FaExclamationTriangle,
+  FaInfoCircle,
+} from "react-icons/fa";
 
 const ApplyPage = () => {
   const [formData, setFormData] = useState({
@@ -40,6 +41,7 @@ const ApplyPage = () => {
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [touched, setTouched] = useState<Record<string, boolean>>({});
   const { toast, ToastContainer } = useToast();
+  const [applicationsClosed] = useState(true); // Set to true to disable applications
 
   const requiredFields = [
     "name",
@@ -100,6 +102,16 @@ const ApplyPage = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    if (applicationsClosed) {
+      toast({
+        title: "Applications Closed",
+        description:
+          "Cohort 1 applications have now closed. Stay tuned for Cohort 2 announcements!",
+        variant: "destructive",
+      });
+      return;
+    }
 
     // Validate all fields
     const validation = validateForm(formData, requiredFields);
@@ -193,6 +205,25 @@ const ApplyPage = () => {
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
         <ToastContainer />
+
+        {/* Applications Closed Banner */}
+        {applicationsClosed && (
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="bg-amber-100 border-l-4 border-amber-500 text-amber-700 p-4 mb-8 rounded-lg flex items-start gap-3"
+            role="alert"
+          >
+            <FaInfoCircle className="w-5 h-5 mt-0.5 flex-shrink-0" />
+            <div>
+              <p className="font-bold">Applications Currently Closed</p>
+              <p>
+                Cohort 1 applications have now closed. Stay tuned for
+                announcements about Cohort 2!
+              </p>
+            </div>
+          </motion.div>
+        )}
 
         {/* Hero Section with Enhanced Spacing */}
         <div className="text-center mb-12 sm:mb-16 lg:mb-20">
@@ -379,9 +410,7 @@ const ApplyPage = () => {
                   }`}
                 >
                   <option value="">Select a track</option>
-                  <option value="Web3 Fundamentals">
-                    Web3 Fundamentals
-                  </option>
+                  <option value="Web3 Fundamentals">Web3 Fundamentals</option>
                   <option value="Smart Contract Development">
                     Smart Contract Development
                   </option>
@@ -406,18 +435,23 @@ const ApplyPage = () => {
                 </label>
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                   {[
-                    { level: "Beginner", icon: FaUser, desc: "New to Web3", color: "text-green-500" },
+                    {
+                      level: "Beginner",
+                      icon: FaUser,
+                      desc: "New to Web3",
+                      color: "text-green-500",
+                    },
                     {
                       level: "Intermediate",
                       icon: FaGraduationCap,
                       desc: "Some experience",
-                      color: "text-blue-500"
+                      color: "text-blue-500",
                     },
                     {
                       level: "Advanced",
                       icon: FaCode,
                       desc: "Experienced developer",
-                      color: "text-purple-500"
+                      color: "text-purple-500",
                     },
                   ].map(({ level, icon: IconComponent, desc, color }) => (
                     <div key={level} className="relative">
@@ -454,7 +488,8 @@ const ApplyPage = () => {
                 </div>
                 {errors.experience && touched.experience && (
                   <p className="mt-2 text-sm text-red-600 flex items-center gap-1">
-                    <FaExclamationTriangle className="w-3 h-3" /> {errors.experience}
+                    <FaExclamationTriangle className="w-3 h-3" />{" "}
+                    {errors.experience}
                   </p>
                 )}
               </div>
@@ -521,7 +556,8 @@ Example: I want to learn smart contract development to build my own DeFi protoco
                   />
                   {errors.timezone && touched.timezone && (
                     <p className="mt-2 text-sm text-red-600 flex items-center gap-1">
-                      <FaExclamationTriangle className="w-3 h-3" /> {errors.timezone}
+                      <FaExclamationTriangle className="w-3 h-3" />{" "}
+                      {errors.timezone}
                     </p>
                   )}
                 </div>
@@ -553,7 +589,8 @@ Example: I want to learn smart contract development to build my own DeFi protoco
                   />
                   {errors.availability && touched.availability && (
                     <p className="mt-2 text-sm text-red-600 flex items-center gap-1">
-                      <FaExclamationTriangle className="w-3 h-3" /> {errors.availability}
+                      <FaExclamationTriangle className="w-3 h-3" />{" "}
+                      {errors.availability}
                     </p>
                   )}
                 </div>
@@ -562,11 +599,30 @@ Example: I want to learn smart contract development to build my own DeFi protoco
               <div className="pt-6">
                 <button
                   type="submit"
-                  className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-semibold py-4 px-6 rounded-xl transition-all duration-300 transform hover:scale-[1.02] hover:shadow-lg flex items-center justify-center gap-2"
+                  disabled={applicationsClosed}
+                  className={`w-full text-white font-semibold py-4 px-6 rounded-xl transition-all duration-300 transform flex items-center justify-center gap-2 ${
+                    applicationsClosed
+                      ? "bg-gray-400 cursor-not-allowed"
+                      : "bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 hover:scale-[1.02] hover:shadow-lg"
+                  } relative group`}
                 >
-                  <FaRocket className="w-4 h-4" />
-                  Submit Application
-                  <FaArrowRight className="w-4 h-4" />
+                  {applicationsClosed ? (
+                    <>
+                      <span>Applications Closed</span>
+                      <div className="absolute bottom-full mb-2 hidden group-hover:flex items-center justify-center w-64 px-3 py-2 bg-gray-800 text-white text-sm rounded-lg">
+                        <div className="text-center">
+                          Cohort 1 applications have now closed. <br />
+                          Stay tuned for Cohort 2 announcements!
+                        </div>
+                      </div>
+                    </>
+                  ) : (
+                    <>
+                      <FaRocket className="w-4 h-4" />
+                      Submit Application
+                      <FaArrowRight className="w-4 h-4" />
+                    </>
+                  )}
                 </button>
               </div>
 
@@ -610,7 +666,8 @@ Example: I want to learn smart contract development to build my own DeFi protoco
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              What Happens Next? <FaCheckCircle className="w-8 h-8 text-blue-600" />
+              What Happens Next?{" "}
+              <FaCheckCircle className="w-8 h-8 text-blue-600" />
             </motion.h2>
 
             <motion.p
