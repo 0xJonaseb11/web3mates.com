@@ -11,9 +11,9 @@ const HeroSection = () => {
       opacity: 1,
       transition: {
         staggerChildren: 0.2,
-        delayChildren: 0.3
-      }
-    }
+        delayChildren: 0.3,
+      },
+    },
   };
 
   const itemVariants = {
@@ -23,9 +23,9 @@ const HeroSection = () => {
       opacity: 1,
       transition: {
         duration: 0.5,
-        ease: "easeInOut" as const
-      }
-    }
+        ease: "easeInOut" as const,
+      },
+    },
   };
 
   const logoScrollVariants = {
@@ -36,52 +36,75 @@ const HeroSection = () => {
           repeat: Infinity,
           repeatType: "loop" as const,
           duration: 20,
-          ease: "linear" as const
-        }
-      }
-    }
+          ease: "linear" as const,
+        },
+      },
+    },
   };
 
   const web3Elements = [
-    { name: "Blockchain", icon: "🔗", position: "top-0 left-1/2 mt-2 -translate-x-1/2 -translate-y-1/2" },
-    { name: "DeFi", icon: "💰", position: "top-1/4 right-8 -translate-y-1/2 translate-x-1/2" },
-    { name: "NFTs", icon: "🖼️", position: "bottom-1/4 right-8 translate-y-1/2 translate-x-1/2" },
-    { name: "DAOs", icon: "🏛️", position: "bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2" },
-    { name: "Smart Contracts", icon: "📜", position: "bottom-1/4 left-8 translate-y-1/2 -translate-x-1/2" },
-    { name: "dApps", icon: "📱", position: "top-1/4 left-8 -translate-y-1/2 -translate-x-1/2" },
-
+    {
+      name: "Blockchain",
+      icon: "🔗",
+      position: "top-0 left-1/2 mt-2 -translate-x-1/2 -translate-y-1/2",
+    },
+    {
+      name: "DeFi",
+      icon: "💰",
+      position: "top-1/4 right-8 -translate-y-1/2 translate-x-1/2",
+    },
+    {
+      name: "NFTs",
+      icon: "🖼️",
+      position: "bottom-1/4 right-8 translate-y-1/2 translate-x-1/2",
+    },
+    {
+      name: "DAOs",
+      icon: "🏛️",
+      position: "bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2",
+    },
+    {
+      name: "Smart Contracts",
+      icon: "📜",
+      position: "bottom-1/4 left-8 translate-y-1/2 -translate-x-1/2",
+    },
+    {
+      name: "dApps",
+      icon: "📱",
+      position: "top-1/4 left-8 -translate-y-1/2 -translate-x-1/2",
+    },
   ];
 
   return (
     <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 md:py-24 lg:py-32 overflow-hidden">
       <div className="absolute -top-16 sm:-top-32 -right-16 sm:-right-32 w-32 h-32 sm:w-64 sm:h-64 md:w-96 md:h-96 bg-[#0066FF]/10 rounded-full filter blur-3xl opacity-70"></div>
       <div className="absolute -bottom-16 sm:-bottom-32 -left-16 sm:-left-32 w-32 h-32 sm:w-64 sm:h-64 md:w-96 md:h-96 bg-[#0066FF]/10 rounded-full filter blur-3xl opacity-70"></div>
-      
-      <motion.div 
+
+      <motion.div
         className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-10 lg:gap-12 items-center"
         initial="hidden"
         animate="visible"
         variants={containerVariants}
       >
-
         <div>
-          <motion.h1 
+          <motion.h1
             className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-[#0B1C39] mb-4 sm:mb-6 leading-tight"
             variants={itemVariants}
           >
-            Empowering <span className="text-[#0066FF]">Africa</span> Through <span className="text-[#0066FF]">Web3 Innovation</span>
+            Empowering <span className="text-[#0066FF]">Africa</span> Through{" "}
+            <span className="text-[#0066FF]">Web3 Innovation</span>
           </motion.h1>
-          
-          <motion.p 
+
+          <motion.p
             className="text-gray-600 text-base sm:text-lg md:text-xl mb-6 sm:mb-8 leading-relaxed max-w-lg"
             variants={itemVariants}
           >
-            <b>Web3 Mates</b> is a Web3 education and innovation hub dedicated to
-            training, connecting, and empowering African developers and
+            <b>Web3 Mates</b> is a Web3 education and innovation hub dedicated
+            to training, connecting, and empowering African developers and
             entrepreneurs in the blockchain revolution.
           </motion.p>
-          
-          <motion.div 
+
+          <motion.div
             className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4"
             variants={itemVariants}
           >
@@ -100,40 +123,153 @@ const HeroSection = () => {
             </Link>
           </motion.div>
 
-          <motion.div 
-            className="mt-12 sm:mt-16"
-            variants={itemVariants}
-          >
-            <p className="text-gray-500 mb-4 text-sm uppercase tracking-wider">Trusted by leading organizations</p>
+          <motion.div className="mt-12 sm:mt-16" variants={itemVariants}>
+            <p className="text-gray-500 mb-4 text-sm uppercase tracking-wider">
+              Trusted by leading organizations
+            </p>
             <div className="overflow-hidden">
-              <motion.div 
+              <motion.div
                 className="flex gap-4 sm:gap-8"
                 variants={logoScrollVariants}
                 animate="animate"
               >
-                {[ 
-                  { src: "/logo-color.svg", alt: "BuidlGuidl Logo", width: 100 },
-                  { src: "/AyaHQ-blue.png", alt: "AyaHQ company logo", width: 120 },
-                  { src: "/web3bridge.png", alt: "Web3Bridge company logo", width: 120 },
-                  { src: "/genesys.png", alt: "Genesys company logo", width: 120 },
-                  { src: "/AyaHQ-blue.png", alt: "AyaHQ company logo", width: 100 },
-                  { src: "/logo-color.svg", alt: "BuidlGuidl Logo", width: 100 },
-                  { src: "/web3bridge.png", alt: "Web3Bridge company logo", width: 100 },
-                  { src: "/genesys.png", alt: "Genesys company logo", width: 120 },
-                  { src: "/AyaHQ-blue.png", alt: "AyaHQ company logo", width: 120 },
-                  { src: "/logo-color.svg", alt: "BuidlGuidl Logo", width: 100 },
-                  { src: "/web3bridge.png", alt: "Web3Bridge company logo", width: 120 },
-                  { src: "/genesys.png", alt: "Genesys company logo", width: 120 },
-                  { src: "/AyaHQ-blue.png", alt: "AyaHQ company logo", width: 100 },
-                  { src: "/logo-color.svg", alt: "BuidlGuidl Logo", width: 100 },
-                  { src: "/web3bridge.png", alt: "Web3Bridge company logo", width: 100 },
-                  { src: "/genesys.png", alt: "Genesys company logo", width: 120 },
-                  { src: "/AyaHQ-blue.png", alt: "AyaHQ company logo", width: 100 },
-                  { src: "/logo-color.svg", alt: "BuidlGuidl Logo", width: 100 },
-                  { src: "/web3bridge.png", alt: "Web3Bridge company logo", width: 100 },
-                  { src: "/genesys.png", alt: "Genesys company logo", width: 120 },
-                  { src: "/AyaHQ-blue.png", alt: "AyaHQ company logo", width: 100 },
-                  { src: "/logo-color.svg", alt: "BuidlGuidl Logo", width: 100 },
+                {[
+                  {
+                    src: "/logo-color.svg",
+                    alt: "BuidlGuidl Logo",
+                    width: 100,
+                  },
+                  {
+                    src: "/AyaHQ-blue.png",
+                    alt: "AyaHQ company logo",
+                    width: 120,
+                  },
+                  {
+                    src: "/digi.png",
+                    alt: "Digital Transformation Center Rwanda Logo",
+                    width: 120,
+                  },
+                  {
+                    src: "/german.jpg",
+                    alt: "German Cooperation Logo",
+                    width: 120,
+                  },
+                  { src: "/giz1.png", alt: "GIZ Logo", width: 120 },
+                  {
+                    src: "/web3bridge.png",
+                    alt: "Web3Bridge company logo",
+                    width: 120,
+                  },
+                  {
+                    src: "/genesys.png",
+                    alt: "Genesys company logo",
+                    width: 120,
+                  },
+
+                  {
+                    src: "/AyaHQ-blue.png",
+                    alt: "AyaHQ company logo",
+                    width: 100,
+                  },
+                  {
+                    src: "/logo-color.svg",
+                    alt: "BuidlGuidl Logo",
+                    width: 100,
+                  },
+                  {
+                    src: "/web3bridge.png",
+                    alt: "Web3Bridge company logo",
+                    width: 100,
+                  },
+                  {
+                    src: "/genesys.png",
+                    alt: "Genesys company logo",
+                    width: 120,
+                  },
+                  {
+                    src: "/AyaHQ-blue.png",
+                    alt: "AyaHQ company logo",
+                    width: 120,
+                  },
+                  {
+                    src: "/logo-color.svg",
+                    alt: "BuidlGuidl Logo",
+                    width: 100,
+                  },
+                  {
+                    src: "/web3bridge.png",
+                    alt: "Web3Bridge company logo",
+                    width: 120,
+                  },
+                  {
+                    src: "/genesys.png",
+                    alt: "Genesys company logo",
+                    width: 120,
+                  },
+                  {
+                    src: "/AyaHQ-blue.png",
+                    alt: "AyaHQ company logo",
+                    width: 100,
+                  },
+                  {
+                    src: "/logo-color.svg",
+                    alt: "BuidlGuidl Logo",
+                    width: 100,
+                  },
+                  {
+                    src: "/web3bridge.png",
+                    alt: "Web3Bridge company logo",
+                    width: 100,
+                  },
+                  {
+                    src: "/genesys.png",
+                    alt: "Genesys company logo",
+                    width: 120,
+                  },
+                  {
+                    src: "/AyaHQ-blue.png",
+                    alt: "AyaHQ company logo",
+                    width: 100,
+                  },
+                  {
+                    src: "/logo-color.svg",
+                    alt: "BuidlGuidl Logo",
+                    width: 100,
+                  },
+                  {
+                    src: "/web3bridge.png",
+                    alt: "Web3Bridge company logo",
+                    width: 100,
+                  },
+                  {
+                    src: "/genesys.png",
+                    alt: "Genesys company logo",
+                    width: 120,
+                  },
+                  {
+                    src: "/AyaHQ-blue.png",
+                    alt: "AyaHQ company logo",
+                    width: 100,
+                  },
+                  {
+                    src: "/logo-color.svg",
+                    alt: "BuidlGuidl Logo",
+                    width: 100,
+                  },
+                  // Newly added consecutive logos
+                  {
+                    src: "/digi.png",
+                    alt: "Digital Transformation Center Rwanda Logo",
+                    width: 120,
+                  },
+                  {
+                    src: "/german.jpg",
+                    alt: "German Cooperation Logo",
+                    width: 120,
+                  },
+                  { src: "/giz1.png", alt: "GIZ Logo", width: 120 },
+                  // Duplicated to appear twice consecutively
+                  
                 ].map((logo, index) => (
                   <div key={index} className="flex-shrink-0">
                     <Image
@@ -150,7 +286,7 @@ const HeroSection = () => {
           </motion.div>
         </div>
 
-        <motion.div 
+        <motion.div
           className="relative flex items-center justify-center"
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -160,40 +296,42 @@ const HeroSection = () => {
             {web3Elements.map((element, index) => (
               <motion.div
                 key={index}
-                className={`absolute ${element.position} z-10 bg-blue-500 rounded-sm text-center hidden sm:block` }
+                className={`absolute ${element.position} z-10 bg-blue-500 rounded-sm text-center hidden sm:block`}
                 animate={{
                   rotate: 360,
                   transition: {
                     duration: 20,
                     repeat: Infinity,
-                    ease: "linear"
-                  }
+                    ease: "linear",
+                  },
                 }}
               >
                 <div className="bg-white/90 backdrop-blur-sm text-[#0066FF] rounded-full p-2 shadow-lg flex flex-col items-center justify-center w-12 h-12 sm:w-16 sm:h-16">
                   <span className="text-lg sm:text-2xl">{element.icon}</span>
-                  <span className="text-xs font-medium mt-1 hidden sm:block">{element.name}</span>
+                  <span className="text-xs font-medium mt-1 hidden sm:block">
+                    {element.name}
+                  </span>
                 </div>
               </motion.div>
             ))}
 
             <div className="absolute inset-0 rounded-full border-2 border-[#0066FF]"></div>
-            
+
             <div className="absolute inset-0 rounded-full bg-gradient-to-br from-[#0066FF]/10 to-[#0066FF]/30 blur-md"></div>
-            
-            <motion.div 
+
+            <motion.div
               className="relative w-[200px] h-[200px] sm:w-[250px] sm:h-[250px] md:w-[320px] md:h-[320px] lg:w-[400px] lg:h-[400px]"
               animate={{
                 rotate: 360,
                 transition: {
                   duration: 15,
                   repeat: Infinity,
-                  ease: "linear"
-                }
+                  ease: "linear",
+                },
               }}
               whileHover={{
                 scale: 1.05,
-                transition: { duration: 0.3 }
+                transition: { duration: 0.3 },
               }}
             >
               <Image
