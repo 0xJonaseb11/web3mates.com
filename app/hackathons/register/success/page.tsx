@@ -153,7 +153,7 @@ export default function HackathonSuccess() {
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.5 }}
             >
-              You're officially registered for{" "}
+              You&apos;re officially registered for{" "}
               <strong>ETH Rwanda Hackathon 2025</strong>. Get ready to build the
               future of Web3 in Africa!
             </motion.p>
@@ -247,7 +247,7 @@ export default function HackathonSuccess() {
                 title: "Prepare & Learn",
                 description: "Access resources to get hackathon-ready",
                 action: "Get Resources",
-                href: "/resources",
+                href: "/hackathons/preparations/resources",
                 color: "from-green-500 to-emerald-500",
               },
             ].map((step, index) => (
@@ -297,7 +297,7 @@ export default function HackathonSuccess() {
               Spread the Word! 🎉
             </h3>
             <p className="text-blue-200 mb-6 max-w-2xl mx-auto">
-              Tell your friends you're joining Africa's biggest Web3 hackathon.
+              Tell your friends you&apos;re joining Africa&apos;s biggest Web3 hackathon.
               The more builders, the better!
             </p>
 
@@ -306,13 +306,13 @@ export default function HackathonSuccess() {
                 {
                   icon: FaTwitter,
                   label: "Share on Twitter",
-                  href: "https://twitter.com/intent/tweet?text=I'm%20joining%20the%20ETH%20Rwanda%20Hackathon%202025!%20Rocket%20Building%20the%20future%20of%20Web3%20in%20Africa%20with%20%40Web3Mates%20%23ETHRwanda%20%23Web3Africa",
+                  href: "https://twitter.com/intent/tweet?text=I'm%20joining%20the%20ETH%20Rwanda%20Hackathon%202025%20to%20build%20the%20future%20of%20Web3%20in%20Africa%20with%20%40Web3Mates!%20%23ETHRwanda%20%23Web3Africa&url=https%3A%2F%2Fweb3mates.com",
                   color: "bg-blue-400 hover:bg-blue-500",
                 },
                 {
                   icon: FaLinkedin,
                   label: "Share on LinkedIn",
-                  href: "https://www.linkedin.com/sharing/share-offsite/?url=https://web3mates.com/hackathon",
+                  href: "https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fweb3mates.com&summary=I'm%20joining%20the%20ETH%20Rwanda%20Hackathon%202025!%20Rocket%20Building%20the%20future%20of%20Web3%20in%20Africa%20with%20%40Web3Mates%20%23ETHRwanda%20%23Web3Africa",
                   color: "bg-blue-600 hover:bg-blue-700",
                 },
                 {

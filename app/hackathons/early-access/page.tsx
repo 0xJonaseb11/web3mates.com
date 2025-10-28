@@ -7,12 +7,45 @@ import { useState } from "react";
 export default function EarlyAccess() {
   const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [error, setError] = useState("");
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Formspree submission for early access
-    console.log("Early access submitted:", email);
-    setSubmitted(true);
+    setIsSubmitting(true);
+    setError("");
+
+    try {
+      const response = await fetch(
+        process.env.NEXT_PUBLIC_FORMSPREE_NEWSLETTER_URL!,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            email: email,
+            _subject: `Early Access Request - ETH Rwanda Hackathon 2025`,
+            _replyto: email,
+            source: "Early Access Page",
+          }),
+        }
+      );
+
+      if (response.ok) {
+        setSubmitted(true);
+        setEmail("");
+      } else {
+        throw new Error("Form submission failed");
+      }
+    } catch (error) {
+      console.error("Form submission error:", error);
+      setError(
+        "There was an error submitting your request. Please try again or contact support."
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -25,10 +58,10 @@ export default function EarlyAccess() {
         >
           <Link
             href="/hackathons/eth-rwanda-hackathon-2025"
-            className="inline-flex items-center text-blue-100 hover:text-white mb-8"
+            className="inline-flex items-center text-blue-100 hover:text-white mb-8 group"
           >
             <svg
-              className="w-4 h-4 mr-2"
+              className="w-4 h-4 mr-2 transform group-hover:-translate-x-1 transition-transform"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -43,8 +76,8 @@ export default function EarlyAccess() {
             Back to Hackathon
           </Link>
 
-          <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/20 backdrop-blur-sm border border-white/30 mb-6">
-            <span className="text-sm font-semibold">🚀 GET EARLY ACCESS</span>
+          <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/20 backdrop-blur-sm border border-white/30 mb-6 ml-4">
+            <span className="text-sm font-semibold">GET EARLY ACCESS</span>
           </div>
 
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">
@@ -60,17 +93,31 @@ export default function EarlyAccess() {
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
-              className="bg-white rounded-2xl p-8 max-w-md mx-auto shadow-2xl"
+              className="bg-white text-slate-600 rounded-2xl p-8 max-w-md mx-auto shadow-2xl"
             >
               <form
                 onSubmit={handleSubmit}
-                action="https://formspree.io/f/your-early-access-form-id"
+                action={process.env.NEXT_PUBLIC_FORMSPREE_NEWSLETTER_URL}
                 method="POST"
               >
+                {/* Formspree Hidden Fields */}
+                <input
+                  type="hidden"
+                  name="_formsubmit_id"
+                  value="early-access-newsletter"
+                />
+                <input
+                  type="text"
+                  name="_gotcha"
+                  style={{ display: "none" }}
+                  tabIndex={-1}
+                  autoComplete="off"
+                />
+
                 <div className="mb-6">
                   <label
                     htmlFor="email"
-                    className="block text-sm font-medium text-gray-700 mb-2 text-left"
+                    className="block text-slate-700 text-sm font-medium mb-2 text-left"
                   >
                     Email Address *
                   </label>
@@ -86,11 +133,27 @@ export default function EarlyAccess() {
                   />
                 </div>
 
+                {error && (
+                  <div className="mb-4 p-3 bg-red-50 border border-red-200 rounded-lg">
+                    <p className="text-red-600 text-sm flex items-center gap-2">
+                      ⚠️ {error}
+                    </p>
+                  </div>
+                )}
+
                 <button
                   type="submit"
-                  className="w-full bg-blue-600 text-white px-6 py-4 rounded-lg font-bold hover:bg-blue-700 transition-colors duration-300 text-lg"
+                  disabled={isSubmitting}
+                  className="w-full bg-blue-600 text-white px-6 py-4 rounded-lg font-bold hover:bg-blue-700 transition-colors duration-300 text-lg disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
                 >
-                  📧 Get Early Access Updates
+                  {isSubmitting ? (
+                    <>
+                      <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                      Submitting...
+                    </>
+                  ) : (
+                    <>Get Early Access Updates</>
+                  )}
                 </button>
               </form>
 
@@ -105,7 +168,12 @@ export default function EarlyAccess() {
               className="bg-white rounded-2xl p-8 max-w-md mx-auto shadow-2xl"
             >
               <div className="text-center">
-                <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <motion.div
+                  initial={{ scale: 0 }}
+                  animate={{ scale: 1 }}
+                  transition={{ type: "spring", stiffness: 200 }}
+                  className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4"
+                >
                   <svg
                     className="w-8 h-8 text-green-500"
                     fill="none"
@@ -119,20 +187,28 @@ export default function EarlyAccess() {
                       d="M5 13l4 4L19 7"
                     />
                   </svg>
-                </div>
+                </motion.div>
                 <h3 className="text-2xl font-bold text-gray-900 mb-2">
                   You're on the list!
                 </h3>
                 <p className="text-gray-600 mb-6">
                   Thank you for signing up for early access. We'll send you
-                  exclusive updates about the  ETH Rwanda Hackathon 2025.
+                  exclusive updates about the ETH Rwanda Hackathon 2025.
                 </p>
-                <Link
-                  href="/hackathons"
-                  className="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors"
-                >
-                  Explore Other Hackathons
-                </Link>
+                <div className="space-y-3">
+                  <Link
+                    href="/hackathons"
+                    className="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors"
+                  >
+                    Explore Other Hackathons
+                  </Link>
+                  <button
+                    onClick={() => setSubmitted(false)}
+                    className="block w-full text-blue-600 hover:text-blue-700 font-medium text-sm"
+                  >
+                    Add another email
+                  </button>
+                </div>
               </div>
             </motion.div>
           )}
@@ -145,9 +221,12 @@ export default function EarlyAccess() {
             className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16"
           >
             <div className="text-center">
-              <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
+              <motion.div
+                whileHover={{ scale: 1.1 }}
+                className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4"
+              >
                 <span className="text-white text-lg">🎯</span>
-              </div>
+              </motion.div>
               <h4 className="font-semibold text-white mb-2">
                 Priority Registration
               </h4>
@@ -157,9 +236,12 @@ export default function EarlyAccess() {
             </div>
 
             <div className="text-center">
-              <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
+              <motion.div
+                whileHover={{ scale: 1.1 }}
+                className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4"
+              >
                 <span className="text-white text-lg">💼</span>
-              </div>
+              </motion.div>
               <h4 className="font-semibold text-white mb-2">
                 Exclusive Workshops
               </h4>
@@ -169,13 +251,46 @@ export default function EarlyAccess() {
             </div>
 
             <div className="text-center">
-              <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
+              <motion.div
+                whileHover={{ scale: 1.1 }}
+                className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4"
+              >
                 <span className="text-white text-lg">🤝</span>
-              </div>
+              </motion.div>
               <h4 className="font-semibold text-white mb-2">Mentor Matching</h4>
               <p className="text-blue-100 text-sm">
                 Get matched with expert mentors early
               </p>
+            </div>
+          </motion.div>
+
+          {/* Additional Info */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.6 }}
+            className="mt-12 bg-white/10 backdrop-blur-sm rounded-2xl p-6 max-w-2xl mx-auto border border-white/20"
+          >
+            <h4 className="font-bold text-white mb-3 text-center">
+              What to Expect
+            </h4>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm text-blue-100">
+              <div className="flex items-center gap-2">
+                <span className="text-green-400">✓</span>
+                <span>Registration opening announcements</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="text-green-400">✓</span>
+                <span>Exclusive workshop invitations</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="text-green-400">✓</span>
+                <span>Mentor matching opportunities</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="text-green-400">✓</span>
+                <span>Early access to challenge details</span>
+              </div>
             </div>
           </motion.div>
         </motion.div>

@@ -214,7 +214,7 @@ export default function HackathonRegistration() {
 
               {/* Main Text */}
               <Link
-                href="/hackathons/africa-web3-hackathon-2025"
+                href="/hackathons/eth-rwanda-hackathon-2025"
                 className="flex items-center gap-4 group"
               >
                 <span className="text-white font-bold text-lg sm:text-xl bg-black/20 px-4 py-1 rounded-full border border-white/30">
@@ -237,7 +237,7 @@ export default function HackathonRegistration() {
                 whileTap={{ scale: 0.95 }}
               >
                 <Link
-                  href="/hackathon/register"
+                  href="/hackathons/register?"
                   className="bg-yellow-400 text-blue-900 px-6 py-2 rounded-full font-bold text-sm sm:text-base hover:bg-yellow-300 transition-colors duration-300 shadow-lg hover:shadow-xl flex items-center gap-2"
                 >
                   🎯 Register Now
@@ -310,7 +310,7 @@ export default function HackathonRegistration() {
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-cyan-200 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-pulse animation-delay-4000"></div>
       </div>
 
-      <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 mt-10">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -659,7 +659,7 @@ export default function HackathonRegistration() {
                     value={formData.team}
                     onChange={handleChange}
                     className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300 hover:border-blue-300 resize-none"
-                    placeholder="Do you have a team? If yes, please list your team members. If not, we'll help you find one during the event! 🎉"
+                    placeholder="Do you have a team? If yes, please list your team members. If not, we'll help you find one during the event or you can work solo too! Feel free to also tell us more about yourself!"
                   />
                 </div>
 
