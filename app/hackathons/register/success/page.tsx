@@ -294,7 +294,7 @@ export default function HackathonSuccess() {
             className="text-center"
           >
             <h3 className="text-2xl font-bold text-white mb-6">
-              Spread the Word! Party Popper
+              Spread the Word! 🎉
             </h3>
             <p className="text-blue-200 mb-6 max-w-2xl mx-auto">
               Tell your friends you're joining Africa's biggest Web3 hackathon.
