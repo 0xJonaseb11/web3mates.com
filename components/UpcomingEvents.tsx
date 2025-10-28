@@ -18,7 +18,7 @@ const events = [
     title: "Rwanda’s First Cross-Border Hackathon, Paving the Way for Africa",
     description:
       "We are preparing to host a Pan-African Hackathon starting in Rwanda, where developers from Rwanda, Nigeria, Kenya, and beyond will collaborate to build impactful Web3 applications.",
-    date: "Planned: Dec 2025",
+    date: "Planned: Mar 2026",
   },
   {
     id: "event2",
@@ -26,7 +26,7 @@ const events = [
     title: "Blockchain for Agriculture Pilot Program in Rwanda",
     description:
       "Partnering with local Rwandan cooperatives, we aim to pilot a blockchain-based produce tracking system to improve transparency and efficiency for farmers and buyers.",
-    date: "Upcoming: Jan 2026",
+    date: "Upcoming: Feb 2026",
   },
   {
     id: "event3",

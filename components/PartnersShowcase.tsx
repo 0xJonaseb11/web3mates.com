@@ -5,23 +5,39 @@ import Image from "next/image";
 
 const PartnersShowcase = () => {
   const partners = [
-    { src: "/genesys.png", alt: "Genesys Logo", width: 120 },
-    { src: "/AyaHQ-blue.png", alt: "AyaHQ Logo", width: 120 },
-    { src: "/web3bridge.png", alt: "Web3Bridge Logo", width: 120 },
-    { src: "/logo-color.svg", alt: "BuidlGuidl Logo", width: 100 },
+    { src: "/genesys.png", alt: "Genesys Logo", width: 240, height: 80 },
+    { src: "/AyaHQ-blue.png", alt: "AyaHQ Logo", width: 240, height: 80 },
+    { src: "/web3bridge.png", alt: "Web3Bridge Logo", width: 240, height: 80 },
+    { src: "/logo-color.svg", alt: "BuidlGuidl Logo", width: 240, height: 80 },
+    {
+      src: "/digi.png",
+      alt: "Digital Transformation Center Rwanda Logo",
+      width: 240,
+      height: 80,
+    },
+    {
+      src: "/german.jpg",
+      alt: "German Cooperation Logo",
+      width: 240,
+      height: 80,
+    },
+    { src: "/giz1.png", alt: "GIZ Logo", width: 240, height: 80 },
   ];
 
   // Duplicate partners for seamless loop
-  const duplicatedPartners = [...partners, ...partners, ...partners, ...partners];
+  const duplicatedPartners = [
+    ...partners,
+    ...partners,
+    ...partners,
+    ...partners,
+  ];
 
   return (
     <section className="py-16 sm:py-20 lg:py-24 bg-white relative overflow-hidden">
-      
       <div className="absolute top-0 right-0 w-64 h-64 bg-[#0066FF]/5 rounded-full filter blur-3xl"></div>
       <div className="absolute bottom-0 left-0 w-64 h-64 bg-[#0066FF]/5 rounded-full filter blur-3xl"></div>
-      
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           className="text-center mb-12 sm:mb-16"
           initial={{ opacity: 0, y: 20 }}
@@ -36,15 +52,16 @@ const PartnersShowcase = () => {
             Our <span className="text-[#0066FF]">Trusted Partners</span> Network
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto text-base sm:text-lg">
-            Building the future of Web3 together with industry leaders and innovative platforms across the globe
+            Building the future of Web3 together with industry leaders and
+            innovative platforms across the globe
           </p>
         </motion.div>
 
         <div className="overflow-hidden relative">
           <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-blue-50 to-transparent z-10"></div>
           <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-blue-50 to-transparent z-10"></div>
-          
-          <motion.div 
+
+          <motion.div
             className="flex gap-12 sm:gap-16"
             animate={{
               x: [-1000, 0],
@@ -53,33 +70,32 @@ const PartnersShowcase = () => {
                   repeat: Infinity,
                   repeatType: "loop" as const,
                   duration: 25,
-                  ease: "linear"
-                }
-              }
+                  ease: "linear",
+                },
+              },
             }}
           >
             {duplicatedPartners.map((partner, index) => (
-              <motion.div 
-                key={index} 
+              <motion.div
+                key={index}
                 className="flex-shrink-0"
-                whileHover={{ 
+                whileHover={{
                   scale: 1.1,
                   y: -5,
-                  transition: { duration: 0.2 }
+                  transition: { duration: 0.2 },
                 }}
               >
                 <Image
                   src={partner.src}
                   alt={partner.alt}
-                  width={partner.width + 20}
-                  height={30}
+                  width={partner.width}
+                  height={partner.height}
                   className="object-contain opacity-90 hover:opacity-100 transition-all duration-300 drop-shadow-lg"
                 />
               </motion.div>
             ))}
           </motion.div>
         </div>
-
 
         <motion.div
           className="mt-12 text-center mb-12 sm:mb-16"
@@ -92,7 +108,8 @@ const PartnersShowcase = () => {
             Our <span className="text-[#0066FF]">Sponsors</span>
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto text-base sm:text-lg">
-            We appreciate the support of organizations that believe in our mission
+            We appreciate the support of organizations that believe in our
+            mission
           </p>
         </motion.div>
 
@@ -123,12 +140,12 @@ const PartnersShowcase = () => {
               No Sponsors Yet
             </h3>
             <p className="text-gray-600 text-sm sm:text-base">
-              We&apos;re currently focused on building our community and partnerships. 
-              Sponsorship opportunities will be available as we grow.
+              We&apos;re currently focused on building our community and
+              partnerships. Sponsorship opportunities will be available as we
+              grow.
             </p>
           </div>
         </motion.div>
-
 
         <motion.div
           className="mt-16 sm:mt-20 text-center"
@@ -141,8 +158,9 @@ const PartnersShowcase = () => {
             Ready to Join Our Network?
           </h3>
           <p className="text-gray-600 mb-8 max-w-2xl mx-auto text-lg">
-            Partner with Web3 Mates and be part of Africa&apos;s Web3 revolution. 
-            Together, we&apos;re building the future of decentralized innovation.
+            Partner with Web3 Mates and be part of Africa&apos;s Web3
+            revolution. Together, we&apos;re building the future of
+            decentralized innovation.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center">
             <motion.a
@@ -167,4 +185,4 @@ const PartnersShowcase = () => {
   );
 };
 
-export default PartnersShowcase; 
+export default PartnersShowcase;
