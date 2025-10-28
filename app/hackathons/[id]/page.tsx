@@ -12,7 +12,7 @@ const hackathons = [
     title: "ETH Rwanda Hackathon 2025",
     description:
       "Join Africa's brightest minds in a groundbreaking 48-hour blockchain innovation sprint. Build decentralized solutions that tackle real challenges across the continent.",
-    date: "December 2024 - January 2025",
+    date: "December2025 - January 2026",
     location: "Multiple Locations Across Africa + Virtual",
     prizePool: "$50,000+ in prizes & grants",
     registrationDeadline: "November 30, 2024",
@@ -25,9 +25,14 @@ const hackathons = [
     ],
     partners: [
       "University of Rwanda",
-      "Multiple African Universities",
-      "Leading Web3 Protocols",
-      "VC Partners",
+      "Rwanda ICT Chamber",
+      "Africa Blockchain Institute",
+      "Web3 Bridge",
+      "AyaHQ",
+      "Genesis",
+      "GIZ",
+      "BuildGuild",
+      "Digital Transformation Rwanda"
     ],
     image: "/e1.svg",
     longDescription:
@@ -101,6 +106,12 @@ const hackathons = [
       "University of Rwanda",
       "Rwanda ICT Chamber",
       "Africa Blockchain Institute",
+      "Web3 Bridge",
+      "AyaHQ",
+      "Genesis",
+      "GIZ",
+      "BuildGuild",
+      "Digital Transformation Rwanda"
     ],
     image: "/img17.jpeg",
     longDescription:
@@ -152,7 +163,17 @@ const hackathons = [
     prizePool: "TBD",
     registrationDeadline: "TBD",
     themes: ["Cross-border Payments", "Supply Chain", "Healthcare"],
-    partners: ["University of Rwanda", "EAC Secretariat"],
+    partners: [
+      "University of Rwanda",
+      "Rwanda ICT Chamber",
+      "Africa Blockchain Institute",
+      "Web3 Bridge",
+      "AyaHQ",
+      "Genesis",
+      "GIZ",
+      "BuildGuild",
+      "Digital Transformation Rwanda"
+    ],
     image: "/img18.jpeg",
     longDescription:
       "The East Africa Blockchain Challenge 2026 is a regional initiative that promotes cross-border collaboration and innovation in blockchain technology. This hackathon brings together talent from across East Africa to solve regional challenges through decentralized solutions.",
@@ -219,7 +240,7 @@ export default function HackathonDetail({
             : "bg-gradient-to-br from-blue-600 to-blue-800"
         } text-white`}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-20">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -248,7 +269,7 @@ export default function HackathonDetail({
 
             {/* Featured Badge for Africa Hackathon */}
             {isAfricaHackathon && (
-              <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/20 backdrop-blur-sm border border-white/30 mb-4">
+              <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/20 backdrop-blur-sm border border-white/30 mb-4 ml-10">
                 <span className="text-sm font-semibold">
                   🔥 FEATURED HACKATHON
                 </span>
@@ -600,7 +621,7 @@ export default function HackathonDetail({
                   href={hackathon.registrationLink}
                   className="w-full bg-yellow-400 text-blue-900 px-6 py-3 rounded-lg font-bold hover:bg-yellow-300 transition-colors duration-300 block text-center"
                 >
-                  🚀 Register Now
+                  Register Now
                 </Link>
               ) : (
                 <button
@@ -608,7 +629,7 @@ export default function HackathonDetail({
                   className="w-full bg-white text-blue-600 px-6 py-3 rounded-lg font-medium transition-all cursor-not-allowed opacity-60"
                   title="Registration coming soon"
                 >
-                  Registration Coming Soon
+                Registration Coming Soon
                 </button>
               )}
               {isAfricaHackathon && (
@@ -616,7 +637,7 @@ export default function HackathonDetail({
                   href="/hackathons/early-access"
                   className="w-full bg-transparent border border-white text-white px-6 py-3 rounded-lg font-medium hover:bg-white/10 transition-colors duration-300 block text-center mt-3"
                 >
-                  📧 Get Early Access Updates
+                  Get Early Access Updates
                 </Link>
               )}
             </motion.div>

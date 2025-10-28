@@ -65,7 +65,7 @@ const EventsHero = () => {
                   $50,000+ PRIZES
                 </span>
                 <span className="text-white/90 text-lg">
-                  Dec 2024 - Jan 2025
+                  Dec 2025 - Jan 2026
                 </span>
               </Link>
 
@@ -141,7 +141,7 @@ const EventsHero = () => {
         />
       </motion.div>
 
-      <section className="py-12 sm:py-16 lg:py-20 pt-20 sm:pt-24 px-4 sm:px-6 lg:px-8">
+      <section className="py-12 sm:py-16 lg:py-20 pt-20 sm:pt-24 px-4 sm:px-6 lg:px-8 mt-20">
         <div className="max-w-7xl mx-auto">
           {/* Hackathon Banner - Dominant Section */}
           <div className="bg-gradient-to-r from-blue-600 to-purple-700 rounded-2xl p-6 sm:p-8 lg:p-10 mb-12 sm:mb-16 lg:mb-20 text-white relative overflow-hidden">
@@ -163,13 +163,13 @@ const EventsHero = () => {
               {/* Badge */}
               <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/20 backdrop-blur-sm border border-white/30 mb-4 sm:mb-6">
                 <span className="text-xs sm:text-sm font-semibold text-white">
-                  🚀 HOT TOPIC
+                  🔥HOT TOPIC
                 </span>
               </div>
 
               {/* Main Title */}
               <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 leading-tight">
-                Africa Web3 <span className="text-yellow-300">Hackathon</span>{" "}
+                ETH Rwanda <span className="text-yellow-300">Hackathon</span>{" "}
                 2025
               </h1>
 
@@ -177,7 +177,7 @@ const EventsHero = () => {
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-6 sm:mb-8">
                 <div className="flex items-center gap-2 bg-black/30 px-4 py-2 rounded-lg">
                   <span className="text-sm sm:text-base">
-                    📅 Dec 2024 - Jan 2025
+                    📅 Dec 2025 - Jan 2026
                   </span>
                 </div>
                 <div className="flex items-center gap-2 bg-black/30 px-4 py-2 rounded-lg">

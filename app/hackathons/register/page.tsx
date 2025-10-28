@@ -183,15 +183,15 @@ export default function HackathonRegistration() {
           <motion.div
             initial={{ scale: 0.9 }}
             animate={{ scale: 1 }}
-            className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-full mb-6 shadow-lg"
+            className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-full mb-6 shadow-lg ml-10"
           >
             <span className="text-sm font-semibold">
-              🚀 JOIN THE REVOLUTION
+              JOIN THE REVOLUTION
             </span>
           </motion.div>
 
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 mb-6 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-            Register for ETH Rwanda Hackathon 2025
+          <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text">
+            Register for <span className="text-blue-600">ETH Rwanda Hackathon 2025</span>
           </h1>
 
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
@@ -540,7 +540,7 @@ export default function HackathonRegistration() {
                     </>
                   ) : (
                     <>
-                      🚀 Secure My Spot
+                      Secure My Spot
                       <svg
                         className="w-5 h-5"
                         fill="none"
@@ -569,9 +569,9 @@ export default function HackathonRegistration() {
             className="lg:col-span-2 space-y-6"
           >
             {/* Event Highlights */}
-            <div className="bg-gradient-to-br from-blue-600 to-purple-700 rounded-3xl p-6 text-white shadow-2xl">
+            <div className="bg-gradient-to-br from-blue-400 to-purple-500 rounded-3xl p-6 text-white shadow-2xl">
               <h3 className="text-xl font-bold mb-4">
-                🎉 Why Join ETH Rwanda Hackathon?
+                Why Join ETH Rwanda Hackathon?
               </h3>
               <div className="space-y-3">
                 {[
@@ -638,7 +638,7 @@ export default function HackathonRegistration() {
             </div>
 
             {/* Support Card */}
-            <div className="bg-gradient-to-br from-green-500 to-emerald-600 rounded-3xl p-6 text-white shadow-2xl">
+            <div className="bg-gradient-to-br from-blue-200 to-blue-500 rounded-3xl p-6 text-white shadow-2xl">
               <div className="flex items-center gap-3 mb-3">
                 <FaShieldAlt className="w-6 h-6" />
                 <h3 className="text-lg font-bold">Need Help?</h3>

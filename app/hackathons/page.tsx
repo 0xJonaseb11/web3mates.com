@@ -11,7 +11,7 @@ const HackathonsPage = () => {
       title: "ETH Rwanda Hackathon 2025",
       description:
         "Join Africa's brightest minds in a groundbreaking 48-hour blockchain innovation sprint. Build decentralized solutions that tackle real challenges across the continent.",
-      date: "December 2024 - January 2025",
+      date: "December 2025 - January 2026",
       location: "Multiple Locations Across Africa",
       themes: [
         "DeFi for Africa",
@@ -30,7 +30,7 @@ const HackathonsPage = () => {
       status: "🚀 Registration Open Soon",
       image: "/e1.svg",
       registrationLink: "/hackathon/register",
-      deadline: "November 30, 2024",
+      deadline: "TBD",
       featured: true,
       duration: "48-Hour Sprint",
       participants: "500+ Expected",
@@ -40,7 +40,7 @@ const HackathonsPage = () => {
       title: "Kigali Web3 Hackathon 2025",
       description:
         "Join Rwanda's premier Web3 development competition in partnership with University of Rwanda. Build decentralized solutions for Africa's challenges.",
-      date: "December 15-17, 2025",
+      date: "May 15-17, 2026",
       location: "University of Rwanda, Kigali Campus",
       themes: ["DeFi for Africa", "Digital Identity", "Climate Tech"],
       prize: "$1,000 in prizes",
@@ -52,7 +52,7 @@ const HackathonsPage = () => {
       status: "Registration Opening Soon",
       image: "/past.jpeg",
       registrationLink: "#register",
-      deadline: "November 30, 2025",
+      deadline: "TBD",
     },
     {
       id: "east-africa-blockchain-challenge-2026",
@@ -246,7 +246,7 @@ const HackathonsPage = () => {
 
             {/* Main Title */}
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 leading-tight">
-              Africa Web3 <span className="text-yellow-300">Hackathon</span>{" "}
+              ETH Rwanda <span className="text-yellow-300">Hackathon</span>{" "}
               2025
             </h2>
 
@@ -254,7 +254,7 @@ const HackathonsPage = () => {
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-6 sm:mb-8">
               <div className="flex items-center gap-2 bg-black/30 px-4 py-2 rounded-lg">
                 <span className="text-sm sm:text-base">
-                  Dec 2024 - Jan 2025
+                  Dec 2025 - Jan 2026
                 </span>
               </div>
               <div className="flex items-center gap-2 bg-black/30 px-4 py-2 rounded-lg">

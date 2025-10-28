@@ -136,7 +136,7 @@ const HeroSection = () => {
                   $50,000+ PRIZES
                 </span>
                 <span className="text-white/90 text-lg">
-                  Dec 2024 - Jan 2025
+                  Dec 2025 - Jan 2026
                 </span>
               </Link>
 
