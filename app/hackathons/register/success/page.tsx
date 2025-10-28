@@ -153,7 +153,7 @@ export default function HackathonSuccess() {
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.5 }}
             >
-              You're officially registered for{" "}
+              You&apos;re officially registered for{" "}
               <strong>ETH Rwanda Hackathon 2025</strong>. Get ready to build the
               future of Web3 in Africa!
             </motion.p>
