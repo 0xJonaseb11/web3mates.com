@@ -32,6 +32,20 @@ export default function HackathonRegistration() {
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
 
+  const marqueeVariants = {
+    animate: {
+      x: [0, -1030],
+      transition: {
+        x: {
+          repeat: Infinity,
+          repeatType: "loop" as const,
+          duration: 25,
+          ease: "linear" as const,
+        },
+      },
+    },
+  };
+
   const validateForm = () => {
     const newErrors: Record<string, string> = {};
 
@@ -82,13 +96,35 @@ export default function HackathonRegistration() {
 
     setIsSubmitting(true);
 
-    // Simulate form submission
-    setTimeout(() => {
-      console.log("Form submitted:", formData);
+    try {
+      const response = await fetch(
+        process.env.NEXT_PUBLIC_FORMSPREE_ETH_RWANDA_HACK_URL!,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            ...formData,
+            _subject: `ETH Rwanda Hackathon Registration - ${formData.fullName}`,
+            _replyto: formData.email,
+          }),
+        }
+      );
+
+      if (response.ok) {
+        window.location.href = "/hackathons/register/success";
+      } else {
+        throw new Error("Form submission failed");
+      }
+    } catch (error) {
+      console.error("Form submission error:", error);
+      alert(
+        "There was an error submitting your registration. Please try again or contact support."
+      );
+    } finally {
       setIsSubmitting(false);
-      // Here you would typically submit to Formspree
-      // window.location.href = "/hackathon/success";
-    }, 2000);
+    }
   };
 
   const handleChange = (
@@ -146,6 +182,127 @@ export default function HackathonRegistration() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 pt-20">
+      {/* Hackathon Marquee Banner - Same as Home HeroSection */}
+      <motion.div
+        className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-blue-600 via-purple-600 to-blue-600 py-3 overflow-hidden shadow-lg border-b border-white/20 mt-20"
+        initial={{ y: -50 }}
+        animate={{ y: 0 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+      >
+        <motion.div
+          className="flex whitespace-nowrap"
+          variants={marqueeVariants}
+          animate="animate"
+        >
+          {[...Array(3)].map((_, setIndex) => (
+            <div key={setIndex} className="flex items-center gap-8 px-4">
+              {/* Animated Emoji */}
+              <motion.div
+                animate={{
+                  scale: [1, 1.2, 1],
+                  rotate: [0, 10, -10, 0],
+                }}
+                transition={{
+                  duration: 2,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
+                className="text-2xl"
+              >
+                🚀
+              </motion.div>
+
+              {/* Main Text */}
+              <Link
+                href="/hackathons/africa-web3-hackathon-2025"
+                className="flex items-center gap-4 group"
+              >
+                <span className="text-white font-bold text-lg sm:text-xl bg-black/20 px-4 py-1 rounded-full border border-white/30">
+                  🔥 HOT EVENT
+                </span>
+                <span className="text-white font-semibold text-lg sm:text-xl">
+                  ETH Rwanda Hackathon 2025
+                </span>
+                <span className="text-yellow-300 font-bold text-lg sm:text-xl animate-pulse">
+                  $50,000+ PRIZES
+                </span>
+                <span className="text-white/90 text-lg">
+                  Dec 2024 - Jan 2025
+                </span>
+              </Link>
+
+              {/* CTA Button */}
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <Link
+                  href="/hackathon/register"
+                  className="bg-yellow-400 text-blue-900 px-6 py-2 rounded-full font-bold text-sm sm:text-base hover:bg-yellow-300 transition-colors duration-300 shadow-lg hover:shadow-xl flex items-center gap-2"
+                >
+                  🎯 Register Now
+                  <motion.span
+                    animate={{ x: [0, 5, 0] }}
+                    transition={{
+                      duration: 1,
+                      repeat: Infinity,
+                      ease: "easeInOut",
+                    }}
+                  >
+                    →
+                  </motion.span>
+                </Link>
+              </motion.div>
+
+              {/* Stats */}
+              <div className="flex items-center gap-6 text-white/80 text-sm">
+                <div className="flex items-center gap-2">
+                  <span className="text-green-400">⏱️</span>
+                  <span>48-Hour Sprint</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="text-purple-400">🌍</span>
+                  <span>10+ Countries</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="text-red-400">👥</span>
+                  <span>500+ Builders</span>
+                </div>
+              </div>
+
+              {/* Animated Emoji */}
+              <motion.div
+                animate={{
+                  scale: [1, 1.3, 1],
+                  rotate: [0, -15, 15, 0],
+                }}
+                transition={{
+                  duration: 2,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                  delay: 1,
+                }}
+                className="text-2xl"
+              >
+                ⚡
+              </motion.div>
+            </div>
+          ))}
+        </motion.div>
+
+        {/* Progress Bar */}
+        <motion.div
+          className="absolute bottom-0 left-0 h-1 bg-gradient-to-r from-yellow-400 to-orange-500"
+          initial={{ width: "0%" }}
+          animate={{ width: "100%" }}
+          transition={{
+            duration: 25,
+            repeat: Infinity,
+            ease: "linear",
+          }}
+        />
+      </motion.div>
+
       {/* Animated Background Elements */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none">
         <div className="absolute -top-40 -right-40 w-80 h-80 bg-blue-200 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-pulse"></div>
@@ -185,13 +342,12 @@ export default function HackathonRegistration() {
             animate={{ scale: 1 }}
             className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-full mb-6 shadow-lg ml-10"
           >
-            <span className="text-sm font-semibold">
-              JOIN THE REVOLUTION
-            </span>
+            <span className="text-sm font-semibold">JOIN THE REVOLUTION</span>
           </motion.div>
 
           <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text">
-            Register for <span className="text-blue-600">ETH Rwanda Hackathon 2025</span>
+            Register for{" "}
+            <span className="text-blue-600">ETH Rwanda Hackathon 2025</span>
           </h1>
 
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
@@ -223,7 +379,25 @@ export default function HackathonRegistration() {
                 </div>
               </div>
 
-              <form onSubmit={handleSubmit}>
+              <form
+                onSubmit={handleSubmit}
+                action={process.env.NEXT_PUBLIC_FORMSPREE_ETH_RWANDA_HACK_URL}
+                method="POST"
+              >
+                {/* Formspree Hidden Fields */}
+                <input
+                  type="hidden"
+                  name="_formsubmit_id"
+                  value="eth-rwanda-hackathon-2025"
+                />
+                <input
+                  type="text"
+                  name="_gotcha"
+                  style={{ display: "none" }}
+                  tabIndex={-1}
+                  autoComplete="off"
+                />
+
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
                   {/* Full Name */}
                   <div className="space-y-2">
