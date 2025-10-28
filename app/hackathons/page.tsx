@@ -601,7 +601,7 @@ const HackathonsPage = () => {
             <p className="text-gray-600 text-sm sm:text-base">
               The ETH Rwanda Hackathon 2025 is open to developers, designers,
               entrepreneurs, and students from across Africa and beyond. Teams
-              of 2-5 participants are welcome. If you don't have a team, we'll
+              of 2-5 participants are welcome. If you don&apos;t have a team, we&apos;ll
               help you find one during the event!
             </p>
           </motion.div>
@@ -655,7 +655,7 @@ const HackathonsPage = () => {
             <p className="text-gray-600 text-sm sm:text-base">
               Participants will have access to technical mentors, industry
               experts, workshops on Web3 technologies, design thinking sessions,
-              and dedicated support channels. We'll also provide API access to
+              and dedicated support channels. We&apos;ll also provide API access to
               various blockchain platforms and tools.
             </p>
           </motion.div>

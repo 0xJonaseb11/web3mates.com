@@ -1,245 +1,109 @@
-# Web3 Mates - Blockchain Catalyst
+# Web3 Mates - Official Website
+![Logo](public/logo.svg)
 
-<div align="center">
-  <img src="/public/logo.svg" alt="Web3 Mates Logo" width="120" height="120" />
-  
-  **Empowering Africa's Web3 Builders—One Line of Code at a Time**
-  
-  [![Next.js](https://img.shields.io/badge/Next.js-15.3.4-black?style=flat-square&logo=next.js)](https://nextjs.org/)
-  [![React](https://img.shields.io/badge/React-18.2.0-blue?style=flat-square&logo=react)](https://reactjs.org/)
-  [![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue?style=flat-square&logo=typescript)](https://www.typescriptlang.org/)
-  [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4.0-38B2AC?style=flat-square&logo=tailwind-css)](https://tailwindcss.com/)
-</div>
+## Table of Contents
 
----
+- [Legal Notice](#legal-notice)
+- [Intellectual Property](#intellectual-property)
+- [Terms of Use](#terms-of-use)
+- [Official Channels](#official-channels)
+- [Contact Information](#contact-information)
 
-## Overview
+## Legal Notice
 
-**Web3 Mates** is a comprehensive Web3 education and innovation hub dedicated to training, connecting, and empowering African developers and entrepreneurs in the blockchain revolution. Our platform serves as a catalyst for blockchain adoption across Africa, providing education, mentorship, community building, and project collaboration opportunities.
+**web3mates.com** is the official registered domain and digital platform of Web3 Mates. This website and all associated digital properties are protected under international copyright, trademark, and intellectual property laws.
 
-## Key Features
+> **IMPORTANT**: This repository contains proprietary code, design assets, and business logic that are exclusive property of Web3 Mates. Any unauthorized access, use, reproduction, or distribution is strictly prohibited and may result in legal action.
 
-### Education & Training
+## Intellectual Property
 
-- **Mentorship Programs**: Structured learning paths for Web3 development
-- **Workshops**: Hands-on training sessions for blockchain technologies
-- **Course Materials**: Comprehensive curriculum covering DeFi, NFTs, DAOs, and more
-- **Project-Based Learning**: Real-world application of Web3 concepts
+All components of this website are protected intellectual property, including but not limited to:
 
-### Community Building
+- **Brand Assets**: Logos, trademarks, color schemes, and visual identity
+- **Content**: Text, images, graphics, and educational materials
+- **Code**: Source code, architecture, and proprietary implementations
+- **Design**: User interface, user experience, and layout designs
+- **Business Logic**: Unique features, workflows, and system integrations
 
-- **Discord Community**: Active real-time discussions and networking
-- **Telegram Channel**: Instant updates and announcements
-- **LinkedIn Network**: Professional connections and opportunities
-- **GitHub Collaboration**: Open-source project contributions
+### Protection Measures
 
-### Events & Competitions
+- Copyright registration pending
+- Trademark protection in process
+- Digital rights management
+- Regular security audits and monitoring
 
-- **Hackathons**: Innovation challenges and competitions
-- **Callups**: Special announcements and opportunities
-- **Workshops**: Skill-building sessions
-- **Networking Events**: Community meetups and connections
+## Terms of Use
 
-### Business Services
+### Strictly Prohibited Actions
 
-- **Enterprise Solutions**: Custom Web3 training for companies
-- **Partnership Programs**: Strategic collaborations
-- **Sponsorship Opportunities**: Support for community initiatives
-- **Project Showcase**: Platform for African Web3 projects
+1. **Reproduction**: Copying, cloning, or replicating any part of this website
+2. **Distribution**: Sharing, transmitting, or making available to unauthorized parties
+3. **Modification**: Altering, adapting, or creating derivative works
+4. **Commercial Use**: Using for commercial purposes without explicit written consent
+5. **Reverse Engineering**: Decompiling, disassembling, or analyzing the codebase
 
-## Technology Stack
+### Authorized Use
 
-Built with modern web technologies including Next.js, React, TypeScript, and Tailwind CSS for optimal performance and user experience.
+Access to this repository is granted solely for:
 
-## Project Structure
+- Internal development and maintenance by authorized Web3 Mates personnel
+- Security auditing by contracted security firms
+- Legal review by authorized legal representatives
 
-Organized codebase with modular components, reusable hooks, and structured pages for maintainability and scalability.
+## Official Channels
 
-## Development Setup
+### Primary Website
 
-### Prerequisites
-
-- **Node.js** 18.0 or higher
-- **npm** or **yarn** package manager
-
-### Installation
-
-1. **Install dependencies**
-
-   ```bash
-   npm install
-   # or
-   yarn install
-   ```
-
-2. **Set up environment variables**
-   Create a `.env.local` file in the root directory:
-
-   ```env
-   # Formspree URLs for contact forms
-   NEXT_PUBLIC_FORMSPREE_CONTACT_URL=https://formspree.io/f/YOUR_CONTACT_FORM_ID
-   NEXT_PUBLIC_FORMSPREE_PARTNERSHIP_URL=https://formspree.io/f/YOUR_PARTNERSHIP_FORM_ID
-   NEXT_PUBLIC_FORMSPREE_ENTERPRISE_URL=https://formspree.io/f/YOUR_ENTERPRISE_FORM_ID
-   NEXT_PUBLIC_FORMSPREE_SPONSORSHIP_URL=https://formspree.io/f/YOUR_SPONSORSHIP_FORM_ID
-   NEXT_PUBLIC_FORMSPREE_MENTORSHIP_URL=https://formspree.io/f/YOUR_MENTORSHIP_FORM_ID
-NEXT_PUBLIC_FORMSPREE_FEEDBACK_URL=https://formspree.io/f/YOUR_FEEDBACK_FORM_ID
-NEXT_PUBLIC_FORMSPREE_NEWSLETTER_URL=https://formspree.io/f/YOUR_NEWSLETTER_FORM_ID
-   ```
-
-3. **Run the development server**
-
-   ```bash
-   npm run dev
-   # or
-   yarn dev
-   ```
-
-4. **Open your browser**
-   Navigate to [http://localhost:3000](http://localhost:3000)
-
-## Available Scripts
-
-- `npm run dev` - Start development server with Turbopack
-- `npm run build` - Build for production
-- `npm run start` - Start production server
-- `npm run lint` - Run ESLint
-- `npm run lint:ignore` - Skip linting
-
-## Deployment
-
-### Vercel (Recommended)
-
-1. Connect your repository to Vercel
-2. Add environment variables in Vercel dashboard
-3. Deploy automatically on push to main branch
-
-### Other Platforms
-
-- **Netlify**: Configure build settings for Next.js
-- **Railway**: Deploy with automatic environment variable injection
-- **DigitalOcean App Platform**: One-click deployment
-
-## Customization
-
-### Branding
-
-- Update colors in `tailwind.config.js`
-- Replace logo in `public/logo.svg`
-- Modify brand colors in component files
-
-### Content
-
-- Edit page content in respective `page.tsx` files
-- Update navigation in `app/layout.tsx`
-- Modify footer links in `components/Footer.tsx`
-
-### Styling
-
-- Customize Tailwind classes throughout components
-- Add custom CSS in `app/globals.css`
-- Modify component-specific styles
-
-## Contact Forms Setup
-
-The website uses Formspree for all contact forms. To set up:
-
-1. Create forms at [formspree.io](https://formspree.io)
-2. Add form URLs to environment variables
-3. Configure email notifications in Formspree dashboard
-4. Set up auto-replies for better user experience
-
-**Available Forms:**
-- Contact form (`NEXT_PUBLIC_FORMSPREE_CONTACT_URL`)
-- Partnership form (`NEXT_PUBLIC_FORMSPREE_PARTNERSHIP_URL`)
-- Enterprise form (`NEXT_PUBLIC_FORMSPREE_ENTERPRISE_URL`)
-- Sponsorship form (`NEXT_PUBLIC_FORMSPREE_SPONSORSHIP_URL`)
-- Mentorship application form (`NEXT_PUBLIC_FORMSPREE_MENTORSHIP_URL`)
-- General feedback form (`NEXT_PUBLIC_FORMSPREE_FEEDBACK_URL`)
-- Newsletter subscription (`NEXT_PUBLIC_FORMSPREE_NEWSLETTER_URL`)
-
-## Development Guidelines
-
-### Code Style
-
-- Use TypeScript for type safety
-- Follow ESLint configuration
-- Use Tailwind CSS for styling
-- Implement responsive design patterns
-
-### Component Structure
-
-- Keep components modular and reusable
-- Use proper TypeScript interfaces
-- Implement loading states and error handling
-- Follow Next.js App Router conventions
-
-### Performance
-
-- Optimize images with Next.js Image component
-- Use proper loading strategies
-- Implement lazy loading where appropriate
-- Monitor Core Web Vitals
-
-## Contributing
-
-This is a proprietary project. Internal contributions should follow:
-
-1. Create feature branches from `main`
-2. Follow the existing code style
-3. Test thoroughly before submitting
-4. Update documentation as needed
-5. Ensure responsive design works on all devices
-
-## License
-
-This project is proprietary and confidential. All rights reserved. This website is hosted with SSL certification and is a registered business platform. Cloning, copying, or unauthorized use is strictly prohibited.
-
-## Acknowledgments
-
-### Core Team
-
-- [**@0xJonaseb11**](https://github.com/0xJonaseb11) - Technical Support Lead
-- [**@NyLaurent**](https://github.com/NyLaurent) - Developer Relations
-- **Design Team** - UI/UX Design & Branding
-
-### Technology Partners
-
-- **Next.js Team** - React framework
-- **Vercel** - Site Traffic && Analytics
-- **Hostinger** - Hosting and deployment
-- **Tailwind CSS** - Utility-first CSS framework
-- **Framer Motion** - Animation library
-- **React Icons** - Icon library
-- **Formspree** - Contact form handling
-
-### Community Contributors
-
-- **Web3 Mates Community** - Feedback and testing
-- **African Web3 Developers** - Community support
-- **Blockchain Enthusiasts** - Content and ideas
-
-## Connect With Us
-
-### Official Channels
-
-- **Website**: [web3mates.com](https://www.web3mates.com)
-- **Email**: [info@web3mates.com](mailto:info@web3mates.com)
+- **Official Domain**: [https://web3mates.com](https://web3mates.com)
 
 ### Social Media
 
+- **LinkedIn**: [Web3 Mates Company Page](https://linkedin.com/company/web3mates)
 - **Twitter/X**: [@Web3Mates](https://x.com/Web3Mates)
-- **LinkedIn**: [Web3 Mates](https://linkedin.com/company/web3mates)
 
 ### Community Platforms
 
-- **Discord**: [Join our community](https://discord.gg/qzECSsvuxu)
-- **Telegram**: [Follow us](https://t.me/+Gc9JJOqazxgxZmQ0)
-- **GitHub**: [Web3Mates](https://github.com/Web3Mates)
+- **Discord**: [Official Community Server](https://discord.gg/qzECSsvuxu)
+- **Telegram**: [Official Announcement Channel](https://t.me/+Gc9JJOqazxgxZmQ0)
+
+## Contact Information
+
+### General Inquiries
+
+- **Email**: [info@web3mates.com](mailto:info@web3mates.com)
+- **Website**: [web3mates.com/contact](https://web3mates.com/contact)
+
+### Legal Matters
+
+- **Legal Department**: [legal@web3mates.com](mailto:legal@web3mates.com)
+
+### Business Partnerships
+
+- **Partnerships**: [partnerships@web3mates.com](mailto:partnerships@web3mates.com)
+- **Enterprise**: [enterprise@web3mates.com](mailto:enterprise@web3mates.com)
+
+### Technical Support
+
+- **Support**: [support@web3mates.com](mailto:support@web3mates.com)
+
+---
+
+## Compliance and Enforcement
+
+Web3 Mates reserves the right to:
+
+- Monitor and track unauthorized usage
+- Issue cease and desist notices
+- Pursue legal action for violations
+- Seek damages for intellectual property infringement
+
+All rights not expressly granted herein are reserved by Web3 Mates.
 
 ---
 
 <div align="center">
-  <strong>Empowering Africa's Web3 Builders—One Line of Code at a Time</strong>
-  
-  © 2025 Web3 Mates - Blockchain Catalyst. All Rights Reserved.
+  <strong>© 2025 Web3 Mates. All Rights Reserved.</strong><br/>
+  <em>Confidential and Proprietary - For Authorized Use Only</em>
 </div>
+
+**Violations of these terms may result in civil and criminal penalties.**

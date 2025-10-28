@@ -189,10 +189,10 @@ export default function EarlyAccess() {
                   </svg>
                 </motion.div>
                 <h3 className="text-2xl font-bold text-gray-900 mb-2">
-                  You're on the list!
+                  You&apos;re on the list!
                 </h3>
                 <p className="text-gray-600 mb-6">
-                  Thank you for signing up for early access. We'll send you
+                  Thank you for signing up for early access. We&apos;ll send you
                   exclusive updates about the ETH Rwanda Hackathon 2025.
                 </p>
                 <div className="space-y-3">
