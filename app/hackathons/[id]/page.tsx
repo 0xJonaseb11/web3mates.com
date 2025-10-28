@@ -8,7 +8,7 @@ import { notFound } from "next/navigation";
 // Mock data - in a real app, this would come from an API or database
 const hackathons = [
   {
-    id: "africa-web3-hackathon-2025",
+    id: "eth-rwanda-hackathon-2025",
     title: "ETH Rwanda Hackathon 2025",
     description:
       "Join Africa's brightest minds in a groundbreaking 48-hour blockchain innovation sprint. Build decentralized solutions that tackle real challenges across the continent.",
@@ -206,7 +206,7 @@ export default function HackathonDetail({
     notFound();
   }
 
-  const isAfricaHackathon = hackathon.id === "africa-web3-hackathon-2025";
+  const isAfricaHackathon = hackathon.id === "eth-rwanda-hackathon-2025";
   const isRegistrationOpen = isAfricaHackathon;
 
   return (

@@ -24,7 +24,7 @@ export default function EarlyAccess() {
           className="text-center text-white"
         >
           <Link
-            href="/hackathons/africa-web3-hackathon-2025"
+            href="/hackathons/eth-rwanda-hackathon-2025"
             className="inline-flex items-center text-blue-100 hover:text-white mb-8"
           >
             <svg

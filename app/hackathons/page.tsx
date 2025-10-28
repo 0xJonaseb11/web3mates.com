@@ -7,7 +7,7 @@ import Link from "next/link";
 const HackathonsPage = () => {
   const upcomingHackathons = [
     {
-      id: "africa-web3-hackathon-2025",
+      id: "eth-rwanda-hackathon-2025",
       title: "ETH Rwanda Hackathon 2025",
       description:
         "Join Africa's brightest minds in a groundbreaking 48-hour blockchain innovation sprint. Build decentralized solutions that tackle real challenges across the continent.",
@@ -254,7 +254,7 @@ const HackathonsPage = () => {
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-6 sm:mb-8">
               <div className="flex items-center gap-2 bg-black/30 px-4 py-2 rounded-lg">
                 <span className="text-sm sm:text-base">
-                  📅 Dec 2024 - Jan 2025
+                  Dec 2024 - Jan 2025
                 </span>
               </div>
               <div className="flex items-center gap-2 bg-black/30 px-4 py-2 rounded-lg">
@@ -262,14 +262,14 @@ const HackathonsPage = () => {
               </div>
               <div className="flex items-center gap-2 bg-black/30 px-4 py-2 rounded-lg">
                 <span className="text-sm sm:text-base">
-                  🌍 Multiple Locations
+                  Multiple Locations
                 </span>
               </div>
             </div>
 
             {/* Description */}
             <p className="text-lg sm:text-xl md:text-2xl max-w-3xl mx-auto mb-6 sm:mb-8 text-blue-100 leading-relaxed">
-              Join Africa's brightest minds in a groundbreaking 48-hour
+              Join Africa&apos;s brightest minds in a groundbreaking 48-hour
               blockchain innovation sprint. Build, collaborate, and shape the
               future of Web3 across the continent.
             </p>
@@ -308,13 +308,13 @@ const HackathonsPage = () => {
                 href="/hackathons/register"
                 className="bg-yellow-400 text-blue-900 px-8 py-3 rounded-lg font-bold text-sm sm:text-base hover:bg-yellow-300 transition-colors duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 text-center"
               >
-                🚀 Get Early Access
+                Get Early Access
               </Link>
               <Link
-                href="/hackathons/africa-web3-hackathon-2025"
+                href="/hackathons/eth-rwanda-hackathon-2025"
                 className="border-2 border-white text-white px-6 py-3 rounded-lg font-semibold text-sm sm:text-base hover:bg-white/10 transition-colors duration-300 text-center"
               >
-                📋 View Details
+                Learn More
               </Link>
             </div>
           </div>
@@ -349,9 +349,9 @@ const HackathonsPage = () => {
               {/* Featured Badge */}
               {hackathon.featured && (
                 <div className="absolute top-4 left-4 z-10">
-                  <div className="bg-gradient-to-r from-red-500 to-orange-500 text-white px-3 py-1 rounded-full text-xs font-bold shadow-lg">
+                  {/* <div className="bg-gradient-to-r from-red-500 to-orange-500 text-white px-3 py-1 rounded-full text-xs font-bold shadow-lg">
                     🔥 FEATURED
-                  </div>
+                  </div> */}
                 </div>
               )}
 
@@ -539,7 +539,7 @@ const HackathonsPage = () => {
               No past hackathons
             </h3>
             <p className="mt-2 text-gray-500 text-sm sm:text-base">
-              We haven't hosted any hackathons yet. Stay tuned for our upcoming
+              We haven&apos;t hosted any hackathons yet. Stay tuned for our upcoming
               events!
             </p>
           </div>
@@ -554,7 +554,7 @@ const HackathonsPage = () => {
         viewport={{ once: true }}
       >
         <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-4">
-          Ready to Build Africa's Web3 Future?
+          Ready to Build Africa&apos;s Web3 Future?
         </h2>
         <p className="text-blue-50 max-w-2xl mx-auto mb-6 sm:mb-8 text-base sm:text-lg">
           Join hundreds of developers, designers, and entrepreneurs shaping the
@@ -565,7 +565,7 @@ const HackathonsPage = () => {
             href="/hackathon/register"
             className="bg-yellow-400 text-blue-900 px-6 sm:px-8 py-3 rounded-lg font-bold text-sm sm:text-base hover:bg-yellow-300 transition-colors duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 text-center"
           >
-            🚀 Register for Africa Hackathon
+            Register for ETH Rwanda Hackathon
           </Link>
           <Link
             href="/partnership"

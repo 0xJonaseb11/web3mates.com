@@ -6,7 +6,7 @@ import { FaArrowRight } from "react-icons/fa";
 
 const blogPosts = [
   {
-    id: "africa-web3-hackathon-2025",
+    id: "eth-rwanda-hackathon-2025",
     image: "/e1.svg",
     date: "Dec 2024 - Jan 2025",
     title: "ETH Rwanda Hackathon 2025",
