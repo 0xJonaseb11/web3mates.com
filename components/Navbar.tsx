@@ -44,7 +44,7 @@ const Navbar = () => {
                   className="object-contain w-12 h-12 sm:w-9 sm:h-9 md:w-10 md:h-10 lg:w-16 lg:h-16 rounded-sm"
                 />
                 <div className="flex flex-col">
-                  <span className="text-lg sm:text-xl font-bold text-gray-900">
+                  <span className="text-2xl sm:text-2xl font-bold text-blue-900">
                     Web3 Mates
                   </span>
                   <span className="text-xs sm:text-sm text-[#0066FF]">
