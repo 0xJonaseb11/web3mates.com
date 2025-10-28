@@ -278,13 +278,13 @@ export default function ResourcesPage() {
           
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             Everything you need to start your Web3 journey. From beginner tutorials to advanced development tools, 
-            we've curated the best resources to help you build the future of decentralized applications.
+            we&apos;ve curated the best resources to help you build the future of decentralized applications.
           </p>
 
           <div className="mt-8 bg-yellow-50 border border-yellow-200 rounded-2xl p-6 max-w-4xl mx-auto">
             <p className="text-yellow-800 text-lg font-medium">
-              💡 <strong>Pro Tip:</strong> Don't forget to check out the resources shared in our past workshops! 
-              Many include exclusive content and project templates you won't find elsewhere.
+              💡 <strong>Pro Tip:</strong> Don&apos;t forget to check out the resources shared in our past workshops! 
+              Many include exclusive content and project templates you won&apos;t find elsewhere.
             </p>
           </div>
         </motion.div>
@@ -501,7 +501,7 @@ export default function ResourcesPage() {
                   No resources found
                 </h3>
                 <p className="text-gray-600 max-w-md mx-auto">
-                  Try adjusting your search terms or select a different category to find what you're looking for.
+                  Try adjusting your search terms or select a different category to find what you&apos;re looking for.
                 </p>
               </motion.div>
             )}
