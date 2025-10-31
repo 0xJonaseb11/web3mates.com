@@ -193,7 +193,9 @@ export default function EarlyAccess() {
                 </h3>
                 <p className="text-gray-600 mb-6">
                   Thank you for signing up for early access. We&apos;ll send you
+
                   exclusive updates about the ETH Rwanda Hackathon 2026.
+
                 </p>
                 <div className="space-y-3">
                   <Link
