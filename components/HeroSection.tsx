@@ -123,17 +123,17 @@ const HeroSection = () => {
 
               {/* Main Text */}
               <Link
-                href="/hackathons/eth-rwanda-hackathon-2025"
+                href="/hackathons/eth-rwanda-hackathon-2026"
                 className="flex items-center gap-4 group"
               >
                 <span className="text-white font-bold text-lg sm:text-xl bg-black/20 px-4 py-1 rounded-full border border-white/30">
                   🔥 HOT EVENT
                 </span>
                 <span className="text-white font-semibold text-lg sm:text-xl">
-                  ETH Rwanda Hackathon 2025
+                  ETH Rwanda Hackathon 2026
                 </span>
                 <span className="text-yellow-300 font-bold text-lg sm:text-xl animate-pulse">
-                  $50,000+ PRIZES
+                  $3,000+ PRIZES
                 </span>
                 <span className="text-white/90 text-lg">
                   Dec 2025 - Jan 2026

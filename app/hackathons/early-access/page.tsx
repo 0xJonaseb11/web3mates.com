@@ -25,7 +25,7 @@ export default function EarlyAccess() {
           },
           body: JSON.stringify({
             email: email,
-            _subject: `Early Access Request - ETH Rwanda Hackathon 2025`,
+            _subject: `Early Access Request - ETH Rwanda Hackathon 2026`,
             _replyto: email,
             source: "Early Access Page",
           }),
@@ -57,7 +57,7 @@ export default function EarlyAccess() {
           className="text-center text-white"
         >
           <Link
-            href="/hackathons/eth-rwanda-hackathon-2025"
+            href="/hackathons/eth-rwanda-hackathon-2026"
             className="inline-flex items-center text-blue-100 hover:text-white mb-8 group"
           >
             <svg
@@ -86,7 +86,7 @@ export default function EarlyAccess() {
 
           <p className="text-xl text-blue-100 max-w-2xl mx-auto mb-8">
             Get exclusive early access to registration, special workshops, and
-            priority mentorship matching for the ETH Rwanda Hackathon 2025.
+            priority mentorship matching for the ETH Rwanda Hackathon 2026.
           </p>
 
           {!submitted ? (
@@ -193,7 +193,9 @@ export default function EarlyAccess() {
                 </h3>
                 <p className="text-gray-600 mb-6">
                   Thank you for signing up for early access. We&apos;ll send you
-                  exclusive updates about the ETH Rwanda Hackathon 2025.
+
+                  exclusive updates about the ETH Rwanda Hackathon 2026.
+
                 </p>
                 <div className="space-y-3">
                   <Link

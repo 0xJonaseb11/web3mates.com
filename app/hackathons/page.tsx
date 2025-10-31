@@ -7,8 +7,8 @@ import Link from "next/link";
 const HackathonsPage = () => {
   const upcomingHackathons = [
     {
-      id: "eth-rwanda-hackathon-2025",
-      title: "ETH Rwanda Hackathon 2025",
+      id: "eth-rwanda-hackathon-2026",
+      title: "ETH Rwanda Hackathon 2026",
       description:
         "Join Africa's brightest minds in a groundbreaking 48-hour blockchain innovation sprint. Build decentralized solutions that tackle real challenges across the continent.",
       date: "December 2025 - January 2026",
@@ -20,14 +20,14 @@ const HackathonsPage = () => {
         "Cross-border Payments",
         "Supply Chain",
       ],
-      prize: "$50,000+ in prizes & grants",
+      prize: "$3000+ in prizes & grants",
       partners: [
         "University of Rwanda",
         "Multiple African Universities",
         "Leading Web3 Protocols",
         "VC Partners",
       ],
-      status: "🚀 Registration Open Soon",
+      status: "Registration Open Soon",
       image: "/e1.svg",
       registrationLink: "/hackathon/register",
       deadline: "TBD",
@@ -247,7 +247,7 @@ const HackathonsPage = () => {
             {/* Main Title */}
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 leading-tight">
               ETH Rwanda <span className="text-yellow-300">Hackathon</span>{" "}
-              2025
+              2026
             </h2>
 
             {/* Key Info */}
@@ -278,7 +278,7 @@ const HackathonsPage = () => {
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-6 sm:mb-8 text-center">
               <div className="flex flex-col items-center">
                 <span className="font-bold text-yellow-300 text-xl sm:text-2xl">
-                  $50K+
+                  $3K+
                 </span>
                 <span className="text-blue-100 text-sm">In Prizes</span>
               </div>
@@ -311,7 +311,7 @@ const HackathonsPage = () => {
                 Get Early Access
               </Link>
               <Link
-                href="/hackathons/eth-rwanda-hackathon-2025"
+                href="/hackathons/eth-rwanda-hackathon-2026"
                 className="border-2 border-white text-white px-6 py-3 rounded-lg font-semibold text-sm sm:text-base hover:bg-white/10 transition-colors duration-300 text-center"
               >
                 Learn More
@@ -599,7 +599,7 @@ const HackathonsPage = () => {
               Who can participate in the ETH Rwanda Hackathon?
             </h3>
             <p className="text-gray-600 text-sm sm:text-base">
-              The ETH Rwanda Hackathon 2025 is open to developers, designers,
+              The ETH Rwanda Hackathon 2026 is open to developers, designers,
               entrepreneurs, and students from across Africa and beyond. Teams
               of 2-5 participants are welcome. If you don&apos;t have a team, we&apos;ll
               help you find one during the event!

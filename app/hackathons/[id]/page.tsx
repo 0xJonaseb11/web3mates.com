@@ -8,14 +8,14 @@ import { notFound } from "next/navigation";
 // Mock data - in a real app, this would come from an API or database
 const hackathons = [
   {
-    id: "eth-rwanda-hackathon-2025",
-    title: "ETH Rwanda Hackathon 2025",
+    id: "eth-rwanda-hackathon-2026",
+    title: "ETH Rwanda Hackathon 2026",
     description:
       "Join Africa's brightest minds in a groundbreaking 48-hour blockchain innovation sprint. Build decentralized solutions that tackle real challenges across the continent.",
-    date: "December2025 - January 2026",
-    location: "Multiple Locations Across Africa + Virtual",
-    prizePool: "$50,000+ in prizes & grants",
-    registrationDeadline: "November 30, 2024",
+    date: "December 20, 2025 - January 18, 2026",
+    location: "Kigali, Rwanda",
+    prizePool: "$3,000+ in grants",
+    registrationDeadline: "January 18, 2026",
     themes: [
       "DeFi for Africa",
       "Digital Identity",
@@ -24,19 +24,16 @@ const hackathons = [
       "Supply Chain",
     ],
     partners: [
-      "University of Rwanda",
-      "Rwanda ICT Chamber",
-      "Africa Blockchain Institute",
       "Web3 Bridge",
       "AyaHQ",
       "Genesis",
       "GIZ",
-      "BuildGuild",
+      "BuidlGuild",
       "Digital Transformation Rwanda"
     ],
     image: "/e1.svg",
     longDescription:
-      "The ETH Rwanda Hackathon 2025 is our flagship event designed to catalyze blockchain innovation across the continent. Over 48 intensive hours, participants will collaborate, learn, and build decentralized applications that address real-world challenges in finance, identity, supply chain, and more. This hybrid event features physical hubs in major African cities combined with virtual participation, ensuring broad accessibility while maintaining the energy of in-person collaboration. With over $50,000 in prizes, mentorship from industry leaders, and potential incubation opportunities, this is your chance to make a lasting impact on Africa's digital future.",
+      "The ETH Rwanda Hackathon 2026 is our flagship event designed to catalyze blockchain innovation across the continent. Over 48 intensive hours, participants will collaborate, learn, and build decentralized applications that address real-world challenges in finance, identity, supply chain, and more. This hybrid event features physical hubs in major African cities combined with virtual participation, ensuring broad accessibility while maintaining the energy of in-person collaboration. With over $3,000 in prizes, mentorship from industry leaders, and potential incubation opportunities, this is your chance to make a lasting impact on Africa's digital future.",
     schedule: [
       {
         day: "Phase 1: Registration",
@@ -76,12 +73,12 @@ const hackathons = [
       },
     ],
     prizes: [
-      { place: "Grand Prize", prize: "$20,000 + Incubation Program" },
-      { place: "2nd Place", prize: "$10,000 + Mentorship" },
-      { place: "3rd Place", prize: "$5,000 + Workshop Access" },
-      { place: "Best DeFi Solution", prize: "$3,000" },
-      { place: "Best Social Impact", prize: "$3,000" },
-      { place: "Audience Choice", prize: "$2,000" },
+      { place: "Grand Prize", prize: "$1,500 + Incubation Program" },
+      { place: "2nd Place", prize: "$1,000 + Mentorship" },
+      { place: "3rd Place", prize: "$500 + Workshop Access" },
+      { place: "Best DeFi Solution", prize: "Custom" },
+      { place: "Best Social Impact", prize: "Custom" },
+      { place: "Audience Choice", prize: "Custom" },
     ],
     status: "🚀 Registration Open Soon",
     participants: "500+ Expected",
@@ -227,7 +224,7 @@ export default function HackathonDetail({
     notFound();
   }
 
-  const isAfricaHackathon = hackathon.id === "eth-rwanda-hackathon-2025";
+  const isAfricaHackathon = hackathon.id === "eth-rwanda-hackathon-2026";
   const isRegistrationOpen = isAfricaHackathon;
 
   return (
@@ -317,7 +314,7 @@ export default function HackathonDetail({
                 </div>
                 <div className="text-center">
                   <div className="text-2xl font-bold text-yellow-300">
-                    $50K+
+                    $3,000
                   </div>
                   <div className="text-blue-100 text-sm">Prizes</div>
                 </div>
