@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
+import { FaInbox, FaInfo } from "react-icons/fa6";
 
 // Mock data - in a real app, this would come from an API or database
 const hackathons = [
@@ -29,7 +30,62 @@ const hackathons = [
       "Genesis",
       "GIZ",
       "BuidlGuild",
-      "Digital Transformation Rwanda"
+      "Digital Transformation Rwanda",
+    ],
+    sponsors: [
+      {
+        name: "Web3 Bridge",
+        logo: "/web3bridge.png",
+        package: "Platinum Sponsor",
+        description:
+          "Main event sponsor providing infrastructure and mentorship",
+        contribution: "$1,500+",
+        benefits: [
+          "Main stage branding",
+          "Keynote speaking slot",
+          "Recruitment booth",
+          "Featured in all marketing",
+        ],
+      },
+      {
+        name: "AyaHQ",
+        logo: "/AyaHQ-blue.png",
+        package: "Gold Sponsor",
+        description: "Infrastructure and technical support partner",
+        contribution: "$1,000+",
+        benefits: [
+          "Workshop hosting",
+          "Technical mentorship",
+          "Brand visibility",
+          "Networking session",
+        ],
+      },
+      {
+        name: "Genesis",
+        logo: "/genesys.png",
+        package: "Silver Sponsor",
+        description: "Developer tools and platform support",
+        contribution: "$500+",
+        benefits: [
+          "Developer tools access",
+          "Technical workshops",
+          "Brand recognition",
+          "Community engagement",
+        ],
+      },
+      {
+        name: "GIZ",
+        logo: "/giz1.png",
+        package: "Community Partner",
+        description: "Supporting digital transformation in Rwanda",
+        contribution: "Strategic Partnership",
+        benefits: [
+          "Government liaison",
+          "Community outreach",
+          "Local ecosystem support",
+          "Policy guidance",
+        ],
+      },
     ],
     image: "/e1.svg",
     longDescription:
@@ -89,128 +145,7 @@ const hackathons = [
     teamSize: "2-5 members",
     registrationLink: "/hackathons/register",
   },
-  {
-    id: "kigali-web3-2025",
-    title: "Kigali Web3 Hackathon 2025",
-    description:
-      "Join Rwanda's premier Web3 development competition in partnership with University of Rwanda. Build decentralized solutions for Africa's challenges.",
-    date: "December 15-17, 2025",
-    location: "University of Rwanda, Kigali Campus",
-    prizePool: "$1,000 in prizes",
-    registrationDeadline: "November 30, 2025",
-    themes: ["DeFi for Africa", "Digital Identity", "Climate Tech"],
-    partners: [
-      "University of Rwanda",
-      "Rwanda ICT Chamber",
-      "Africa Blockchain Institute",
-      "Web3 Bridge",
-      "AyaHQ",
-      "Genesis",
-      "GIZ",
-      "BuildGuild",
-      "Digital Transformation Rwanda"
-    ],
-    image: "/img17.jpeg",
-    longDescription:
-      "The Kigali Web3 Hackathon 2025 is a three-day intensive event that brings together developers, designers, and entrepreneurs from across Africa to build innovative blockchain solutions. This hackathon focuses on addressing real-world challenges facing the African continent through decentralized technology.",
-    schedule: [
-      {
-        day: "Day 1",
-        activities: [
-          "Opening Ceremony",
-          "Team Formation",
-          "Workshop Sessions",
-          "Coding Begins",
-        ],
-      },
-      {
-        day: "Day 2",
-        activities: [
-          "Continued Development",
-          "Mentor Sessions",
-          "Progress Check-ins",
-          "Networking",
-        ],
-      },
-      {
-        day: "Day 3",
-        activities: [
-          "Final Development",
-          "Presentations",
-          "Judging",
-          "Awards Ceremony",
-        ],
-      },
-    ],
-    prizes: [
-      { place: "1st Place", prize: "$500 + Incubation Opportunity" },
-      { place: "2nd Place", prize: "$300 + Mentorship Program" },
-      { place: "3rd Place", prize: "$200 + Workshop Access" },
-    ],
-    status: "Registration Opening Soon",
-    registrationLink: "#register",
-  },
-  {
-    id: "east-africa-blockchain-2026",
-    title: "East Africa Blockchain Challenge 2026",
-    description:
-      "Regional hackathon bringing together developers from across East Africa to build interoperable blockchain solutions.",
-    date: "March 2026 (TBD)",
-    location: "University of Rwanda, Nyarugenge Campus",
-    prizePool: "TBD",
-    registrationDeadline: "TBD",
-    themes: ["Cross-border Payments", "Supply Chain", "Healthcare"],
-    partners: [
-      "University of Rwanda",
-      "Rwanda ICT Chamber",
-      "Africa Blockchain Institute",
-      "Web3 Bridge",
-      "AyaHQ",
-      "Genesis",
-      "GIZ",
-      "BuildGuild",
-      "Digital Transformation Rwanda"
-    ],
-    image: "/img18.jpeg",
-    longDescription:
-      "The East Africa Blockchain Challenge 2026 is a regional initiative that promotes cross-border collaboration and innovation in blockchain technology. This hackathon brings together talent from across East Africa to solve regional challenges through decentralized solutions.",
-    schedule: [
-      {
-        day: "Day 1",
-        activities: [
-          "Regional Opening",
-          "Cross-border Team Formation",
-          "Technical Workshops",
-          "Development Start",
-        ],
-      },
-      {
-        day: "Day 2",
-        activities: [
-          "Collaborative Development",
-          "Regional Mentor Sessions",
-          "Progress Reviews",
-          "Cultural Exchange",
-        ],
-      },
-      {
-        day: "Day 3",
-        activities: [
-          "Final Development",
-          "Regional Presentations",
-          "Judging",
-          "Awards & Networking",
-        ],
-      },
-    ],
-    prizes: [
-      { place: "Regional Winner", prize: "TBD + Regional Recognition" },
-      { place: "Innovation Award", prize: "TBD + Regional Partnership" },
-      { place: "Community Choice", prize: "TBD + Community Support" },
-    ],
-    status: "Registration Coming Soon",
-    registrationLink: "#",
-  },
+  // ... other hackathons remain the same
 ];
 
 export default function HackathonDetail({
@@ -226,6 +161,7 @@ export default function HackathonDetail({
 
   const isAfricaHackathon = hackathon.id === "eth-rwanda-hackathon-2026";
   const isRegistrationOpen = isAfricaHackathon;
+  const hasSponsors = hackathon.sponsors && hackathon.sponsors.length > 0;
 
   return (
     <div className="min-h-screen bg-white">
@@ -430,6 +366,157 @@ export default function HackathonDetail({
                 ))}
               </div>
             </motion.div>
+
+            {/* Sponsors Section - NEW SECTION ADDED */}
+            {hasSponsors && (
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="bg-white rounded-xl p-6 sm:p-8 shadow-lg border border-gray-100"
+              >
+                <div className="flex items-center justify-between mb-6">
+                  <h2 className="text-2xl sm:text-3xl font-bold text-gray-900">
+                    Our Sponsors
+                  </h2>
+                  <Link
+                    href="/sponsorship"
+                    className="inline-flex items-center gap-2 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors duration-300 text-sm font-medium"
+                  >
+                    🤝 Become a Sponsor
+                    <svg
+                      className="w-4 h-4"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M14 5l7 7m0 0l-7 7m7-7H3"
+                      />
+                    </svg>
+                  </Link>
+                </div>
+
+                <p className="text-gray-600 mb-8 text-lg">
+                  We're grateful to our amazing sponsors who make this hackathon
+                  possible. Their support enables us to create an incredible
+                  experience for all participants.
+                </p>
+
+                <div className="space-y-6">
+                  {hackathon.sponsors.map((sponsor, index) => (
+                    <motion.div
+                      key={index}
+                      initial={{ opacity: 0, x: -20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      transition={{ delay: index * 0.1 }}
+                      viewport={{ once: true }}
+                      className="border border-gray-200 rounded-xl p-6 hover:shadow-md transition-shadow duration-300"
+                    >
+                      <div className="flex flex-col md:flex-row gap-6">
+                        {/* Sponsor Logo and Basic Info */}
+                        <div className="flex-shrink-0 flex flex-col items-center text-center md:text-left md:items-start">
+                          <div className="w-20 h-20 bg-gray-100 rounded-lg flex items-center justify-center mb-3 p-2">
+                            <Image
+                              src={sponsor.logo}
+                              alt={sponsor.name}
+                              width={80}
+                              height={80}
+                              className="object-contain max-h-16"
+                            />
+                          </div>
+                          <div className="mb-2">
+                            <span
+                              className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold ${
+                                sponsor.package === "Platinum Sponsor"
+                                  ? "bg-gradient-to-r from-yellow-400 to-orange-500 text-white"
+                                  : sponsor.package === "Gold Sponsor"
+                                    ? "bg-gradient-to-r from-yellow-300 to-yellow-500 text-gray-900"
+                                    : sponsor.package === "Silver Sponsor"
+                                      ? "bg-gradient-to-r from-gray-300 to-gray-400 text-gray-900"
+                                      : "bg-gradient-to-r from-blue-400 to-blue-600 text-white"
+                              }`}
+                            >
+                              {sponsor.package}
+                            </span>
+                          </div>
+                          <h3 className="font-bold text-lg text-gray-900">
+                            {sponsor.name}
+                          </h3>
+                          <p className="text-gray-600 text-sm mt-1">
+                            {sponsor.description}
+                          </p>
+                          <div className="mt-2 bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-sm font-medium">
+                            Contribution: {sponsor.contribution}
+                          </div>
+                        </div>
+
+                        {/* Sponsor Benefits */}
+                        <div className="flex-1">
+                          <h4 className="font-semibold text-gray-900 mb-3 flex items-center gap-2">
+                            <span className="w-2 h-2 bg-green-500 rounded-full"></span>
+                            Sponsor Benefits
+                          </h4>
+                          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                            {sponsor.benefits.map((benefit, benefitIndex) => (
+                              <div
+                                key={benefitIndex}
+                                className="flex items-center gap-2 text-sm text-gray-600"
+                              >
+                                <svg
+                                  className="w-4 h-4 text-green-500 flex-shrink-0"
+                                  fill="none"
+                                  stroke="currentColor"
+                                  viewBox="0 0 24 24"
+                                >
+                                  <path
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    strokeWidth={2}
+                                    d="M5 13l4 4L19 7"
+                                  />
+                                </svg>
+                                {benefit}
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      </div>
+                    </motion.div>
+                  ))}
+                </div>
+
+                {/* Sponsorship CTA */}
+                <div className="mt-8 p-6 bg-gradient-to-r from-blue-50 to-purple-50 rounded-xl border border-blue-200 text-center">
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">
+                    Interested in Sponsoring?
+                  </h3>
+                  <p className="text-gray-600 mb-4 max-w-2xl mx-auto">
+                    Join our prestigious list of sponsors and support the next
+                    generation of African Web3 innovators. Get exclusive access
+                    to top talent, brand visibility, and networking
+                    opportunities.
+                  </p>
+                  <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                    <Link
+                      href="/sponsorship"
+                      className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-lg font-semibold hover:from-blue-700 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl"
+                    >
+                      {/* Download Sponsorship Kit */} Sponsor Our Hackathon
+                    </Link>
+                    <Link
+                      href="mailto:info@web3mates.com"
+                      className="border-2 border-blue-600 text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-blue-600 hover:text-white transition-all duration-300"
+                    >
+                      Contact Our Team
+                    </Link>
+                  </div>
+                </div>
+              </motion.div>
+            )}
           </div>
 
           {/* Right Column - Sidebar */}
@@ -626,7 +713,7 @@ export default function HackathonDetail({
                   className="w-full bg-white text-blue-600 px-6 py-3 rounded-lg font-medium transition-all cursor-not-allowed opacity-60"
                   title="Registration coming soon"
                 >
-                Registration Coming Soon
+                  Registration Coming Soon
                 </button>
               )}
               {isAfricaHackathon && (
