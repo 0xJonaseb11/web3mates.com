@@ -34,43 +34,45 @@ const hackathons = [
     ],
     sponsors: [
       {
-        name: "Web3 Bridge",
-        logo: "/web3bridge.png",
+        name: "Your Company Here",
+        logo: "/placeholder-sponsor-platinum.svg",
         package: "Platinum Sponsor",
-        description:
-          "Main event sponsor providing infrastructure and mentorship",
-        contribution: "$1,500+",
+        description: "Be the main event sponsor and get maximum visibility",
+        contribution: "$3,000+",
         benefits: [
           "Main stage branding",
           "Keynote speaking slot",
           "Recruitment booth",
           "Featured in all marketing",
+          "Prime logo placement",
         ],
       },
       {
-        name: "AyaHQ",
-        logo: "/AyaHQ-blue.png",
+        name: "Innovation Partner",
+        logo: "/placeholder-sponsor-gold.svg",
         package: "Gold Sponsor",
-        description: "Infrastructure and technical support partner",
-        contribution: "$1,000+",
+        description: "Perfect for tech companies and infrastructure providers",
+        contribution: "$2,000+",
         benefits: [
-          "Workshop hosting",
-          "Technical mentorship",
+          "Workshop hosting rights",
+          "Technical mentorship sessions",
           "Brand visibility",
           "Networking session",
+          "Featured in press releases",
         ],
       },
       {
-        name: "Genesis",
-        logo: "/genesys.png",
+        name: "Community Champion",
+        logo: "/placeholder-sponsor-silver.svg",
         package: "Silver Sponsor",
-        description: "Developer tools and platform support",
-        contribution: "$500+",
+        description: "Ideal for growing Web3 projects and tools",
+        contribution: "$1,000+",
         benefits: [
-          "Developer tools access",
+          "Developer tools showcase",
           "Technical workshops",
           "Brand recognition",
           "Community engagement",
+          "Social media features",
         ],
       },
       {
@@ -377,7 +379,7 @@ export default function HackathonDetail({
               >
                 <div className="flex items-center justify-between mb-6">
                   <h2 className="text-2xl sm:text-3xl font-bold text-gray-900">
-                    Our Sponsors
+                    Sponsorship Opportunities
                   </h2>
                   <Link
                     href="/sponsorship"
@@ -401,9 +403,10 @@ export default function HackathonDetail({
                 </div>
 
                 <p className="text-gray-600 mb-8 text-lg">
-                  We're grateful to our amazing sponsors who make this hackathon
-                  possible. Their support enables us to create an incredible
-                  experience for all participants.
+                  We're seeking visionary partners to join us in empowering
+                  Africa's next generation of Web3 innovators. Your sponsorship
+                  will make this groundbreaking event possible while giving you
+                  exclusive access to top talent and brand visibility.
                 </p>
 
                 <div className="space-y-6">
@@ -419,14 +422,23 @@ export default function HackathonDetail({
                       <div className="flex flex-col md:flex-row gap-6">
                         {/* Sponsor Logo and Basic Info */}
                         <div className="flex-shrink-0 flex flex-col items-center text-center md:text-left md:items-start">
-                          <div className="w-20 h-20 bg-gray-100 rounded-lg flex items-center justify-center mb-3 p-2">
-                            <Image
-                              src={sponsor.logo}
-                              alt={sponsor.name}
-                              width={80}
-                              height={80}
-                              className="object-contain max-h-16"
-                            />
+                          <div className="w-20 h-20 bg-gradient-to-br from-blue-100 to-purple-100 rounded-lg flex items-center justify-center mb-3 p-2 border-2 border-dashed border-blue-300">
+                            {sponsor.logo.includes("placeholder") ? (
+                              <div className="text-center">
+                                <div className="text-2xl mb-1"></div>
+                                <div className="text-xs text-blue-600 font-semibold">
+                                  sponsor logo
+                                </div>
+                              </div>
+                            ) : (
+                              <Image
+                                src={sponsor.logo}
+                                alt={sponsor.name}
+                                width={80}
+                                height={80}
+                                className="object-contain max-h-16"
+                              />
+                            )}
                           </div>
                           <div className="mb-2">
                             <span
@@ -492,20 +504,20 @@ export default function HackathonDetail({
                 {/* Sponsorship CTA */}
                 <div className="mt-8 p-6 bg-gradient-to-r from-blue-50 to-purple-50 rounded-xl border border-blue-200 text-center">
                   <h3 className="text-xl font-bold text-gray-900 mb-2">
-                    Interested in Sponsoring?
+                    Ready to Shape Africa's Web3 Future?
                   </h3>
                   <p className="text-gray-600 mb-4 max-w-2xl mx-auto">
-                    Join our prestigious list of sponsors and support the next
-                    generation of African Web3 innovators. Get exclusive access
-                    to top talent, brand visibility, and networking
-                    opportunities.
+                    Join us as a sponsor and get exclusive access to Africa's
+                    brightest Web3 talent, unprecedented brand visibility, and
+                    the opportunity to shape the future of blockchain innovation
+                    on the continent.
                   </p>
                   <div className="flex flex-col sm:flex-row gap-4 justify-center">
                     <Link
                       href="/sponsorship"
                       className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-lg font-semibold hover:from-blue-700 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl"
                     >
-                      {/* Download Sponsorship Kit */} Sponsor Our Hackathon
+                      Lean More
                     </Link>
                     <Link
                       href="mailto:info@web3mates.com"
