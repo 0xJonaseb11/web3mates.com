@@ -1,8 +1,8 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import {
   FaUser,
   FaEnvelope,
@@ -12,7 +12,67 @@ import {
   FaUsers,
   FaCode,
   FaShieldAlt,
+  FaCheckCircle,
+  FaExclamationTriangle,
+  FaTimes,
 } from "react-icons/fa";
+
+// Toast Component
+interface ToastProps {
+  message: string;
+  type: "success" | "error" | "warning";
+  onClose: () => void;
+  isVisible: boolean;
+}
+
+const Toast = ({ message, type, onClose, isVisible }: ToastProps) => {
+  const icons = {
+    success: <FaCheckCircle className="w-5 h-5" />,
+    error: <FaExclamationTriangle className="w-5 h-5" />,
+    warning: <FaExclamationTriangle className="w-5 h-5" />,
+  };
+
+  const colors = {
+    success: "bg-blue-500 border-blue-700",
+    error: "bg-red-500 border-red-600",
+    warning: "bg-yellow-500 border-yellow-600",
+  };
+
+  return (
+    <AnimatePresence>
+      {isVisible && (
+        <motion.div
+          initial={{ opacity: 0, y: -50, scale: 0.9 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
+          exit={{ opacity: 0, y: -50, scale: 0.9 }}
+          transition={{ duration: 0.3, ease: "easeOut" }}
+          className={`fixed top-24 right-6 z-50 ${colors[type]} text-white p-4 rounded-2xl shadow-2xl border-2 backdrop-blur-sm max-w-sm min-w-80`}
+        >
+          <div className="flex items-start gap-3">
+            <div className="flex-shrink-0 mt-0.5">{icons[type]}</div>
+            <div className="flex-1">
+              <p className="font-semibold text-sm">{message}</p>
+            </div>
+            <button
+              onClick={onClose}
+              className="flex-shrink-0 hover:bg-white/20 rounded-full p-1 transition-colors"
+            >
+              <FaTimes className="w-4 h-4" />
+            </button>
+          </div>
+          {/* Progress Bar */}
+          <motion.div
+            className="h-1 bg-white/30 rounded-full mt-3 overflow-hidden"
+            initial={{ width: "100%" }}
+            animate={{ width: "0%" }}
+            transition={{ duration: 5, ease: "linear" }}
+            onAnimationComplete={onClose}
+          />
+        </motion.div>
+      )}
+    </AnimatePresence>
+  );
+};
 
 export default function HackathonRegistration() {
   const [formData, setFormData] = useState({
@@ -31,6 +91,34 @@ export default function HackathonRegistration() {
 
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [toast, setToast] = useState<{
+    message: string;
+    type: "success" | "error" | "warning";
+    isVisible: boolean;
+  }>({
+    message: "",
+    type: "success",
+    isVisible: false,
+  });
+
+  const showToast = (
+    message: string,
+    type: "success" | "error" | "warning" = "success"
+  ) => {
+    setToast({ message, type, isVisible: true });
+  };
+
+  const hideToast = () => {
+    setToast((prev) => ({ ...prev, isVisible: false }));
+  };
+
+  // Auto-hide toast after 5 seconds
+  useEffect(() => {
+    if (toast.isVisible) {
+      const timer = setTimeout(hideToast, 5000);
+      return () => clearTimeout(timer);
+    }
+  }, [toast.isVisible]);
 
   const marqueeVariants = {
     animate: {
@@ -84,7 +172,16 @@ export default function HackathonRegistration() {
     }
 
     setErrors(newErrors);
-    return Object.keys(newErrors).length === 0;
+
+    if (Object.keys(newErrors).length > 0) {
+      showToast(
+        "Please fix the errors in the form before submitting.",
+        "warning"
+      );
+      return false;
+    }
+
+    return true;
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -95,6 +192,7 @@ export default function HackathonRegistration() {
     }
 
     setIsSubmitting(true);
+    showToast("Submitting your registration...", "success");
 
     try {
       const response = await fetch(
@@ -113,14 +211,18 @@ export default function HackathonRegistration() {
       );
 
       if (response.ok) {
-        window.location.href = "/hackathons/register/success";
+        showToast("🎉 Registration successful! Redirecting...", "success");
+        setTimeout(() => {
+          window.location.href = "/hackathons/register/success";
+        }, 2000);
       } else {
         throw new Error("Form submission failed");
       }
     } catch (error) {
       console.error("Form submission error:", error);
-      alert(
-        "There was an error submitting your registration. Please try again or contact support."
+      showToast(
+        "❌ There was an error submitting your registration. Please try again or contact support.",
+        "error"
       );
     } finally {
       setIsSubmitting(false);
@@ -182,9 +284,17 @@ export default function HackathonRegistration() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 pt-20">
-      {/* Hackathon Marquee Banner - Same as Home HeroSection */}
+      {/* Toast Notification */}
+      <Toast
+        message={toast.message}
+        type={toast.type}
+        onClose={hideToast}
+        isVisible={toast.isVisible}
+      />
+
+      {/* Hackathon Marquee Banner */}
       <motion.div
-        className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-blue-600 via-purple-600 to-blue-600 py-3 overflow-hidden shadow-lg border-b border-white/20 mt-20"
+        className="fixed top-0 left-0 right-0 z-40 bg-gradient-to-r from-blue-600 via-purple-600 to-blue-600 py-3 overflow-hidden shadow-lg border-b border-white/20 mt-20"
         initial={{ y: -50 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
@@ -196,7 +306,6 @@ export default function HackathonRegistration() {
         >
           {[...Array(3)].map((_, setIndex) => (
             <div key={setIndex} className="flex items-center gap-8 px-4">
-              {/* Animated Emoji */}
               <motion.div
                 animate={{
                   scale: [1, 1.2, 1],
@@ -212,7 +321,6 @@ export default function HackathonRegistration() {
                 🚀
               </motion.div>
 
-              {/* Main Text */}
               <Link
                 href="/hackathons/eth-rwanda-hackathon-2026"
                 className="flex items-center gap-4 group"
@@ -231,7 +339,6 @@ export default function HackathonRegistration() {
                 </span>
               </Link>
 
-              {/* CTA Button */}
               <motion.div
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
@@ -254,7 +361,6 @@ export default function HackathonRegistration() {
                 </Link>
               </motion.div>
 
-              {/* Stats */}
               <div className="flex items-center gap-6 text-white/80 text-sm">
                 <div className="flex items-center gap-2">
                   <span className="text-green-400">⏱️</span>
@@ -270,7 +376,6 @@ export default function HackathonRegistration() {
                 </div>
               </div>
 
-              {/* Animated Emoji */}
               <motion.div
                 animate={{
                   scale: [1, 1.3, 1],
@@ -290,7 +395,6 @@ export default function HackathonRegistration() {
           ))}
         </motion.div>
 
-        {/* Progress Bar */}
         <motion.div
           className="absolute bottom-0 left-0 h-1 bg-gradient-to-r from-yellow-400 to-orange-500"
           initial={{ width: "0%" }}
@@ -342,12 +446,13 @@ export default function HackathonRegistration() {
             animate={{ scale: 1 }}
             className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-full mb-6 shadow-lg ml-10"
           >
-            <span className="text-sm font-semibold">JOIN THE REVOLUTION</span>
+            <span className="text-sm font-semibold">
+              JOIN THE REVOLUTION
+            </span>
           </motion.div>
 
-          <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text">
-            Register for{" "}
-            <span className="text-blue-600">ETH Rwanda Hackathon 2026</span>
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold  mb-6 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text">
+            Register for <span className="text-blue-700">ETH Rwanda Hackathon 2026</span>
           </h1>
 
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
@@ -379,25 +484,7 @@ export default function HackathonRegistration() {
                 </div>
               </div>
 
-              <form
-                onSubmit={handleSubmit}
-                action={process.env.NEXT_PUBLIC_FORMSPREE_ETH_RWANDA_HACK_URL}
-                method="POST"
-              >
-                {/* Formspree Hidden Fields */}
-                <input
-                  type="hidden"
-                  name="_formsubmit_id"
-                  value="eth-rwanda-hackathon-2026"
-                />
-                <input
-                  type="text"
-                  name="_gotcha"
-                  style={{ display: "none" }}
-                  tabIndex={-1}
-                  autoComplete="off"
-                />
-
+              <form onSubmit={handleSubmit}>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
                   {/* Full Name */}
                   <div className="space-y-2">
@@ -615,7 +702,7 @@ export default function HackathonRegistration() {
                 {/* Preferred Track */}
                 <div className="mb-8">
                   <label className="flex items-center gap-2 text-sm font-medium text-gray-700 mb-4">
-                    Preferred Track (Optional)
+                    🎯 Preferred Track (Optional)
                   </label>
                   <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
                     {tracks.map((track) => (
@@ -659,7 +746,7 @@ export default function HackathonRegistration() {
                     value={formData.team}
                     onChange={handleChange}
                     className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300 hover:border-blue-300 resize-none"
-                    placeholder="Do you have a team? If yes, please list your team members. If not, we'll help you find one during the event or you can work solo too! Feel free to also tell us more about yourself!"
+                    placeholder="Do you have a team? If yes, please list your team members. If not, we'll help you find one during the event!"
                   />
                 </div>
 
@@ -743,7 +830,7 @@ export default function HackathonRegistration() {
             className="lg:col-span-2 space-y-6"
           >
             {/* Event Highlights */}
-            <div className="bg-gradient-to-br from-blue-400 to-purple-500 rounded-3xl p-6 text-white shadow-2xl">
+            <div className="bg-gradient-to-br from-blue-500 to-purple-600 rounded-3xl p-6 text-white shadow-2xl">
               <h3 className="text-xl font-bold mb-4">
                 Why Join ETH Rwanda Hackathon?
               </h3>
@@ -770,20 +857,20 @@ export default function HackathonRegistration() {
                 Hackathon Stats
               </h3>
               <div className="grid grid-cols-2 gap-4">
-                <div className="text-center p-3 bg-blue-50 rounded-xl">
+                <div className="text-center p-3 bg-purple-50 rounded-xl">
                   <div className="text-2xl font-bold text-blue-600">500+</div>
                   <div className="text-xs text-gray-600">Participants</div>
                 </div>
                 <div className="text-center p-3 bg-purple-50 rounded-xl">
-                  <div className="text-2xl font-bold text-purple-600">100+</div>
+                  <div className="text-2xl font-bold text-blue-600">100+</div>
                   <div className="text-xs text-gray-600">Mentors</div>
                 </div>
-                <div className="text-center p-3 bg-green-50 rounded-xl">
-                  <div className="text-2xl font-bold text-green-600">48</div>
+                <div className="text-center p-3 bg-purple-50 rounded-xl">
+                  <div className="text-2xl font-bold text-blue-600">48</div>
                   <div className="text-xs text-gray-600">Hours</div>
                 </div>
-                <div className="text-center p-3 bg-orange-50 rounded-xl">
-                  <div className="text-2xl font-bold text-orange-600">10+</div>
+                <div className="text-center p-3 bg-purple-50 rounded-xl">
+                  <div className="text-2xl font-bold text-blue-600">10+</div>
                   <div className="text-xs text-gray-600">Countries</div>
                 </div>
               </div>
@@ -812,12 +899,12 @@ export default function HackathonRegistration() {
             </div>
 
             {/* Support Card */}
-            <div className="bg-gradient-to-br from-blue-200 to-blue-500 rounded-3xl p-6 text-white shadow-2xl">
+            <div className="bg-gradient-to-br from-blue-400 to-blue-500 rounded-3xl p-6 text-white shadow-2xl">
               <div className="flex items-center gap-3 mb-3">
                 <FaShieldAlt className="w-6 h-6" />
                 <h3 className="text-lg font-bold">Need Help?</h3>
               </div>
-              <p className="text-sm text-green-100 mb-4">
+              <p className="text-green-100 text-sm mb-4">
                 Our support team is here to help you with any questions about
                 registration.
               </p>
