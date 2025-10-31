@@ -6,10 +6,10 @@ import { FaArrowRight } from "react-icons/fa";
 
 const blogPosts = [
   {
-    id: "eth-rwanda-hackathon-2025",
+    id: "eth-rwanda-hackathon-2026",
     image: "/e1.svg",
     date: "Dec 2025 - Jan 2026",
-    title: "ETH Rwanda Hackathon 2025",
+    title: "ETH Rwanda Hackathon 2026",
     description:
       "Join Africa's brightest minds in a groundbreaking 48-hour blockchain innovation sprint. Build, collaborate, and shape the future of Web3.",
     featured: true,

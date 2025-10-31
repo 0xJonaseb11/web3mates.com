@@ -52,17 +52,17 @@ const EventsHero = () => {
 
               {/* Main Text */}
               <Link
-                href="/hackathons/eth-rwanda-hackathon-2025"
+                href="/hackathons/eth-rwanda-hackathon-2026"
                 className="flex items-center gap-4 group"
               >
                 <span className="text-white font-bold text-lg sm:text-xl bg-black/20 px-4 py-1 rounded-full border border-white/30">
                   🔥 HOT EVENT
                 </span>
                 <span className="text-white font-semibold text-lg sm:text-xl">
-                  ETH Rwanda Hackathon 2025
+                  ETH Rwanda Hackathon 2026
                 </span>
                 <span className="text-yellow-300 font-bold text-lg sm:text-xl animate-pulse">
-                  $50,000+ PRIZES
+                  $3,000+ PRIZES
                 </span>
                 <span className="text-white/90 text-lg">
                   Dec 2025 - Jan 2026
@@ -177,12 +177,12 @@ const EventsHero = () => {
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-6 sm:mb-8">
                 <div className="flex items-center gap-2 bg-black/30 px-4 py-2 rounded-lg">
                   <span className="text-sm sm:text-base">
-                    📅 Dec 2025 - Jan 2026
+                    Dec 2025 - Jan 2026
                   </span>
                 </div>
                 <div className="flex items-center gap-2 bg-black/30 px-4 py-2 rounded-lg">
                   <span className="text-sm sm:text-base">
-                    ⏱️ 48-Hour Sprint
+                    48-Hour Sprint
                   </span>
                 </div>
               </div>
@@ -200,7 +200,7 @@ const EventsHero = () => {
                   <Link href="/hackathons/register">Register Now - Early Access</Link>
                 </button>
                 <button className="border-2 border-white text-white px-6 py-3 rounded-lg font-semibold text-sm sm:text-base hover:bg-white/10 transition-colors duration-300">
-                  <Link href="/hackathons/eth-rwanda-hackathon-2025">Learn 
+                  <Link href="/hackathons/eth-rwanda-hackathon-2026">Learn 
                   More</Link>
                 </button>
               </div>
@@ -208,7 +208,7 @@ const EventsHero = () => {
               {/* Additional Info */}
               <div className="mt-6 sm:mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4 text-center text-sm text-blue-100">
                 <div className="flex flex-col items-center">
-                  <span className="font-bold text-white text-lg">$50K+</span>
+                  <span className="font-bold text-white text-lg">$3K+</span>
                   <span>In Prizes</span>
                 </div>
                 <div className="flex flex-col items-center">

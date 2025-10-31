@@ -154,7 +154,7 @@ export default function HackathonSuccess() {
               transition={{ delay: 0.5 }}
             >
               You&apos;re officially registered for{" "}
-              <strong>ETH Rwanda Hackathon 2025</strong>. Get ready to build the
+              <strong>ETH Rwanda Hackathon 2026</strong>. Get ready to build the
               future of Web3 in Africa!
             </motion.p>
           </motion.div>
@@ -306,13 +306,13 @@ export default function HackathonSuccess() {
                 {
                   icon: FaTwitter,
                   label: "Share on Twitter",
-                  href: "https://twitter.com/intent/tweet?text=I'm%20joining%20the%20ETH%20Rwanda%20Hackathon%202025%20to%20build%20the%20future%20of%20Web3%20in%20Africa%20with%20%40Web3Mates!%20%23ETHRwanda%20%23Web3Africa&url=https%3A%2F%2Fweb3mates.com",
+                  href: "https://twitter.com/intent/tweet?text=I'm%20joining%20the%20ETH%20Rwanda%20Hackathon%202026%20to%20build%20the%20future%20of%20Web3%20in%20Africa%20with%20%40Web3Mates!%20%23ETHRwanda%20%23Web3Africa&url=https%3A%2F%2Fweb3mates.com",
                   color: "bg-blue-400 hover:bg-blue-500",
                 },
                 {
                   icon: FaLinkedin,
                   label: "Share on LinkedIn",
-                  href: "https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fweb3mates.com&summary=I'm%20joining%20the%20ETH%20Rwanda%20Hackathon%202025!%20Rocket%20Building%20the%20future%20of%20Web3%20in%20Africa%20with%20%40Web3Mates%20%23ETHRwanda%20%23Web3Africa",
+                  href: "https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fweb3mates.com&summary=I'm%20joining%20the%20ETH%20Rwanda%20Hackathon%202026!%20Rocket%20Building%20the%20future%20of%20Web3%20in%20Africa%20with%20%40Web3Mates%20%23ETHRwanda%20%23Web3Africa",
                   color: "bg-blue-600 hover:bg-blue-700",
                 },
                 {

@@ -151,33 +151,33 @@ export default function HackathonRegistration() {
   const experienceLevels = [
     {
       value: "beginner",
-      label: "🌱 Beginner",
+      label: "Beginner",
       description: "New to Web3, excited to learn",
     },
     {
       value: "intermediate",
-      label: "🚀 Intermediate",
+      label: "Intermediate",
       description: "Some experience with blockchain",
     },
     {
       value: "advanced",
-      label: "💻 Advanced",
+      label: "Advanced",
       description: "Comfortable with Web3 development",
     },
     {
       value: "expert",
-      label: "🏆 Expert",
+      label: "Expert",
       description: "Professional Web3 developer",
     },
   ];
 
   const tracks = [
-    { value: "defi", label: "💸 DeFi for Africa", emoji: "💸" },
-    { value: "identity", label: "🆔 Digital Identity", emoji: "🆔" },
-    { value: "climate", label: "🌍 Climate Tech", emoji: "🌍" },
-    { value: "payments", label: "💳 Cross-border Payments", emoji: "💳" },
-    { value: "supplychain", label: "📦 Supply Chain", emoji: "📦" },
-    { value: "not-sure", label: "🤔 Not sure yet", emoji: "🤔" },
+    { value: "defi", label: "DeFi for Africa", emoji: "" },
+    { value: "identity", label: "Digital Identity", emoji: "" },
+    { value: "climate", label: "Climate Tech", emoji: "" },
+    { value: "payments", label: "Cross-border Payments", emoji: "" },
+    { value: "supplychain", label: "Supply Chain", emoji: "" },
+    { value: "not-sure", label: "Not sure yet", emoji: "" },
   ];
 
   return (
@@ -214,17 +214,17 @@ export default function HackathonRegistration() {
 
               {/* Main Text */}
               <Link
-                href="/hackathons/eth-rwanda-hackathon-2025"
+                href="/hackathons/eth-rwanda-hackathon-2026"
                 className="flex items-center gap-4 group"
               >
                 <span className="text-white font-bold text-lg sm:text-xl bg-black/20 px-4 py-1 rounded-full border border-white/30">
                   🔥 HOT EVENT
                 </span>
                 <span className="text-white font-semibold text-lg sm:text-xl">
-                  ETH Rwanda Hackathon 2025
+                  ETH Rwanda Hackathon 2026
                 </span>
                 <span className="text-yellow-300 font-bold text-lg sm:text-xl animate-pulse">
-                  $50,000+ PRIZES
+                  $3,000+ PRIZES
                 </span>
                 <span className="text-white/90 text-lg">
                   Dec 2024 - Jan 2025
@@ -318,7 +318,7 @@ export default function HackathonRegistration() {
           className="text-center mb-12"
         >
           <Link
-            href="/hackathons/eth-rwanda-hackathon-2025"
+            href="/hackathons/eth-rwanda-hackathon-2026"
             className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full border border-blue-200 hover:border-blue-300 transition-all duration-300 mb-8 group"
           >
             <svg
@@ -347,7 +347,7 @@ export default function HackathonRegistration() {
 
           <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text">
             Register for{" "}
-            <span className="text-blue-600">ETH Rwanda Hackathon 2025</span>
+            <span className="text-blue-600">ETH Rwanda Hackathon 2026</span>
           </h1>
 
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
@@ -388,7 +388,7 @@ export default function HackathonRegistration() {
                 <input
                   type="hidden"
                   name="_formsubmit_id"
-                  value="eth-rwanda-hackathon-2025"
+                  value="eth-rwanda-hackathon-2026"
                 />
                 <input
                   type="text"
@@ -615,7 +615,7 @@ export default function HackathonRegistration() {
                 {/* Preferred Track */}
                 <div className="mb-8">
                   <label className="flex items-center gap-2 text-sm font-medium text-gray-700 mb-4">
-                    🎯 Preferred Track (Optional)
+                    Preferred Track (Optional)
                   </label>
                   <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
                     {tracks.map((track) => (
@@ -749,12 +749,12 @@ export default function HackathonRegistration() {
               </h3>
               <div className="space-y-3">
                 {[
-                  "🏆 $50,000+ in prizes & incubation opportunities",
-                  "🤝 Connect with 100+ industry mentors",
-                  "🌍 Build solutions for real African challenges",
-                  "💼 Career opportunities with top Web3 companies",
-                  "🎓 Learn from workshops & technical sessions",
-                  "🚀 Potential to launch your own startup",
+                  "$3,000+ in prizes & incubation opportunities",
+                  "Connect with 100+ industry mentors",
+                  "Build solutions for real African challenges",
+                  "Career opportunities with top Web3 companies",
+                  "Learn from workshops & technical sessions",
+                  "Potential to launch your own startup",
                 ].map((benefit, index) => (
                   <div key={index} className="flex items-center gap-3 text-sm">
                     <div className="w-2 h-2 bg-yellow-400 rounded-full"></div>
@@ -767,7 +767,7 @@ export default function HackathonRegistration() {
             {/* Stats Card */}
             <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-6 shadow-xl border border-white/20">
               <h3 className="text-lg font-bold text-gray-900 mb-4">
-                📊 Hackathon Stats
+                Hackathon Stats
               </h3>
               <div className="grid grid-cols-2 gap-4">
                 <div className="text-center p-3 bg-blue-50 rounded-xl">
@@ -792,7 +792,7 @@ export default function HackathonRegistration() {
             {/* Next Steps */}
             <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-6 shadow-xl border border-white/20">
               <h3 className="text-lg font-bold text-gray-900 mb-4">
-                📅 What Happens Next?
+                What Happens Next?
               </h3>
               <div className="space-y-3">
                 {[
