@@ -29,7 +29,7 @@ const HackathonsPage = () => {
       ],
       status: "Registration Open Soon",
       image: "/e1.svg",
-      registrationLink: "/hackathon/register",
+      registrationLink: "/hackathons/register",
       deadline: "TBD",
       featured: true,
       duration: "48-Hour Sprint",
@@ -562,7 +562,7 @@ const HackathonsPage = () => {
         </p>
         <div className="flex flex-col sm:flex-row justify-center gap-4">
           <Link
-            href="/hackathon/register"
+            href="/hackathons/register"
             className="bg-yellow-400 text-blue-900 px-6 sm:px-8 py-3 rounded-lg font-bold text-sm sm:text-base hover:bg-yellow-300 transition-colors duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 text-center"
           >
             Register for ETH Rwanda Hackathon
