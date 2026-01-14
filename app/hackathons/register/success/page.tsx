@@ -24,8 +24,8 @@ export default function HackathonSuccess() {
 
   // Only the countdown logic is updated
   useEffect(() => {
-    // Hackathon starts: January 1, 2026 00:00:00 UTC
-    const hackathonDate = new Date("2026-01-01T00:00:00Z").getTime();
+    // Hackathon starts: May 1, 2026 00:00:00 UTC
+    const hackathonDate = new Date("2026-05-01T00:00:00Z").getTime();
 
     const updateCountdown = () => {
       const now = Date.now();

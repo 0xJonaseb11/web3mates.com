@@ -64,9 +64,7 @@ const EventsHero = () => {
                 <span className="text-yellow-300 font-bold text-lg sm:text-xl animate-pulse">
                   $3,000+ PRIZES
                 </span>
-                <span className="text-white/90 text-lg">
-                  Dec 2025 - Jan 2026
-                </span>
+                <span className="text-white/90 text-lg">May 2026</span>
               </Link>
 
               {/* CTA Button */}
@@ -170,15 +168,13 @@ const EventsHero = () => {
               {/* Main Title */}
               <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 leading-tight">
                 ETH Rwanda <span className="text-yellow-300">Hackathon</span>{" "}
-                2025
+                2026
               </h1>
 
               {/* Date and Duration */}
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-6 sm:mb-8">
                 <div className="flex items-center gap-2 bg-black/30 px-4 py-2 rounded-lg">
-                  <span className="text-sm sm:text-base">
-                    Dec 2025 - Jan 2026
-                  </span>
+                  <span className="text-sm sm:text-base">May 2026</span>
                 </div>
                 <div className="flex items-center gap-2 bg-black/30 px-4 py-2 rounded-lg">
                   <span className="text-sm sm:text-base">

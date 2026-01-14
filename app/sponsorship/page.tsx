@@ -31,7 +31,7 @@ const upcomingHackathons = [
   {
     id: "eth-rwanda-hackathon-2026",
     title: "ETH Rwanda Hackathon 2026",
-    date: "December 2025 - January 2026",
+    date: "May 2026",
     prize: "$3,000+",
     participants: "500+ Expected",
     status: "Coming Soon",
