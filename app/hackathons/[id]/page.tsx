@@ -13,10 +13,10 @@ const hackathons = [
     title: "ETH Rwanda Hackathon 2026",
     description:
       "Join Africa's brightest minds in a groundbreaking 48-hour blockchain innovation sprint. Build decentralized solutions that tackle real challenges across the continent.",
-    date: "December 20, 2025 - January 18, 2026",
+    date: "May 2026",
     location: "Kigali, Rwanda",
     prizePool: "$3,000+ in grants",
-    registrationDeadline: "January 18, 2026",
+    registrationDeadline: "TBD",
     themes: [
       "DeFi for Africa",
       "Digital Identity",

@@ -11,7 +11,7 @@ const HackathonsPage = () => {
       title: "ETH Rwanda Hackathon 2026",
       description:
         "Join Africa's brightest minds in a groundbreaking 48-hour blockchain innovation sprint. Build decentralized solutions that tackle real challenges across the continent.",
-      date: "December 2025 - January 2026",
+      date: "May 2026",
       location: "Multiple Locations Across Africa",
       themes: [
         "DeFi for Africa",
@@ -253,9 +253,7 @@ const HackathonsPage = () => {
             {/* Key Info */}
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-6 sm:mb-8">
               <div className="flex items-center gap-2 bg-black/30 px-4 py-2 rounded-lg">
-                <span className="text-sm sm:text-base">
-                  Dec 2025 - Jan 2026
-                </span>
+                <span className="text-sm sm:text-base">May 2026</span>
               </div>
               <div className="flex items-center gap-2 bg-black/30 px-4 py-2 rounded-lg">
                 <span className="text-sm sm:text-base">⏱️ 48-Hour Sprint</span>

@@ -315,9 +315,7 @@ const Footer = () => {
                 <span className="text-yellow-300 font-bold text-lg sm:text-xl animate-pulse">
                   $3,000+ PRIZES
                 </span>
-                <span className="text-white/90 text-lg">
-                  Dec 2025 - Jan 2026
-                </span>
+                <span className="text-white/90 text-lg">May 2026</span>
               </Link>
 
               {/* CTA Button */}
