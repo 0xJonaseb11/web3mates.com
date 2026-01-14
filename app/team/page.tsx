@@ -29,7 +29,7 @@ const team = [
     },
   },
   {
-    image: "/jonas.jpg",
+    image: "/jonas.jpeg",
     name: "Jonas Sebera",
     role: "Senior Technical Support Engineer",
     description:

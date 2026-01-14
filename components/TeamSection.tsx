@@ -33,7 +33,7 @@ const team = [
     },
   },
   {
-    image: "/jonas.jpg",
+    image: "/jonas.jpeg",
     name: "Jonas Sebera",
     role: "Senior Technical Support Engineer",
     description:
@@ -143,7 +143,7 @@ const TeamSection = () => {
             >
               <div className="flex flex-col sm:flex-row">
                 {/* Member Photo - Updated to match /team page styling */}
-                <div className="w-full sm:w-2/5 lg:w-1/3 h-72 sm:h-auto relative">
+                <div className="w-full sm:w-2/5 lg:w-1/3 h-72 sm:h-auto relative m-0">
                   <Image
                     src={member.image}
                     alt={member.name}
